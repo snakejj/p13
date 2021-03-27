@@ -1,0 +1,375 @@
+html {
+    font-size: 100%;
+    background-image: url(img/overlay.png), url(img/bg.jpg);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, 100% 100%;
+    background-attachment: fixed;
+    height: 90%;
+    display:block;
+    margin : auto;
+    /*overflow-y: scroll;*/
+}
+
+body {
+    height: 92%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+
+}
+
+header {
+    background-color: #ffffff9e;
+}
+
+/* ************************************************************************ */
+/* -------------------NAVBAR-------------------- */
+nav {
+    margin : 0 2% 2% 2%;
+    display:block;
+    width: 96%;
+    min-height: 50px;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #846c90;
+    border-top: none;
+}
+
+.navbar {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction
+     and if we allow the items to wrap
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-item {
+    border: 1px solid #846c90;
+    width: 200px;
+    text-align: center;
+}
+
+/* -------------------END NAVBAR-------------------- */
+/* ************************************************************************ */
+
+
+/* ************************************************************************ */
+/* -------------------SUBMIT-------------------- */
+
+#submit {
+    margin : 2%;
+    margin-top : 0;
+    display:block;
+    width: 96%;
+    border: 1px solid #846c90;
+}
+
+#submit input {
+    height: 25px;
+    width: 73%;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid #846c90;
+    background-color: #ffffff9e;
+}
+
+#submit button {
+    width: 22%;
+    margin: 0 1% 0 1%;
+    text-align: center;
+    padding: 0px;
+    height: 25px;
+
+}
+
+/* -------------------END SUBMIT-------------------- */
+/* ************************************************************************ */
+
+
+/* ************************************************************************ */
+/* -------------------MAIN-------------------- */
+main {
+    background-color: #ffffff9e;
+}
+
+#main {
+    margin : 0 2% 2% 2%;
+    display:block;
+    width: 96%;
+    min-height: 450px;
+    max-height:450px;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #846c90;
+    background-color: #ffffff70;
+}
+
+/* -------------------END MAIN-------------------- */
+/* ************************************************************************ */
+
+/* ************************************************************************ */
+/* -------------------COMMENTS-------------------- */
+#comments {
+    margin : 2%;
+    margin-top : 0;
+    display:block;
+    width: 96%;
+    border: 1px solid #846c90;
+}
+
+.comments {
+    padding: 0;
+}
+
+.comment-item {
+    margin : 1%;
+    display:block;
+    width: 98%;
+    border: 1px solid #846c90;
+}
+
+.comment {
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction
+     and if we allow the items to wrap
+    * Remember this is the same as:
+    * flex-direction: row;
+    * flex-wrap: wrap;
+    */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: left;
+
+    padding: 0;
+    list-style: none;
+}
+
+.avatar {
+    margin : 1%;
+    display:block;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #846c90;
+}
+
+.comment-infos {
+    margin : 1%;
+}
+
+.message {
+    margin : 1%;
+    display:block;
+    width: 98%;
+    border: 1px solid #846c90;
+}
+
+.view-hide-answer {
+    margin : 1%;
+    display:block;
+    font-weight: bold;
+}
+
+
+
+.answer {
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction
+     and if we allow the items to wrap
+    * Remember this is the same as:
+    * flex-direction: row;
+    * flex-wrap: wrap;
+    */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: left;
+
+    padding: 0;
+    padding-left: 15%;
+    list-style: none;
+}
+
+
+/* -------------------END COMMENTS-------------------- */
+/* ************************************************************************ */
+
+/* ************************************************************************ */
+/* -------------------POSTING COMMENTS-------------------- */
+
+
+#post-comment {
+    margin : 2%;
+    margin-top : 0;
+    width: 96%;
+    border: 1px solid #846c90;
+    display: block;
+
+}
+
+#comment-form {
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction
+     and if we allow the items to wrap
+    * Remember this is the same as:
+    * flex-direction: row;
+    * flex-wrap: wrap;
+    */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+
+    padding: 0;
+}
+
+#pseudo-input, #email-input{
+    height: 25px;
+    width: 450PX;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid #846c90;
+    background-color: #ffffff9e;
+}
+
+#message-input {
+    height: 100px;
+    min-width: 98%;
+    margin: 1%;
+    border: 1px solid #846c90;
+    background-color: #ffffff9e;
+}
+
+.captcha {
+    height: 50px;
+    width: 300px;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid #846c90;
+}
+#captcha-input {
+    height: 25px;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #846c90;
+    background-color: #ffffff9e;
+}
+
+#post-comment button{
+    width: 300px;
+    margin: auto 1%;
+    text-align: center;
+    padding: 0px;
+    height: 25px;
+}
+
+/* -------------------END POSTING COMMENTS-------------------- */
+/* *******************************-***************************************** */
+
+
+/* ************************************************************************ */
+/* -------------------FOOTER-------------------- */
+
+footer {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+/* -------------------END FOOTER-------------------- */
+/* ************************************************************************ */
+
+
+/* ************************************************************************ */
+/* ************************************************************************ */
+/* ************************************************************************ */
+
+.subtitle {
+    border-bottom: 1px solid #846c90;
+    margin: 0;
+    text-align: center;
+    font-size: smaller;
+    background-color: #846c904f;
+}
+
+a:-webkit-any-link{
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1em;
+}
+
+/* ************************************************************************ */
+/* ************************************************************************ */
+/* ************************************************************************ */
+
+/*
+
+#question {
+    margin : 2% 2% 0 2%;
+    display:block;
+    width: 96%;
+    max-height:500px;
+    border: 1px solid #846c90;
+}
+
+#askquestionhere {
+    margin: 1% 0 0 2%;
+}
+
+.map {
+    width: 96%;
+    height: 200px;
+    margin: 0 2% 0 2%;
+    background: #846c90;
+}
+
+.anecdote {
+    padding-bottom: 0;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+}
+
+.navbar {
+    display: flex !important;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    width: 25%;
+    margin: 0 auto;
+    list-style: none;
+    border-right: 1px solid #846c90;
+    text-align: center;
+}
+
+.navbar p  {
+    font-size: smaller;
+}
+
+*/
