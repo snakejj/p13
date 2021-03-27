@@ -121,6 +121,47 @@ main {
 /* ************************************************************************ */
 
 /* ************************************************************************ */
+/* -------------------SHARE-------------------- */
+
+#share {
+    margin : 0 2% 2% 2%;
+    display:block;
+    width: 96%;
+    min-height: 50px;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #846c90;
+    background-color: #ffffff70;
+}
+
+.share {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction
+     and if we allow the items to wrap
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+
+  padding: 0;
+  list-style: none;
+}
+
+.share-item {
+    text-align: center;
+    margin: auto;
+}
+
+/* -------------------END SHARE-------------------- */
+/* ************************************************************************ */
+
+/* ************************************************************************ */
 /* -------------------COMMENTS-------------------- */
 #comments {
     margin : 2%;
