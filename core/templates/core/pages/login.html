@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+
+    {% include "core/layouts/_submit.html" %}
+    <div id="login" style="background-color: #fff0;">
+        <h3 class="subtitle">Connexion</h3>
+
+        <form class="login">
+            <input type="text" id="login-email-input" name="login-email-input" placeholder="Email" required>
+            <input type="password" id="login-password-input" name="login-password-input" placeholder="Mot de passe" required>
+            <button type="submit">Connexion</button>
+            <p style="text-align: center; font-weight: bold; margin-top:0;">Mot de passe oublié ?</p>
+        </form>
+
+    </div>
+
+{% endblock content %}

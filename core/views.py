@@ -7,3 +7,7 @@ def home(request):
 
 def legal_notice(request):
     return render(request, 'core/pages/legal_notice.html', {'title': "Mentions légales",})
+
+
+def login(request):
+    return render(request, 'core/pages/login.html', {'title': "Connexion",})

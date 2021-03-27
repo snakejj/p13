@@ -327,6 +327,47 @@ main {
 /* -------------------END POSTING COMMENTS-------------------- */
 /* *******************************-***************************************** */
 
+/* ************************************************************************ */
+/* --------------------------LOGIN---------------------------- */
+
+#login {
+    margin : 0 2% 2% 2%;
+    display:block;
+    width: 96%;
+    min-height: 450px;
+    max-height:450px;
+    height: auto;
+    overflow-y: auto;
+    border: 1px solid #846c90;
+    background-color: #ffffff70;
+}
+
+.login {
+    padding: 0;
+    margin-top: 2%;
+    margin : 2% auto ;
+    display:block;
+    width: 98%;
+    border: 1px solid #846c90;
+}
+
+#login input {
+    height: 28px;
+    width: 97%;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid #846c90;
+    background-color: #ffffff9e;
+}
+#login button {
+    height: 28px;
+    width: 70%;
+    margin: 1% 15%;
+    text-align: center;
+}
+
+/* --------------------------END LOGIN---------------------------- */
+/* ************************************************************************ */
 
 /* ************************************************************************ */
 /* -------------------FOOTER-------------------- */
