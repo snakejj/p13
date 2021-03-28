@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+    {% include "core/layouts/_submit.html" %}
+    <div id="main-video">
+                <div class="wrapper">
+                    <div class="wrapper-left">
+                        <h3 class="subtitle">Vidéo aléatoire</h3>
+
+                            <iframe src="https://www.youtube.com/embed/uvf0lD5xzH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="wrapper-right">
+                        <h3 class="subtitle">ID</h3>
+                            <form id="rating-form">
+                                <label for="interest">Intérêt /10</label><br>
+                                <input type="number" id="interest" name="interest" max="10" min="0">
+                                <label for="quality">Qualité /10</label><br>
+                                <input type="number" id="quality" name="quality" max="10" min="0">
+                                <button type="submit">Noter</button>
+                            </form>
+                    </div>
+                </div>
+    </div>
+
+    {% include "core/layouts/_share.html" %}
+    {% include "core/layouts/_comments.html" %}
+
+
+{% endblock content %}
