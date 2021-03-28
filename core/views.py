@@ -12,5 +12,10 @@ def legal_notice(request):
 def login(request):
     return render(request, 'core/pages/login.html', {'title': "Connexion",})
 
+
 def random_video(request):
     return render(request, 'core/pages/random_video.html', {'title': "Vidéo aléatoire",})
+
+
+def top_videos(request):
+    return render(request, 'core/pages/top_videos.html', {'title': "Top vidéos",})
