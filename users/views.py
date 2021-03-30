@@ -46,7 +46,13 @@ def comments_list(request):
 
 
 def moderation_video(request):
-    return render(request, 'users/moderation-video.html', {'title': "Modération d'une vidéo"})
+    return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
+
+
+def moderation_comment(request):
+    return render(request, 'users/moderation-comment.html', {'title': "Modérat° commentaire"})
+
+
 
 
 def logout(request):

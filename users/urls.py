@@ -11,5 +11,6 @@ urlpatterns = [
     path('admin/videos', views.videos_list, name='videos_list'),
     path('admin/comments', views.comments_list, name='comments_list'),
     path('admin/moderation-video', views.moderation_video, name='moderation_video'),
+    path('admin/moderation-commentaires', views.moderation_comment, name='moderation_comment'),
 ]
 
