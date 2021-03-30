@@ -6,6 +6,25 @@
 {% if user.is_authenticated %}
         <div id="main">
         <h3 class="subtitle">{{ title }}</h3>
+
+                <ul id="dashboard">
+                        <li class="dashboard-item">
+                                <h3 class="subtitle" style="background-color: red;color: white;">Signalement en attente</h3>
+                                Content
+                        </li>
+                        <li class="dashboard-item">
+                                <h3 class="subtitle">Nb de requetes API</h3>
+                                Content
+                        </li>
+                        <li class="dashboard-item">
+                                <h3 class="subtitle">Nb de vidéos</h3>
+                                Content
+                        </li>
+                        <li class="dashboard-item">
+                                <h3 class="subtitle">Nb de commentaires</h3>
+                                Content
+                        </li>
+                </ul>
         </div>
 {% else %}
         <p style="text-align:center;">Pour acceder à cette page vous devez etre connecté.</p>

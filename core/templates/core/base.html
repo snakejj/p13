@@ -10,13 +10,37 @@
 
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- Font Awesome Icons -->
+    <link href="{% static 'fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'DataTables/datatables.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script>
+    setTimeout(function() {
+        $('#message_container').fadeOut(1600, "linear");
+    }, 5000); // <-- time in milliseconds
+    </script>
 
 </head>
+{% if messages %}
+  <div>
+    {% for message in messages %}
+      <div {% if message.tags %} class="{{ message.tags }}"{% endif %} id="message_container"onclick="this.parentElement.style.display='none';">
+        <div class="message_text">{{ message }}</div><div class="message_close_icon">&times;</div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
 <body>
     {% include "core/layouts/_header.html" %}
 
     <main>
+    {% if user.is_authenticated %}
+    {% include "core/layouts/_header-admin.html" %}
+    {% endif %}
     {% block content %}
     {% endblock %}
     </main>
