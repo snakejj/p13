@@ -1,0 +1,149 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+{% if user.is_authenticated %}
+<script>
+        $(document).ready(function () {
+            $("#reset").click(function (e) {
+                location.reload();
+            });
+
+
+            /*JSON Binding*/
+            var json = [
+                        {
+                            "id": "1",
+                            "status": "initial",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "2",
+                            "status": "online",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "3",
+                            "status": "offline",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "4",
+                            "status": "reported",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "5",
+                            "status": "reported",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "6",
+                            "status": "offline",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "7",
+                            "status": "initial",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "8",
+                            "status": "online",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "9",
+                            "status": "initial",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "10",
+                            "status": "reported",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": "11",
+                            "status": "online",
+                            "interest-rating": 2.3,
+                            "quality-rating": 9.5,
+                            "link": "dsHUS4qZ27J",
+                        },
+
+
+            ];
+
+            $('#table').DataTable({
+                data: json,
+                columns: [
+                    {
+                        "data": "id",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                $(nTd).html("<a href='https://www.youtube.com/watch?v="+oData.link+"'>"+oData.id+"</a>");
+                            }
+                    },
+                    {
+                        "data": "status",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                $(nTd).html("<a href='{% url 'users:videos_list' %}/"+oData.id+"'>"+oData.status+"</a>");
+                            },
+                    },
+                    { data: 'interest-rating' },
+                    { data: 'quality-rating' },
+                ],
+                "pageLength": 10
+            });
+            /*End*/
+
+        });
+</script>
+
+    <div id="main">
+        <h3 class="subtitle">{{ title }}</h3>
+
+        <div class="container">
+                <div id="content">
+                    <table id="table" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Status</th>
+                                <th>Note Intérêt</th>
+                                <th>Note Qualité</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+        </div>
+    </div>
+
+{% else %}
+<p style="text-align:center;">Pour acceder à cette page vous devez etre connecté.</p>
+<p style="text-align:center;"><a href="{% url 'users:login' %}">Suivez ce lien pour vous connecter.</a></p>
+{% endif %}
+
+{% endblock content %}
