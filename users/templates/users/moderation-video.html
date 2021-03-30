@@ -1,0 +1,115 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+{% if user.is_authenticated %}
+<script>
+        $(document).ready(function () {
+            $("#reset").click(function (e) {
+                location.reload();
+            });
+
+
+            /*JSON Binding*/
+            var json = [
+                        {
+                            "id": 1,
+                            "reason": "Fausses informations",
+                            "message": "Message explaining why this video should be deleted bla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla bla",
+                        },
+                        {
+                            "id": 2,
+                            "reason": "Lien mort",
+                            "message": "Message explaining why this video should be fixed bla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla bla",
+                        },
+
+
+
+            ];
+
+            $('#table').DataTable({
+                data: json,
+                columns: [
+
+                    { data: 'id' },
+                    { data: 'reason' },
+                    { data: 'message' },
+
+                ],
+                "pageLength": 10
+            });
+            /*End*/
+
+        });
+</script>
+
+    <div id="main">
+        <h3 class="subtitle">{{ title }}</h3>
+        <div class="wrapper">
+                    <div class="wrapper-left">
+
+                            <iframe src="https://www.youtube.com/embed/uvf0lD5xzH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="wrapper-right">
+                        <!--
+                        <div class="sort-rank">
+                        Trier par : Intérêt ▴
+                        </div>
+                        -->
+
+
+
+                        <ul class="ranks">
+                            <li class="rank" style="text-align: left;">
+                                <form id="status_form" class="" action="{% url 'users:moderation_video' %}" method="get">
+
+                                    <input type="radio" name="status" id="status-initial" autocomplete="off" checked>
+                                    <label class="status" for="status-initial" style="color: white;background-color: #0d6efd;"><b>Initial</b></label><br>
+
+                                    <input type="radio" name="status" id="status-reported" autocomplete="off">
+                                    <label class="status" for="status-reported" style="color: white;background-color: #dc3545;"><b>Reported</b></label><br>
+
+                                    <input type="radio" name="status" id="status-on" autocomplete="off">
+                                    <label class="status" for="status-on" style="color: white;background-color: #198754;"><b>On</b></label><br>
+
+                                    <input type="radio" name="status" id="status-off" autocomplete="off">
+                                    <label class="status" for="status-off" style="color: white;background-color: #6c757d;"><b>Off</b></label><br><br>
+                                    <button type="submit">Appliquer</button>
+                                </form>
+                            </li>
+
+                            <li class="rank" style="border: none;"></li>
+                            <li class="rank">Moyenne note intérêt</li>
+                            <li class="rank">Moyenne note qualité</li>
+                            <li class="rank">Lien vers la vidéo original</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+        <div class="container">
+                <div id="content">
+                    <table id="table" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Motif</th>
+                                <th>Message de signalement</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+        </div>
+    </div>
+
+{% else %}
+<p style="text-align:center;">Pour acceder à cette page vous devez etre connecté.</p>
+<p style="text-align:center;"><a href="{% url 'users:login' %}">Suivez ce lien pour vous connecter.</a></p>
+{% endif %}
+
+{% endblock content %}

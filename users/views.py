@@ -45,6 +45,10 @@ def comments_list(request):
     return render(request, 'users/comments_list.html', {'title': "Liste des commentaires"})
 
 
+def moderation_video(request):
+    return render(request, 'users/moderation-video.html', {'title': "Modération d'une vidéo"})
+
+
 def logout(request):
     log_out(request)
     messages.info(request, "On espere vous revoir bientot !", fail_silently=True)
