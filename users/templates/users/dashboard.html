@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+        <div id="main">
+        <h3 class="subtitle">{{ title }}</h3>
+        </div>
+{% else %}
+        <p style="text-align:center;">Pour acceder à cette page vous devez etre connecté.</p>
+        <p style="text-align:center;"><a href="{% url 'users:login' %}">Suivez ce lien pour vous connecter.</a></p>
+{% endif %}
+
+
+{% endblock content %}

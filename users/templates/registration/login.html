@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+{% include "core/layouts/_submit.html" %}
+
+
+{% if user.is_authenticated %}
+        <p style="text-align:center;">Vous êtes déjà connecté</p>
+        <p style="text-align:center;"><a href="{% url 'users:logout' %}">Suivez ce lien pour vous déconnecter.</a></p>
+{% else %}
+    <div id="login" style="background-color: #fff0;">
+        <h3 class="subtitle">{{ title }}</h3>
+
+        <form class="login" action="{% url 'users:login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary" id="button_send">Envoyer</button>
+        </form>
+
+        <p style="text-align: center; font-weight: bold; margin-top:0;">
+          <a id="lostpassword" href="/password_reset/">
+            Mot de passe oublié ?
+          </a>
+        </p>
+    </div>
+{% endif %}
+
+
+
+{% endblock content %}

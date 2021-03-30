@@ -1,0 +1,17 @@
+{% load static %}
+    <!-- Navigation admin -->
+    <div id="nav-admin">
+        <ul class="navbar-admin">
+            <li class="navbar-admin-item-main">
+                <a href="{% url 'users:dashboard' %}">Tableau de bord</a>
+            </li>
+          <li class="navbar-admin-item">
+              <a href="{% url 'users:videos_list' %}">Vidéos</a></li>
+          <li class="navbar-admin-item">
+              <a href="{% url 'users:comments_list' %}">Commentaires</a>
+          </li>
+        </ul>
+    </div>
+
+
+

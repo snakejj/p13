@@ -1,0 +1,203 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+{% if user.is_authenticated %}
+<script>
+        $(document).ready(function () {
+            $("#reset").click(function (e) {
+                location.reload();
+            });
+
+
+            /*JSON Binding*/
+            var json = [
+                        {
+                            "id": 1,
+                            "status": "initial",
+                            "videos_id": 1,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 2,
+                            "status": "online",
+                            "videos_id": 2,
+                            "parent_id": "None",
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 3,
+                            "status": "offline",
+                            "videos_id": 2,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 4,
+                            "status": "reported",
+                            "videos_id": 5,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 5,
+                            "status": "reported",
+                            "videos_id": 1,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 6,
+                            "status": "offline",
+                            "videos_id": 3,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 7,
+                            "status": "initial",
+                            "videos_id": 4,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 8,
+                            "status": "online",
+                            "videos_id": 5,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 9,
+                            "status": "initial",
+                            "videos_id": 3,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 10,
+                            "status": "reported",
+                            "videos_id": 8,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+                        {
+                            "id": 11,
+                            "status": "online",
+                            "videos_id": 6,
+                            "parent_id": 2,
+                            "pseudo": "Pseudo",
+                            "email": "email@email.com",
+                            "comment": "dsqoikjdsqlk dsqdsq dsqkjh dsqkjj é",
+                            "link_video": "dsHUS4qZ27J",
+                        },
+
+
+            ];
+
+            $('#table').DataTable({
+                data: json,
+                columns: [
+                    {
+                        "data": "id",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                $(nTd).html("<a href='{% url 'users:comments_list' %}/"+oData.id+"'>"+oData.id+"</a>");
+                            },
+                    },
+                    {
+                        "data": "status",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                $(nTd).html("<a href='{% url 'users:comments_list' %}/"+oData.id+"'>"+oData.status+"</a>");
+                            },
+                    },
+                    {
+                        "data": "videos_id",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                $(nTd).html("<a href='{% url 'users:videos_list' %}/"+oData.videos_id+"'>"+oData.videos_id+"</a>");
+                            },
+                    },
+                    {
+                        "data": "parent_id",
+                        "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
+                            {
+                                if ( oData.parent_id > 0 )
+                                    {
+                                        $(nTd).html("<a href='{% url 'users:comments_list' %}/"+oData.parent_id+"'>"+oData.parent_id+"</a>");
+                                    }
+                            },
+                    },
+                    { data: 'pseudo' },
+                    { data: 'email' },
+                    { data: 'comment' },
+                ],
+                "pageLength": 10
+            });
+            /*End*/
+
+        });
+</script>
+
+    <div id="main">
+        <h3 class="subtitle">{{ title }}</h3>
+
+        <div class="container">
+                <div id="content">
+                    <table id="table" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Status</th>
+                                <th>Vidéo Id</th>
+                                <th>Parent Id</th>
+                                <th>Pseudo</th>
+                                <th>Email</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+        </div>
+    </div>
+
+{% else %}
+<p style="text-align:center;">Pour acceder à cette page vous devez etre connecté.</p>
+<p style="text-align:center;"><a href="{% url 'users:login' %}">Suivez ce lien pour vous connecter.</a></p>
+{% endif %}
+
+{% endblock content %}

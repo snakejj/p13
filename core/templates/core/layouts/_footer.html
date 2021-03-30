@@ -2,17 +2,26 @@
 <!-- Footer -->
 <footer>
     <p>
-        <a href="{% url 'core:login' %}">
-            <img alt="Copyleft" src="{% static 'css/img/login.png' %}">
+        {% if user.is_authenticated %}
+        <a style="color: #ff000069" href="{% url 'users:logout' %}">
+            <i class="fa fa-sign-out-alt fa-2x"></i>
         </a>
+        {% else %}
+        <a style="color: #00000069" href="{% url 'users:login' %}">
+            <i class="fas fa-sign-in-alt fa-2x"></i>
+        </a>
+        {% endif %}
+
 
     </p>
+
     <p>
         <a href="https://github.com/snakejj/">
-            <img alt="GitHub" src="{% static 'css/img/github.png' %}">
+            <i class="fab fa-gitlab fa-2x" aria-hidden="true" style="color:black"></i>
+<!--            <i class="fab fa-github fa-2x"></i>-->
         </a>
         <a href="https://www.gnu.org/licenses/copyleft.fr.html">
-            <img alt="Copyleft" src="{% static 'css/img/copyleft.png' %}">
+            <i class="fab fa-creative-commons-pd fa-2x" style="color:black"></i>
         </a>
 
     </p>
