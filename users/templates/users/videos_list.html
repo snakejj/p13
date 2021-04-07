@@ -109,7 +109,7 @@
                         "data": "status",
                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
                             {
-                                $(nTd).html("<a href='{% url 'users:videos_list' %}/"+oData.id+"'>"+oData.status+"</a>");
+                                $(nTd).html("<a href='{% url 'videos:videos_list' %}/"+oData.id+"'>"+oData.status+"</a>");
                             },
                     },
                     { data: 'interest-rating' },

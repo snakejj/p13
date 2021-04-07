@@ -149,7 +149,7 @@
                         "data": "videos_id",
                         "fnCreatedCell": function (nTd, sData, oData, iRow, iCol)
                             {
-                                $(nTd).html("<a href='{% url 'users:videos_list' %}/"+oData.videos_id+"'>"+oData.videos_id+"</a>");
+                                $(nTd).html("<a href='{% url 'videos:videos_list' %}/"+oData.videos_id+"'>"+oData.videos_id+"</a>");
                             },
                     },
                     {

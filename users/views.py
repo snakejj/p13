@@ -5,21 +5,7 @@ from django.contrib.auth import login as log_in
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-
-from django.utils.http import urlsafe_base64_encode
-from django.utils.http import urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError, force_str
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.core.mail import EmailMessage
-from django.conf import settings
-
-
-from .forms import SignUpForm
-
-
 
 ########################################################################################################################
 
@@ -37,16 +23,8 @@ def dashboard(request):
     return render(request, 'users/dashboard.html', {'title': "Tableau de bord"})
 
 
-def videos_list(request):
-    return render(request, 'users/videos_list.html', {'title': "Liste des vidéos"})
-
-
 def comments_list(request):
     return render(request, 'users/comments_list.html', {'title': "Liste des commentaires"})
-
-
-def moderation_video(request):
-    return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
 
 
 def moderation_comment(request):
