@@ -4,6 +4,10 @@ from urllib.parse import urlparse, parse_qs
 
 class VideoManager(models.Manager):
 
+    def __init__(self):
+        self.link_is_bad = False
+        self.link_already_exist = False
+
     def _parse_link(self, raw_link):
         # Examples:
         # - http://youtu.be/SA2iWivDJiE
@@ -21,10 +25,15 @@ class VideoManager(models.Manager):
             if query.path[:3] == '/v/':
                 return query.path.split('/')[2]
         # fail?
-        return None
+        self.link_is_bad = True
+        return self.link_is_bad
 
     def _add_video(self, clean_link):
-        pass
+        if len(clean_link) == 11:
+            Video.objects.get_or_create(link=clean_link)
+        else:
+            self.link_already_exist = True
+            return self.link_already_exist
 
     def _change_status(self, video_id, desired_status):
         pass
