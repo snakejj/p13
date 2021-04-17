@@ -1,14 +1,11 @@
 from django.db import models
 from urllib.parse import urlparse, parse_qs
 
+import videos
+
 
 class VideoManager(models.Manager):
-
-    def __init__(self):
-        self.link_is_bad = False
-        self.link_already_exist = False
-
-    def _parse_link(self, raw_link):
+    def parse_link(self, raw_link):
         # Examples:
         # - http://youtu.be/SA2iWivDJiE
         # - http://www.youtube.com/watch?v=_oPAwA_Udwc&feature=feedu
@@ -25,23 +22,22 @@ class VideoManager(models.Manager):
             if query.path[:3] == '/v/':
                 return query.path.split('/')[2]
         # fail?
-        self.link_is_bad = True
-        return self.link_is_bad
+        return False
 
-    def _add_video(self, clean_link):
+    def add_video(self, clean_link):
         if len(clean_link) == 11:
-            Video.objects.get_or_create(link=clean_link)
+            try:
+                Video.objects.get(link=clean_link)
+                return False
+                # Video.objects.get_or_create(link=clean_link)
+            except videos.models.Video.DoesNotExist:
+                Video.objects.create(link=clean_link)
+                return True
         else:
-            self.link_already_exist = True
-            return self.link_already_exist
+            return False
 
-    def _change_status(self, video_id, desired_status):
+    def select_random_video(self):
         pass
-
-    def _select_random_video(self):
-        pass
-
-
 
 class Video(models.Model):
     link = models.CharField(max_length=11)

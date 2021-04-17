@@ -7,10 +7,19 @@
                 <a href="{% url 'core:home' %}">Accueil</a>
             </li>
           <li class="navbar-item">
-              <a href="{% url 'core:random_video' %}">Vidéo aléatoire</a>
+              {% if request.session.has_submit_unique_video == True %}
+              <a href="{% url 'videos:random_video' %}">Vidéo aléatoire</a>
+              {% else %}
+              Vidéo aléatoire
+              {% endif %}
           </li>
           <li class="navbar-item">
-              <a href="{% url 'core:top_videos' %}">Top vidéos</a></li>
+              {% if request.session.has_submit_unique_video == True %}
+              <a href="{% url 'videos:top_videos' %}">Top vidéos</a>
+              {% else %}
+              Top vidéos
+              {% endif %}
+          </li>
           <li class="navbar-item">
               <a href="{% url 'core:legal_notice' %}">Mention légales</a>
           </li>
