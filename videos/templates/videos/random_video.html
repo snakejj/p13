@@ -4,17 +4,17 @@
 
     {% include "core/layouts/_submit.html" %}
 
-    {% if request.session.has_submit_unique_video == True %}
+    {% if request.session.has_submit_unique_video == True or user.is_authenticated %}
     <div id="main-video">
                 <div class="wrapper">
                     <div class="wrapper-left">
                         <h3 class="subtitle">{{ title }}</h3>
 
-                            <iframe src="https://www.youtube.com/embed/uvf0lD5xzH0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/{{ request.session.video_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </div>
                     <div class="wrapper-right">
-                        <h3 class="subtitle">ID</h3>
+                        <h3 class="subtitle">ID: {{ request.session.video_link }}</h3>
                             <form id="rating-form">
                                 <label for="interest">Intérêt /10</label><br>
                                 <input type="number" id="interest" name="interest" max="10" min="0">

@@ -4,7 +4,7 @@
         <h3 class="subtitle">Soumettre une vidéo</h3>
         <form action="{% url 'videos:submit_video' %}" method="post" id="submit-form">
             {% csrf_token %}
-            <input type="text" id="link" name="link_submitted">
+            <input type="text" id="link" name="link_submitted" placeholder="Soumettez vos liens YouTube les plus intéressants ici">
             <button type="submit">⇧</button>
         </form>
 </div>

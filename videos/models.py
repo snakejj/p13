@@ -1,11 +1,19 @@
+import os
+import json
+from random import randrange
+
+import requests
+from dotenv import load_dotenv, find_dotenv
 from django.db import models
 from urllib.parse import urlparse, parse_qs
-
 import videos
 
 
+load_dotenv(find_dotenv())
+
+
 class VideoManager(models.Manager):
-    def parse_link(self, raw_link):
+    def parse_link(self, request, raw_link):
         # Examples:
         # - http://youtu.be/SA2iWivDJiE
         # - http://www.youtube.com/watch?v=_oPAwA_Udwc&feature=feedu
@@ -21,10 +29,12 @@ class VideoManager(models.Manager):
                 return query.path.split('/')[2]
             if query.path[:3] == '/v/':
                 return query.path.split('/')[2]
+        elif request.user.is_authenticated:
+            return ""
         # fail?
         return False
 
-    def add_video(self, clean_link):
+    def add_video(self, request, clean_link):
         if len(clean_link) == 11:
             try:
                 Video.objects.get(link=clean_link)
@@ -33,11 +43,46 @@ class VideoManager(models.Manager):
             except videos.models.Video.DoesNotExist:
                 Video.objects.create(link=clean_link)
                 return True
+        elif request.user.is_authenticated:
+            return True
         else:
-            return False
+            return None
 
     def select_random_video(self):
-        pass
+
+        max_pk = len(Video.objects.filter())
+        headers = {
+            'Content-type': 'application/json',
+            'Accept': 'application/json'
+        }
+
+        url = "https://api.random.org/json-rpc/4/invoke"
+
+        data = {
+            "jsonrpc": "2.0",
+            "method": "generateIntegers",
+            "params": {
+                "apiKey": os.getenv("RANDOM_API_KEY"),
+                "n": 1,
+                "min": 1,
+                "max": max_pk,
+                "replacement": True
+            },
+            "id": 42
+        }
+        response = requests.post(url, json=data, headers=headers)
+
+        if response.status_code == 200:
+            # If the API answer, we use a Truly random integer
+            random_pk = response.json()["result"]["random"]["data"][0]
+            video = Video.objects.get(pk=random_pk)
+            return video.link, True
+        else:
+            # If there is an error with the API answer, we use a pseudo-random integer
+            random_pk = randrange(1,max_pk+1)
+            video = Video.objects.get(pk=random_pk)
+            return video.link, False
+
 
 class Video(models.Model):
     link = models.CharField(max_length=11)
