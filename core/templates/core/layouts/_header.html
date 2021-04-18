@@ -7,14 +7,14 @@
                 <a href="{% url 'core:home' %}">Accueil</a>
             </li>
           <li class="navbar-item">
-              {% if request.session.has_submit_unique_video == True %}
+              {% if request.session.has_submit_unique_video == True or user.is_authenticated %}
               <a href="{% url 'videos:random_video' %}">Vidéo aléatoire</a>
               {% else %}
               Vidéo aléatoire
               {% endif %}
           </li>
           <li class="navbar-item">
-              {% if request.session.has_submit_unique_video == True %}
+              {% if request.session.has_submit_unique_video == True or user.is_authenticated %}
               <a href="{% url 'videos:top_videos' %}">Top vidéos</a>
               {% else %}
               Top vidéos
