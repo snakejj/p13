@@ -46,6 +46,10 @@ def submit_video(request):
 
                 request.session['has_submit_unique_video'] = True
 
+                # We call the "select_random_video" function here and not in "random video" view due to the way cookies
+                # work it would have require the user to refresh the page or go on an other page and come back for the
+                # random video to appear.
+
                 video = VideoManager()
                 request.session['video_link'], api_worked = video.select_random_video()
 
@@ -55,6 +59,18 @@ def submit_video(request):
                 elif not api_worked:
                     return render(request, 'videos/random_video.html', {'title': "Vidéo (pseudo) aléatoire", })
 
+            elif video_is_unique == "admin":
+
+                request.session['has_submit_unique_video'] = True
+
+                video = VideoManager()
+                request.session['video_link'], api_worked = video.select_random_video()
+
+                if api_worked:
+                    return render(request, 'videos/random_video.html', {'title': "Vidéo aléatoire", })
+
+                elif not api_worked:
+                    return render(request, 'videos/random_video.html', {'title': "Vidéo (pseudo) aléatoire", })
             elif video_is_unique is False:
                 messages.warning(request, "Cette vidéo à deja été proposé, pensez à proposer une autre vidéo",
                                  fail_silently=True)

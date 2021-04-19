@@ -44,7 +44,7 @@ class VideoManager(models.Manager):
                 Video.objects.create(link=clean_link)
                 return True
         elif request.user.is_authenticated:
-            return True
+            return "admin"
         else:
             return None
 
