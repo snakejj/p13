@@ -1,0 +1,43 @@
+{% load static %}
+<!-- comments -->
+<div id="comments">
+        {% if not comments %}
+        <h3 class="subtitle"> 0 Commentaire</h3>
+            <ul class="comments" style="text-align: center;">
+                <p>Soyez le premier à laisser un commentaire</p>
+            </ul>
+
+        {% else %}
+        <h3 class="subtitle">{{ numb_comments }} Commentaire(s)</h3>
+        <ul class="comments">
+            {% for comment in comments %}
+            <li class="comment-item">
+                <ul class="comment">
+                    <li class="avatar"><img style="background-color: #9d9c9a;" src="{% static 'img/avatar.png' %}" alt="Avatar"></li>
+                    <li class="comment-infos">{{ comment.pseudo }}<br/> {{ comment.added_on }} </li>
+                    <li class="message">
+                        {{ comment.message }}
+                    </li>
+                </ul>
+            </li>
+            {% endfor %}
+
+        </ul>
+        {% endif %}
+</div>
+
+<div id="post-comment">
+    <h3 class="subtitle">Commenter</h3>
+    <form id="comment-form" action="{% url 'videos:random_video' %}" method="post">
+        {% csrf_token %}
+            {{comment_form.pseudo}}
+            {{comment_form.email}}
+            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_link }}">
+            {{comment_form.message}}
+
+        <button type="submit" name="comment_sent">Commenter</button>
+        </form>
+</div>
+
+
+

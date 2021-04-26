@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('core.urls')),
     path('', include('users.urls')),
     path('', include('videos.urls')),
+    path('', include('comments.urls')),
 ]
