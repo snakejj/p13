@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib import messages
 
 from comments.forms import CommentForm
-from videos.forms import LinkForm
+from videos.forms import LinkForm, ReportForm
 
 from videos.models import *
 from comments.models import *
@@ -34,6 +34,7 @@ def random_video(request):
 
     comment_form = CommentForm(prefix='comment')
     link_form = LinkForm(prefix='video')
+    report_form = ReportForm(prefix='report')
 
     if request.method == 'POST':
         if 'link_sent' in request.POST:
@@ -41,8 +42,8 @@ def random_video(request):
 
             video_is_unique = video.submit_video(request, link_form)
             if video_is_unique is True:
-                request.session['video_pk'], request.session['video_link'] = video.select_random_video(
-                    request)
+                request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
+                request.session['has_submit_report'] = False
 
             return redirect("videos:random_video")
 
@@ -51,6 +52,11 @@ def random_video(request):
             comment_submitted = comment.submit_comment(request, comment_form)
             if comment_submitted is True:
                 return redirect("videos:random_video")
+
+        elif "report_sent" in request.POST:
+            report_form = ReportForm(request.POST or None, prefix='report')
+            video.submit_report_video(request, report_form)
+            return redirect("videos:random_video")
 
     try:
         comments = comment.list_comments(request)
@@ -64,6 +70,7 @@ def random_video(request):
                 'comments': comments,
                 'numb_comments': numb_comments,
                 'comment_form': comment_form,
-                'link_form': link_form, })
+                'link_form': link_form,
+                'report_form': report_form, })
 
 

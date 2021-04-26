@@ -67,7 +67,6 @@ class VideoManager(models.Manager):
             return True
 
     def select_random_video(self, request):
-
         # We count the number of videos still online
         max_pk = len(Video.objects.filter(~Q(status="OF")))
 
@@ -95,7 +94,6 @@ class VideoManager(models.Manager):
             response = requests.post(url, json=data, headers=headers)
         except requests.exceptions.ConnectionError:
             response = None
-
         if response is None or response.status_code != 200:
             # If there is an error with the API answer, we use a pseudo-random integer
             random_pk = randrange(0,max_pk-1)
@@ -135,39 +133,62 @@ class VideoManager(models.Manager):
     def submit_video(self, request, link_form):
         if link_form.is_valid():
             link = link_form.data.get('video-link')
-            print("link:", link)
+
             clean_link = self._parse_link(request, link)
-            print("clean_link:", clean_link)
-            print("test du type de cleanlinkg", type(clean_link) )
             if type(clean_link) is not bool:
                 video_is_unique = self._add_video(request, clean_link)
-                print("video is unique:", video_is_unique)
                 if video_is_unique is True:
-                    messages.success(request, "Votre vidéo à bien été ajouté en base de données", fail_silently=True)
                     request.session['has_submit_unique_video'] = True
 
                 elif video_is_unique is False:
-                    print("video_is_unique is False")
                     messages.warning(
                         request, "La vidéo à deja été proposé, merci de proposer une autre vidéo", fail_silently=True
                     )
                 return video_is_unique
+
+            # if admin is connected :
             elif clean_link is True:
-                print("clean_link is 0", clean_link)
-                # if admin is connected :
                 request.session['has_submit_unique_video'] = True
                 return True
+
             elif clean_link is False:
-                print("else",)
                 messages.error(
                     request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
                 )
-
         else:
             messages.error(
                 request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
             )
 
+    def submit_report_video(self, request, report_form):
+        if report_form.is_valid():
+            video = Video.objects.get(pk=report_form.data.get('video'))
+            reason = report_form.data.get('report-reason')
+            message = report_form.data.get('report-message')
+
+            if video.status == "ON":
+                # Here we do not change the video's status as it was already moderated, still we save the report
+                AbuseVideo.objects.create(video=video, reason=reason, message=message)
+                messages.success(
+                    request,
+                    "Cette vidéo a été considéré conforme, "
+                    "neamoins votre signalement a été enregistré pour un eventuel réexamen",
+                    fail_silently=True
+                )
+
+                request.session['has_submit_report'] = True
+            else:
+                # Here we do change the video's status to "RE" ("reported")
+                AbuseVideo.objects.create(video=video,reason=reason, message=message)
+                messages.success(request, "Votre signalement a bien été enregistré", fail_silently=True)
+                video.status = 'RE'
+                video.save()
+
+                request.session['has_submit_report'] = True
+        else:
+            messages.error(
+                request, "Une erreur s'est produite", fail_silently=True
+            )
 
 class Video(models.Model):
     link = models.CharField(max_length=11)
@@ -188,6 +209,33 @@ class Video(models.Model):
         max_length=2,
         choices=STATUS_CHOICES,
         default=INITIAL,
+    )
+
+    objects = VideoManager()
+
+
+class AbuseVideo(models.Model):
+    video = models.ForeignKey(Video, related_name="abuse_video", on_delete=models.CASCADE)
+    message = models.TextField(blank=True)
+    added_on = models.DateTimeField(auto_now_add=True)
+
+    DEAD = 'D'
+    ADULT = 'A'
+    VIOLENT = 'V'
+    FALSE = 'F'
+    OTHER = 'O'
+    REASON_CHOICES = [
+        (DEAD, 'dead link'),
+        (ADULT, 'adult content'),
+        (VIOLENT, 'violent content'),
+        (FALSE, 'false information'),
+        (OTHER, 'other'),
+    ]
+
+    reason = models.CharField(
+        max_length=1,
+        choices=REASON_CHOICES,
+        default=DEAD,
     )
 
     objects = VideoManager()

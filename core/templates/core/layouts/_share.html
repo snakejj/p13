@@ -22,12 +22,50 @@
             <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
         </li>
         <li class="share-item">
-            <button type="submit">
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn" type="submit">
                 <i class="fa fa-flag" style="color:Red" aria-hidden="true"></i> Signaler
             </button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                  {% if request.session.has_submit_report is True %}
+                <div class="modal-header-reported">
+                  <span class="close">&times;</span>
+
+                    <h2>Votre signalement a bien été enregitré</h2>
+                </div>
+              </div>
+
+            </div>
+                {% else %}
+            <div class="modal-header">
+                  <span class="close">&times;</span>
+                    <h2>Signaler la vidéo</h2>
+                </div>
+                <div class="modal-body">
+
+                    <form id="report-form" action="{% url 'videos:random_video' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}">
+                        {{report_form.reason}}
+                        {{report_form.message}}
+
+                        <button type="submit" name="report_sent">Commenter</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                  <br>
+                </div>
+              </div>
+            {% endif %}
+            </div>
         </li>
     </ul>
-
 </div>
 
 
