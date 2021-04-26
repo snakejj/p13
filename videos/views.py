@@ -41,7 +41,7 @@ def random_video(request):
 
             video_is_unique = video.submit_video(request, link_form)
             if video_is_unique is True:
-                request.session['video_pk'], request.session['video_link'], api_worked = video.select_random_video(
+                request.session['video_pk'], request.session['video_link'] = video.select_random_video(
                     request)
 
             return redirect("videos:random_video")

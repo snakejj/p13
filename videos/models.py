@@ -70,6 +70,7 @@ class VideoManager(models.Manager):
 
         # We count the number of videos still online
         max_pk = len(Video.objects.filter(~Q(status="OF")))
+
         headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json'
@@ -92,7 +93,6 @@ class VideoManager(models.Manager):
 
         try:
             response = requests.post(url, json=data, headers=headers)
-
         except requests.exceptions.ConnectionError:
             response = None
 
@@ -101,7 +101,7 @@ class VideoManager(models.Manager):
             random_pk = randrange(0,max_pk-1)
             videos_list = Video.objects.filter(~Q(status="OF"))
             video = videos_list[random_pk]
-            is_random = False
+
             messages.info(
                 request,
                 "L'API de randomisation etant indisponible, la vidéo a été généré pseudo aléatoirement",
@@ -109,13 +109,28 @@ class VideoManager(models.Manager):
             )
 
         else:
-            # If the API answer, we use a Truly random integer
-            random_pk = response.json()["result"]["random"]["data"][0]
-            videos_list = Video.objects.filter(~Q(status="OF"))
-            video = videos_list[random_pk]
-            is_random = True
+            try:
+                # If the API answer, we use a Truly random integer
+                random_pk = response.json()["result"]["random"]["data"][0]
+                videos_list = Video.objects.filter(~Q(status="OF"))
+                video = videos_list[random_pk]
 
-        return video.pk, video.link, is_random
+            except KeyError:
+                # if the result key does not exist, it means there is an error in the request,
+
+                # if this message error, it means it is the first uploaded video and we need to manualy assign random_pk
+                if "Parameter 'min' must be less than parameter 'max'" in response.json()["error"]["message"]:
+                    random_pk = 0
+                    videos_list = Video.objects.filter(~Q(status="OF"))
+                    video = videos_list[random_pk]
+
+                    messages.info(
+                        request,
+                        "Bravo, vous venez d'uploader la premiere vidéo",
+                        fail_silently=True
+                    )
+
+        return video.pk, video.link,
 
     def submit_video(self, request, link_form):
         if link_form.is_valid():
