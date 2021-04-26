@@ -32,7 +32,7 @@
         {% csrf_token %}
             {{comment_form.pseudo}}
             {{comment_form.email}}
-            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_link }}">
+            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}">
             {{comment_form.message}}
 
         <button type="submit" name="comment_sent">Commenter</button>

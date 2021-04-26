@@ -24,9 +24,7 @@ class CommentManager(models.Manager):
             pseudo = comment_form.data.get('comment-pseudo')
             email = comment_form.data.get('comment-email')
             message = comment_form.data.get('comment-message')
-            video_raw = comment_form.data.get('video')
-
-            video = Video.objects.get(link=video_raw)
+            video = Video.objects.get(pk=comment_form.data.get('video'))
 
             Comment.objects.create(video=video, pseudo=pseudo, email=email, message=message)
             messages.success(request, "Votre commentaire à bien été ajouté", fail_silently=True)
