@@ -3,6 +3,9 @@ import json
 from random import randrange
 
 import requests
+from django.contrib import messages
+from django.db.models import Q
+from django.http import HttpResponseRedirect
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
 from urllib.parse import urlparse, parse_qs
@@ -13,7 +16,7 @@ load_dotenv(find_dotenv())
 
 
 class VideoManager(models.Manager):
-    def parse_link(self, request, raw_link):
+    def _parse_link(self, request, raw_link):
         # Examples:
         # - http://youtu.be/SA2iWivDJiE
         # - http://www.youtube.com/watch?v=_oPAwA_Udwc&feature=feedu
@@ -21,36 +24,52 @@ class VideoManager(models.Manager):
         # - http://www.youtube.com/v/SA2iWivDJiE?version=3&amp;hl=en_US
         query = urlparse(raw_link)
         if query.hostname == 'youtu.be':
-            return query.path[1:]
+            clean = query.path[1:]
+            if len(clean) == 11 :
+                return clean
         if query.hostname in {'www.youtube.com', 'youtube.com'}:
             if query.path == '/watch':
-                return parse_qs(query.query)['v'][0]
+                clean = parse_qs(query.query)['v'][0]
+                if len(clean) == 11:
+                    return clean
             if query.path[:7] == '/embed/':
-                return query.path.split('/')[2]
+                clean = query.path.split('/')[2]
+                if len(clean) == 11:
+                    return clean
             if query.path[:3] == '/v/':
-                return query.path.split('/')[2]
+                clean = query.path.split('/')[2]
+                if len(clean) == 11:
+                    return clean
         elif request.user.is_authenticated:
-            return ""
+            return True
         # fail?
         return False
 
-    def add_video(self, request, clean_link):
-        if len(clean_link) == 11:
-            try:
-                Video.objects.get(link=clean_link)
-                return False
-                # Video.objects.get_or_create(link=clean_link)
-            except videos.models.Video.DoesNotExist:
-                Video.objects.create(link=clean_link)
-                return True
-        elif request.user.is_authenticated:
-            return "admin"
-        else:
-            return None
+    def _add_video(self, request, clean_link):
+        """
 
-    def select_random_video(self):
+        :param request:
+        :param clean_link:
+        :return
+        -False (if video exist already in DB)
+        -True (if video did not existed and was successfully inserted in DB)
+        :
 
-        max_pk = len(Video.objects.filter())
+
+        """
+        try:
+            Video.objects.get(link=clean_link)
+            return False
+            # Video.objects.get_or_create(link=clean_link)
+        except videos.models.Video.DoesNotExist:
+            Video.objects.create(link=clean_link)
+            messages.success(request, "Votre vidéo à bien été ajouté en base de données", fail_silently=True)
+            return True
+
+    def select_random_video(self, request):
+
+        # We count the number of videos still online
+        max_pk = len(Video.objects.filter(~Q(status="OF")))
         headers = {
             'Content-type': 'application/json',
             'Accept': 'application/json'
@@ -64,24 +83,75 @@ class VideoManager(models.Manager):
             "params": {
                 "apiKey": os.getenv("RANDOM_API_KEY"),
                 "n": 1,
-                "min": 1,
-                "max": max_pk,
+                "min": 0,
+                "max": max_pk - 1,
                 "replacement": True
             },
             "id": 42
         }
-        response = requests.post(url, json=data, headers=headers)
 
-        if response.status_code == 200:
+        try:
+            response = requests.post(url, json=data, headers=headers)
+
+        except requests.exceptions.ConnectionError:
+            response = None
+
+        if response is None or response.status_code != 200:
+            # If there is an error with the API answer, we use a pseudo-random integer
+            random_pk = randrange(0,max_pk-1)
+            videos_list = Video.objects.filter(~Q(status="OF"))
+            video = videos_list[random_pk]
+            is_random = False
+            messages.info(
+                request,
+                "L'API de randomisation etant indisponible, la vidéo a été généré pseudo aléatoirement",
+                fail_silently=True
+            )
+
+        else:
             # If the API answer, we use a Truly random integer
             random_pk = response.json()["result"]["random"]["data"][0]
-            video = Video.objects.get(pk=random_pk)
-            return video.link, True
+            videos_list = Video.objects.filter(~Q(status="OF"))
+            video = videos_list[random_pk]
+            is_random = True
+
+        return video.pk, video.link, is_random
+
+    def submit_video(self, request, link_form):
+        if link_form.is_valid():
+            link = link_form.data.get('video-link')
+            print("link:", link)
+            clean_link = self._parse_link(request, link)
+            print("clean_link:", clean_link)
+            print("test du type de cleanlinkg", type(clean_link) )
+            if type(clean_link) is not bool:
+                video_is_unique = self._add_video(request, clean_link)
+                print("video is unique:", video_is_unique)
+                if video_is_unique is True:
+                    messages.success(request, "Votre vidéo à bien été ajouté en base de données", fail_silently=True)
+                    request.session['has_submit_unique_video'] = True
+
+                elif video_is_unique is False:
+                    print("video_is_unique is False")
+                    messages.warning(
+                        request, "La vidéo à deja été proposé, merci de proposer une autre vidéo", fail_silently=True
+                    )
+                return video_is_unique
+            elif clean_link is True:
+                print("clean_link is 0", clean_link)
+                # if admin is connected :
+                request.session['has_submit_unique_video'] = True
+                return True
+            elif clean_link is False:
+                print("else",)
+                messages.error(
+                    request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
+                )
+
         else:
-            # If there is an error with the API answer, we use a pseudo-random integer
-            random_pk = randrange(1,max_pk+1)
-            video = Video.objects.get(pk=random_pk)
-            return video.link, False
+            messages.error(
+                request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
+            )
 
 
 class Video(models.Model):

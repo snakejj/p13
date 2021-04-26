@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 ########################################################################################################################
+from videos.forms import LinkForm
 
 
 class TokenGenerator(PasswordResetTokenGenerator):
@@ -31,8 +32,6 @@ def moderation_comment(request):
     return render(request, 'users/moderation-comment.html', {'title': "Modérat° commentaire"})
 
 
-
-
 def logout(request):
     log_out(request)
     messages.info(request, "On espere vous revoir bientot !", fail_silently=True)
@@ -40,6 +39,8 @@ def logout(request):
 
 
 def login(request):
+    link_form = LinkForm(prefix='video')
+
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)
         try:
@@ -67,7 +68,7 @@ def login(request):
         except:
             messages.error(request, "Nom d'utilisateur ou mot de passe incorrect", fail_silently=True)
     form = AuthenticationForm()
-    return render(request, 'registration/login.html', {"form": form, 'title': "Connexion"})
+    return render(request, 'registration/login.html', {"form": form, 'title': "Connexion", 'link_form': link_form, })
 
 
 

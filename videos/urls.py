@@ -9,6 +9,5 @@ urlpatterns = [
     path('admin/moderation-video', views.moderation_video, name='moderation_video'),
     path('video-aleatoire/', views.random_video, name='random_video'),
     path('top-videos/', views.top_videos, name='top_videos'),
-    path('random_video/', views.submit_video, name='submit_video')
 ]
 

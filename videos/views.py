@@ -2,7 +2,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import messages
 
+from comments.forms import CommentForm
+from videos.forms import LinkForm
+
 from videos.models import *
+from comments.models import *
+
 
 # Create your views here.
 
@@ -15,79 +20,50 @@ def moderation_video(request):
     return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
 
 
-def random_video(request):
-    return render(request, 'videos/random_video.html', {'title': "Vidéo aléatoire", })
-
-
 def top_videos(request):
-    return render(request, 'videos/top_videos.html', {'title': "Top vidéos",})
+    link_form = LinkForm(prefix='video')
+
+    return render(request, 'videos/top_videos.html', {
+        'title': "Top vidéos",
+        'link_form': link_form, })
 
 
-def submit_video(request):
-    if request.POST:
-        form = request.POST or None
-        link = form.get('link_submitted')
+def random_video(request):
+    video = VideoManager()
+    comment = CommentManager()
 
-        video = VideoManager()
-        clean_link = video.parse_link(request, link)
+    comment_form = CommentForm(prefix='comment')
+    link_form = LinkForm(prefix='video')
 
-        if clean_link is False and not request.user.is_authenticated:
-            messages.error(
-                request,
-                "Le lien est incorrect, merci de founir un lien youtube valide",
-                fail_silently=True
-            )
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if request.method == 'POST':
+        if 'link_sent' in request.POST:
+            link_form = LinkForm(request.POST or None, prefix='video')
 
-        else:
-            video_is_unique = video.add_video(request, clean_link)
+            video_is_unique = video.submit_video(request, link_form)
             if video_is_unique is True:
-                messages.success(request, "Votre vidéo à bien été ajouté en base de données", fail_silently=True)
+                request.session['video_pk'], request.session['video_link'], api_worked = video.select_random_video(
+                    request)
 
-                request.session['has_submit_unique_video'] = True
+            return redirect("videos:random_video")
 
-                # We call the "select_random_video" function here and not in "random video" view due to the way cookies
-                # work it would have require the user to refresh the page or go on an other page and come back for the
-                # random video to appear.
+        elif 'comment_sent' in request.POST:
+            comment_form = CommentForm(request.POST or None, prefix='comment')
+            comment_submitted = comment.submit_comment(request, comment_form)
+            if comment_submitted is True:
+                return redirect("videos:random_video")
 
-                video = VideoManager()
-                request.session['video_link'], api_worked = video.select_random_video()
+    try:
+        comments = comment.list_comments(request)
+        numb_comments = len(comments)
+    except TypeError:
+        comments = None
+        numb_comments = 0
 
-                if api_worked:
-                    return render(request, 'videos/random_video.html', {'title': "Vidéo aléatoire", })
+    return render(request, 'videos/random_video.html', {
+                'title': "Vidéo aléatoire",
+                'comments': comments,
+                'numb_comments': numb_comments,
+                'comment_form': comment_form,
+                'link_form': link_form, })
 
-                elif not api_worked:
-                    return render(request, 'videos/random_video.html', {'title': "Vidéo (pseudo) aléatoire", })
 
-            elif video_is_unique == "admin":
-
-                request.session['has_submit_unique_video'] = True
-
-                video = VideoManager()
-                request.session['video_link'], api_worked = video.select_random_video()
-
-                if api_worked:
-                    return render(request, 'videos/random_video.html', {'title': "Vidéo aléatoire", })
-
-                elif not api_worked:
-                    return render(request, 'videos/random_video.html', {'title': "Vidéo (pseudo) aléatoire", })
-            elif video_is_unique is False:
-                messages.warning(request, "Cette vidéo à deja été proposé, pensez à proposer une autre vidéo",
-                                 fail_silently=True)
-
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-            elif video_is_unique is None:
-                messages.error(
-                    request,
-                    "Le lien est incorrect, merci de founir un lien youtube valide",
-                    fail_silently=True
-                )
-
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-            else:
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-    else:
-        return render(request, 'videos/random_video.html', {'title': "Vidéo aléatoire", })
