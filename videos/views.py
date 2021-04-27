@@ -36,7 +36,20 @@ def random_video(request):
     link_form = LinkForm(prefix='video')
     report_form = ReportForm(prefix='report')
 
-    if request.method == 'POST':
+    if request.method == 'GET':
+        if 'video_link' in request.GET:
+            request.session['video_link'] = request.GET.get("video_link")
+            try:
+                video_shared = Video.objects.get(link=request.session['video_link'])
+                request.session['video_pk'] = video_shared.pk
+                request.session['has_submit_unique_video'] = True
+            except videos.models.Video.DoesNotExist:
+                messages.error(
+                    request, "Le video n'existe pas ou plus", fail_silently=True
+                )
+                return redirect("core:home")
+
+    elif request.method == 'POST':
         if 'link_sent' in request.POST:
             link_form = LinkForm(request.POST or None, prefix='video')
 
@@ -65,12 +78,18 @@ def random_video(request):
         comments = None
         numb_comments = 0
 
+    try:
+        social_links = video.generate_share_link(request, request.session['video_link'])
+    except KeyError:
+        social_links = None
+
     return render(request, 'videos/random_video.html', {
                 'title': "Vidéo aléatoire",
                 'comments': comments,
                 'numb_comments': numb_comments,
                 'comment_form': comment_form,
                 'link_form': link_form,
-                'report_form': report_form, })
+                'report_form': report_form,
+                'social_links': social_links, })
 
 

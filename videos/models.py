@@ -190,6 +190,33 @@ class VideoManager(models.Manager):
                 request, "Une erreur s'est produite", fail_silently=True
             )
 
+    def generate_share_link(self, request, video_link):
+
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
+
+        raw_data = {
+            "facebook_url": ["https://www.facebook.com/sharer/sharer.php?u=", "fab fa-facebook-square fa-2x"],
+            "twitter_url": ["https://twitter.com/intent/tweet?url=", "fab fa-twitter-square fa-2x"],
+            "linked_url": ["http://www.linkedin.com/shareArticle?mini=true&url=", "fab fa-linkedin fa-2x"],
+            "whatsapp_url": ["https://api.whatsapp.com/send?text=", "fab fa-whatsapp-square fa-2x"],
+            "telegram_url": ["https://telegram.me/share/url?url=", "fab fa-telegram-plane fa-2x"],
+            "email_url": ["mailto:%7Bemail_address%7D?subject=&body=", "fa fa-envelope fa-2x"],
+        }
+
+        social_links = dict()
+
+        try:
+            for value in raw_data.values():
+                full_link = value[0] + base_url + "?video_link=" + video_link
+                social_links[full_link] = value[1]
+        except TypeError:
+            for value in raw_data.values():
+                full_link = "#"
+                social_links[full_link] = value[1]
+
+        return social_links
+
+
 class Video(models.Model):
     link = models.CharField(max_length=11)
     added_on = models.DateTimeField(auto_now_add=True)

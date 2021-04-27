@@ -1,26 +1,18 @@
 {% load static %}
+
 <!-- share -->
+{% if social_links is not None %}
 <div id="share">
     <h3 class="subtitle">Partager</h3>
     <ul class="share">
+        {% for href, class in social_links.items %}
         <li class="share-item">
-            <i class="fab fa-whatsapp-square fa-2x" aria-hidden="true"></i>
+            <a href="{{ href }}">
+                <i class="{{ class }}" aria-hidden="true"></i>
+            </a>
         </li>
-        <li class="share-item">
-            <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
-        </li>
-        <li class="share-item">
-            <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
-        </li>
-        <li class="share-item">
-            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-        </li>
-        <li class="share-item">
-            <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
-        </li>
-        <li class="share-item">
-            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-        </li>
+        {% endfor %}
+
         <li class="share-item">
             <!-- Trigger/Open The Modal -->
             <button id="myBtn" type="submit">
@@ -65,8 +57,10 @@
             {% endif %}
             </div>
         </li>
+
     </ul>
 </div>
+{% endif %}
 
 
 
