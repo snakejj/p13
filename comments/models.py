@@ -19,13 +19,11 @@ class CommentManager(models.Manager):
         captcha_key = os.getenv("CAPTCHA_SECRET_KEY")
         captcha_key_encoded = hashlib.sha256(captcha_key.encode('utf-8'))
         captcha_key_hashed = captcha_key_encoded.hexdigest()
-        print(captcha_key_hashed)
 
         last_comment_message_raw = Comment.objects.latest('pk')
         last_comment_message = last_comment_message_raw.message
         last_comment_message_encoded = hashlib.sha256(last_comment_message.encode('utf-8'))
         last_comment_message_hashed = last_comment_message_encoded.hexdigest()
-        print(last_comment_message_hashed)
 
         captcha_int = str()
         i = 0
