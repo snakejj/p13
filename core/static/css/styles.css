@@ -545,7 +545,8 @@ main {
 
 #post-comment button{
     width: 300px;
-    margin: auto 1%;
+    margin: auto 1% 1%;
+    margin-bottom: 1%;
     text-align: center;
     padding: 0px;
     height: 25px;
