@@ -10,8 +10,6 @@ from comments.models import *
 
 from captcha.image import ImageCaptcha
 
-# Create your views here.
-
 
 def videos_list(request):
     return render(request, 'users/videos_list.html', {'title': "Liste des vidéos"})
@@ -35,13 +33,14 @@ def random_video(request):
 
     link_form = LinkForm(prefix='video')
     report_form = ReportForm(prefix='report')
-
     comment_form = CommentForm(prefix='comment')
     captcha_form = CaptchaForm()
 
+    forcing_new_captcha = False
+    comment.get_captcha_int(request, forcing_new_captcha)
+
     captcha_image = ImageCaptcha(width=100, height=52)
-    captcha_result = comment.get_captcha_int()
-    captcha_image.write(str(captcha_result), 'core/static/captcha/captcha.png')
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
@@ -71,9 +70,13 @@ def random_video(request):
             comment_form = CommentForm(request.POST or None, prefix='comment')
 
             captcha_input = comment_form.data.get('captcha')
-            if str(captcha_input) == str(captcha_result):
+
+            # We check if the input value is the same as the temp var once decrypted
+            if str(captcha_input) == str(comment.decrypt(request.session['temp_var'])):
                 comment_submitted = comment.submit_comment(request, comment_form)
                 if comment_submitted is True:
+                    forcing_new_captcha = True
+                    comment.get_captcha_int(request, forcing_new_captcha)
                     return redirect("videos:random_video")
             else:
                 messages.error(
