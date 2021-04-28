@@ -33,9 +33,10 @@
         {% csrf_token %}
             {{comment_form.pseudo}}
             {{comment_form.email}}
-            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}">
+            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}" required>
             {{comment_form.message}}
-
+            <img class="captcha" src="{% static 'captcha/captcha.png' %}" alt="Captcha">
+            {{captcha_form.captcha}}
         <button type="submit" name="comment_sent">Commenter</button>
         </form>
 </div>

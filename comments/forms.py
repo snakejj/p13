@@ -39,3 +39,15 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ["pseudo", "email", "message"]
+
+
+class CaptchaForm(forms.Form):
+    captcha = forms.CharField(
+        label='captcha',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': "Captcha",
+                'id':"captcha-input",
+            }
+        )
+    )

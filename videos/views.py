@@ -1,13 +1,14 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from comments.forms import CommentForm
+from comments.forms import CommentForm, CaptchaForm
 from videos.forms import LinkForm, ReportForm
 
 from videos.models import *
 from comments.models import *
 
+from captcha.image import ImageCaptcha
 
 # Create your views here.
 
@@ -32,9 +33,15 @@ def random_video(request):
     video = VideoManager()
     comment = CommentManager()
 
-    comment_form = CommentForm(prefix='comment')
     link_form = LinkForm(prefix='video')
     report_form = ReportForm(prefix='report')
+
+    comment_form = CommentForm(prefix='comment')
+    captcha_form = CaptchaForm()
+
+    captcha_image = ImageCaptcha(width=100, height=52)
+    captcha_result = comment.get_captcha_int()
+    captcha_image.write(str(captcha_result), 'core/static/captcha/captcha.png')
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
@@ -62,9 +69,16 @@ def random_video(request):
 
         elif 'comment_sent' in request.POST:
             comment_form = CommentForm(request.POST or None, prefix='comment')
-            comment_submitted = comment.submit_comment(request, comment_form)
-            if comment_submitted is True:
-                return redirect("videos:random_video")
+
+            captcha_input = comment_form.data.get('captcha')
+            if str(captcha_input) == str(captcha_result):
+                comment_submitted = comment.submit_comment(request, comment_form)
+                if comment_submitted is True:
+                    return redirect("videos:random_video")
+            else:
+                messages.error(
+                    request, "Le captcha est incorrect", fail_silently=True
+                )
 
         elif "report_sent" in request.POST:
             report_form = ReportForm(request.POST or None, prefix='report')
@@ -90,6 +104,8 @@ def random_video(request):
                 'comment_form': comment_form,
                 'link_form': link_form,
                 'report_form': report_form,
-                'social_links': social_links, })
+                'social_links': social_links,
+                'captcha_form': captcha_form,
+    })
 
 

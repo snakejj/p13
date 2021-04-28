@@ -1,15 +1,47 @@
-import requests
+import hashlib
+import os
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, redirect
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
 
 from videos.models import Video
-
 load_dotenv(find_dotenv())
 
 
 class CommentManager(models.Manager):
+    def get_captcha_int(self):
+        """
+        Gets a captcha integer of length 4 or 5, based on the hash of the latest message posted and the hash of a
+        secret key in a .env file.
+
+        """
+
+        captcha_key = os.getenv("CAPTCHA_SECRET_KEY")
+        captcha_key_encoded = hashlib.sha256(captcha_key.encode('utf-8'))
+        captcha_key_hashed = captcha_key_encoded.hexdigest()
+        print(captcha_key_hashed)
+
+        last_comment_message_raw = Comment.objects.latest('pk')
+        last_comment_message = last_comment_message_raw.message
+        last_comment_message_encoded = hashlib.sha256(last_comment_message.encode('utf-8'))
+        last_comment_message_hashed = last_comment_message_encoded.hexdigest()
+        print(last_comment_message_hashed)
+
+        captcha_int = str()
+        i = 0
+        while len(captcha_int) < 4:
+            a = captcha_key_hashed[i]
+            b = last_comment_message_hashed[i]
+            if a.isdigit():
+                c = int(a) + i
+                captcha_int += str(c)
+            if b.isdigit():
+                c = int(b) + i
+                captcha_int += str(c)
+            i += 1
+
+        return captcha_int
+
     def list_comments(self,request):
         try:
             video = request.session['video_pk']
@@ -31,7 +63,6 @@ class CommentManager(models.Manager):
             return True
         else:
             return False
-
 
 
 class Comment(models.Model):

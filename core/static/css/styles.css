@@ -535,7 +535,7 @@ main {
     border: 1px solid #846c90;
 }
 #captcha-input {
-    height: 25px;
+    height: 50px;
     width: 300px;
     margin: auto;
     text-align: center;
@@ -545,11 +545,10 @@ main {
 
 #post-comment button{
     width: 300px;
-    margin: auto 1% 1%;
-    margin-bottom: 1%;
+    margin: auto;
     text-align: center;
     padding: 0px;
-    height: 25px;
+    height: 50px;
 }
 
 /* -------------------END POSTING COMMENTS-------------------- */
