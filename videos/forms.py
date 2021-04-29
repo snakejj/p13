@@ -6,6 +6,7 @@ from videos.models import Video, AbuseVideo
 class LinkForm(forms.Form):
 
     link = forms.CharField(
+        required=False,
         label='link_submitted',
         widget=forms.TextInput(
             attrs={
