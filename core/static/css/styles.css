@@ -438,6 +438,7 @@ main {
 
 .comment-infos {
     margin : 1%;
+    word-wrap: anywhere;
 }
 
 .message {
@@ -445,6 +446,7 @@ main {
     display:block;
     width: 98%;
     border: 1px solid #846c90;
+    word-wrap: break-word;
 }
 
 .view-hide-answer {
@@ -513,6 +515,7 @@ main {
 #pseudo-input, #email-input{
     height: 25px;
     width: 450PX;
+    min-width: 130px;
     margin: 1%;
     text-align: center;
     border: 1px solid #846c90;
@@ -539,6 +542,7 @@ main {
 #captcha-input {
     height: 48px;
     width: 300px;
+    min-width: 130px;
     margin: auto;
     text-align: center;
     border: 1px solid #846c90;
@@ -835,6 +839,7 @@ ul.ranks a:active {
 
         padding: 0;
         list-style: none;
+        height:50%;
     }
 
 
