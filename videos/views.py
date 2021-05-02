@@ -20,13 +20,32 @@ def moderation_video(request):
 
 
 def top_videos(request):
+    video = VideoManager()
     link_form = LinkForm(prefix='video')
 
+    top_5_videos = video.getting_top_videos(request)
+    request.session['top_video'] = top_5_videos[0].get("video_link")
 
+    if request.method == 'GET':
+        if 'video_link' in request.GET:
+            request.session['top_video'] = request.GET.get("video_link")
+            try:
+                request.session['top_video'] = request.GET.get("video_link")
+            except videos.models.Video.DoesNotExist:
+                messages.error(
+                    request, "Le video n'existe plus", fail_silently=True
+                )
+    else:
+        pass
+
+    active_style = "background-color: #cfc3d5; color: black;"
 
     return render(request, 'videos/top_videos.html', {
         'title': "Top vidéos",
-        'link_form': link_form, })
+        'link_form': link_form,
+        'top_5_videos': top_5_videos,
+        'active_style': active_style
+    })
 
 
 def random_video(request):

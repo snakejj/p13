@@ -258,6 +258,36 @@ class VideoManager(models.Manager):
             )
             return False
 
+    def getting_top_videos(self, request):
+        list_of_videos_sorted_by_ratings = Video.objects.filter(
+            ~Q(
+                status="OF",
+            ),
+            ~Q(
+                average_interest_rating=None,
+            )
+        ).order_by('-average_interest_rating', '-average_quality_rating')
+
+        top_5_videos_raw = list_of_videos_sorted_by_ratings[:5]
+
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
+
+        top_5_videos = []
+
+        i = 1
+        for value in top_5_videos_raw:
+            top_5_videos.append(
+                {
+                    "video_rank": i,
+                    "video_link": value.link,
+                    "full_link": base_url + "?video_link=" + value.link,
+                    "average_interest": value.average_interest_rating,
+                    "average_quality": value.average_quality_rating,
+                }
+            )
+            i += 1
+
+        return top_5_videos
 
 class Video(models.Model):
     link = models.CharField(max_length=11)
@@ -276,13 +306,13 @@ class Video(models.Model):
 
     average_interest_rating = models.DecimalField(
         null=True,
-        max_digits=3,
+        max_digits=4,
         decimal_places=2,
     )
 
     average_quality_rating = models.DecimalField(
         null=True,
-        max_digits=3,
+        max_digits=4,
         decimal_places=2,
     )
 
