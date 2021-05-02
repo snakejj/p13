@@ -193,6 +193,9 @@ class VideoManager(models.Manager):
 
     def generate_share_link(self, request, video_link):
 
+        if "top-video" in request.path:
+            video_link = request.session['top_video']
+
         base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
 
         raw_data = {
