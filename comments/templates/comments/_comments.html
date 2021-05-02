@@ -29,16 +29,29 @@
 
 <div id="post-comment">
     <h3 class="subtitle">Commenter</h3>
+    {% if "video-aleatoire" in request.path %}
     <form id="comment-form" action="{% url 'videos:random_video' %}" method="post">
         {% csrf_token %}
-            {{comment_form.pseudo}}
-            {{comment_form.email}}
-            <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}" required>
-            {{comment_form.message}}
-            <img class="captcha" src="{% static 'captcha/captcha.png' %}" alt="Captcha">
-            {{captcha_form.captcha}}
+        {{comment_form.pseudo}}
+        {{comment_form.email}}
+        <input type="hidden" id="video-link-input" name="video" value="{{ request.session.video_pk }}" required>
+        {{comment_form.message}}
+        <img class="captcha" src="{% static 'captcha/captcha.png' %}" alt="Captcha">
+        {{captcha_form.captcha}}
         <button type="submit" name="comment_sent">Commenter</button>
-        </form>
+    </form>
+    {% elif "top-videos" in request.path %}
+    <form id="comment-form" action="{% url 'videos:top_videos' %}" method="post">
+        {% csrf_token %}
+        {{comment_form.pseudo}}
+        {{comment_form.email}}
+        <input type="hidden" id="video-link-input" name="video" value="{{ request.session.top_video_pk }}" required>
+        {{comment_form.message}}
+        <img class="captcha" src="{% static 'captcha/captcha.png' %}" alt="Captcha">
+        {{captcha_form.captcha}}
+        <button type="submit" name="comment_sent">Commenter</button>
+    </form>
+    {% endif %}
 </div>
 {% endif %}
 

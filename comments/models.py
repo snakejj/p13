@@ -111,11 +111,18 @@ class CommentManager(models.Manager):
             return request.session['temp_var']
 
     def list_comments(self,request):
-        try:
-            video = request.session['video_pk']
-            comments = Comment.objects.filter(video=video)
-        except KeyError:
-            comments = None
+        if "top-videos" in request.path:
+            try:
+                video = request.session['top_video_pk']
+                comments = Comment.objects.filter(video=video)
+            except KeyError:
+                comments = None
+        elif "video-aleatoire" in request.path:
+            try:
+                video = request.session['video_pk']
+                comments = Comment.objects.filter(video=video)
+            except KeyError:
+                comments = None
 
         return comments
 

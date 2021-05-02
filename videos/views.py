@@ -36,11 +36,10 @@ def top_videos(request):
     captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
     top_5_videos = video.getting_top_videos(request)
+
     try:
-        if not request.session['has_submit_report']:
-            request.session['top_video'] = top_5_videos[0].get("video_link")
-        video_instance = Video.objects.get(link=request.session['top_video'])
-        request.session['top_video_pk'] = video_instance.pk
+        if request.session['top_video']:
+            pass
     except KeyError:
         request.session['top_video'] = top_5_videos[0].get("video_link")
         video_instance = Video.objects.get(link=request.session['top_video'])
@@ -64,6 +63,23 @@ def top_videos(request):
             report_form = ReportForm(request.POST or None, prefix='report')
             video.submit_report_video(request, report_form)
             return redirect("videos:top_videos")
+
+        elif 'comment_sent' in request.POST:
+            comment_form = CommentForm(request.POST or None, prefix='comment')
+
+            captcha_input = comment_form.data.get('captcha')
+
+            # We check if the input value is the same as the temp var once decrypted
+            if str(captcha_input) == str(comment.decrypt(request.session['temp_var'])):
+                comment_submitted = comment.submit_comment(request, comment_form)
+                if comment_submitted is True:
+                    forcing_new_captcha = True
+                    comment.get_captcha_int(request, forcing_new_captcha)
+                    return redirect("videos:top_videos")
+            else:
+                messages.error(
+                    request, "Le captcha est incorrect", fail_silently=True
+                )
 
     active_style = "background-color: #cfc3d5; color: black;"
 
