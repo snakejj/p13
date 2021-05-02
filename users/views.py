@@ -1,3 +1,6 @@
+import os
+
+import requests
 from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as log_out
@@ -8,6 +11,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 ########################################################################################################################
+from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending
 from videos.forms import LinkForm
 
 
@@ -20,8 +24,21 @@ generate_token = TokenGenerator()
 ########################################################################################################################
 
 
+
 def dashboard(request):
-    return render(request, 'users/dashboard.html', {'title': "Tableau de bord"})
+    nb_requests_used = get_api_usage(request)
+    all_videos = get_videos_count()
+    all_comments = get_comments_count()
+    report_pending = get_report_pending()
+
+    return render(request, 'users/dashboard.html', {
+        'title': "Tableau de bord",
+        'report_pending': report_pending,
+        'nb_requests': nb_requests_used,
+        'all_videos': all_videos,
+        'all_comments': all_comments,
+    })
+
 
 
 def comments_list(request):

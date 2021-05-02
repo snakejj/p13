@@ -365,6 +365,10 @@ class AbuseVideo(models.Model):
         default=DEAD,
     )
 
+    report_dealt_with = models.BooleanField(
+        default=False,
+    )
+
     objects = VideoManager()
 
 
