@@ -1,9 +1,12 @@
 import hashlib
 import os
+from random import randrange
+
 from django.contrib import messages
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
 
+import comments
 from videos.models import Video
 load_dotenv(find_dotenv())
 
@@ -80,9 +83,13 @@ class CommentManager(models.Manager):
 
             captcha_key_hashed = self.get_hashed_value(os.getenv("CAPTCHA_SECRET_KEY"))
 
-            last_comment_message_raw = Comment.objects.latest('pk')
-            last_comment_message = last_comment_message_raw.message
-            last_comment_message_hashed = self.get_hashed_value(last_comment_message)
+            try:
+                last_comment_message_raw = Comment.objects.latest('pk')
+                last_comment_message = last_comment_message_raw.message
+                last_comment_message_hashed = self.get_hashed_value(last_comment_message)
+            except comments.models.Comment.DoesNotExist:
+                last_comment_message = "Random message in case there is no comment yet"
+                last_comment_message_hashed = self.get_hashed_value(last_comment_message)
 
             captcha_int = str()
             i = 0
