@@ -176,8 +176,14 @@ class VideoManager(models.Manager):
                     "neamoins votre signalement a été enregistré pour un eventuel réexamen",
                     fail_silently=True
                 )
-
-                request.session['has_submit_report'] = True
+                if "top-videos" in request.path:
+                    list_of_reported_video = request.session['has_submit_report']
+                    list_of_reported_video.append(request.session['top_video'])
+                    request.session['has_submit_report'] = list_of_reported_video
+                elif "video-aleatoire" in request.path:
+                    list_of_reported_video = request.session['has_submit_report']
+                    list_of_reported_video.append(request.session['video_link'])
+                    request.session['has_submit_report'] = list_of_reported_video
             else:
                 # Here we do change the video's status to "RE" ("reported")
                 AbuseVideo.objects.create(video=video,reason=reason, message=message)
@@ -185,7 +191,14 @@ class VideoManager(models.Manager):
                 video.status = 'RE'
                 video.save()
 
-                request.session['has_submit_report'] = True
+                if "top-videos" in request.path:
+                    list_of_reported_video = request.session['has_submit_report']
+                    list_of_reported_video.append(request.session['top_video'])
+                    request.session['has_submit_report'] = list_of_reported_video
+                elif "video-aleatoire" in request.path:
+                    list_of_reported_video = request.session['has_submit_report']
+                    list_of_reported_video.append(request.session['video_link'])
+                    request.session['has_submit_report'] = list_of_reported_video
         else:
             messages.error(
                 request, "Une erreur s'est produite", fail_silently=True

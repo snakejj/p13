@@ -21,30 +21,75 @@ def moderation_video(request):
 
 def top_videos(request):
     video = VideoManager()
+    comment = CommentManager()
+
     link_form = LinkForm(prefix='video')
+    report_form = ReportForm(prefix='report')
+    comment_form = CommentForm(prefix='comment')
+    captcha_form = CaptchaForm()
+
+    forcing_new_captcha = False
+
+    comment.get_captcha_int(request, forcing_new_captcha)
+
+    captcha_image = ImageCaptcha(width=100, height=52)
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
     top_5_videos = video.getting_top_videos(request)
-    request.session['top_video'] = top_5_videos[0].get("video_link")
+    try:
+        if not request.session['has_submit_report']:
+            request.session['top_video'] = top_5_videos[0].get("video_link")
+        video_instance = Video.objects.get(link=request.session['top_video'])
+        request.session['top_video_pk'] = video_instance.pk
+    except KeyError:
+        request.session['top_video'] = top_5_videos[0].get("video_link")
+        video_instance = Video.objects.get(link=request.session['top_video'])
+        request.session['top_video_pk'] = video_instance.pk
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['top_video'] = request.GET.get("video_link")
+            video_instance = Video.objects.get(link=request.session['top_video'])
+            request.session['top_video_pk'] = video_instance.pk
             try:
                 request.session['top_video'] = request.GET.get("video_link")
             except videos.models.Video.DoesNotExist:
                 messages.error(
                     request, "Le video n'existe plus", fail_silently=True
                 )
-    else:
-        pass
+
+    elif request.method == 'POST':
+
+        if "report_sent" in request.POST:
+            report_form = ReportForm(request.POST or None, prefix='report')
+            video.submit_report_video(request, report_form)
+            return redirect("videos:top_videos")
 
     active_style = "background-color: #cfc3d5; color: black;"
+
+    try:
+        comments = comment.list_comments(request)
+        numb_comments = len(comments)
+    except TypeError:
+        comments = None
+        numb_comments = 0
+
+    try:
+        social_links = video.generate_share_link(request, request.session['video_link'])
+    except KeyError:
+        social_links = None
 
     return render(request, 'videos/top_videos.html', {
         'title': "Top vidéos",
         'link_form': link_form,
         'top_5_videos': top_5_videos,
-        'active_style': active_style
+        'active_style': active_style,
+        'comments': comments,
+        'numb_comments': numb_comments,
+        'comment_form': comment_form,
+        'report_form': report_form,
+        'social_links': social_links,
+        'captcha_form': captcha_form,
     })
 
 
@@ -65,7 +110,11 @@ def random_video(request):
     captcha_image = ImageCaptcha(width=100, height=52)
     captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
-
+    try:
+        if not request.session['has_submit_report']:
+            request.session['has_submit_report'] = []
+    except KeyError:
+        request.session['has_submit_report'] = []
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['video_link'] = request.GET.get("video_link")
@@ -86,7 +135,6 @@ def random_video(request):
             video_is_unique = video.submit_video(request, link_form)
             if video_is_unique is True:
                 request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
-                request.session['has_submit_report'] = False
 
             return redirect("videos:random_video")
 
@@ -117,7 +165,6 @@ def random_video(request):
             video_rated = video.submit_rating_video(request, rate_form)
             if video_rated is True:
                 request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
-                request.session['has_submit_report'] = False
 
             return redirect("videos:random_video")
 

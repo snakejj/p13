@@ -12,7 +12,6 @@
             </a>
         </li>
         {% endfor %}
-
         <li class="share-item">
             <!-- Trigger/Open The Modal -->
             <button id="myBtn" type="submit">
@@ -24,7 +23,8 @@
 
               <!-- Modal content -->
               <div class="modal-content">
-                  {% if request.session.has_submit_report is True %}
+    {% if "video-aleatoire" in request.path %}
+                  {% if request.session.video_link in request.session.has_submit_report %}
                 <div class="modal-header-reported">
                   <span class="close">&times;</span>
 
@@ -55,6 +55,39 @@
                 </div>
               </div>
             {% endif %}
+    {% elif "top-videos" in request.path %}
+                  {% if request.session.top_video in request.session.has_submit_report %}
+                <div class="modal-header-reported">
+                  <span class="close">&times;</span>
+
+                    <h2>Votre signalement a bien été enregitré</h2>
+                </div>
+              </div>
+
+            </div>
+                {% else %}
+            <div class="modal-header">
+                  <span class="close">&times;</span>
+                    <h2>Signaler la vidéo</h2>
+                </div>
+                <div class="modal-body">
+
+                    <form id="report-form" action="{% url 'videos:top_videos' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" id="video-link-input" name="video" value="{{ request.session.top_video_pk }}">
+                        {{report_form.reason}}
+                        {{report_form.message}}
+
+                        <button type="submit" name="report_sent">Commenter</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                  <br>
+                </div>
+              </div>
+            {% endif %}
+    {% endif %}
             </div>
         </li>
 
