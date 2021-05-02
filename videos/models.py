@@ -4,6 +4,7 @@ from random import randrange
 
 import requests
 from django.contrib import messages
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from dotenv import load_dotenv, find_dotenv
@@ -216,6 +217,21 @@ class VideoManager(models.Manager):
 
         return social_links
 
+    def submit_rating_video(self, request, rating_form):
+        if rating_form.is_valid():
+            video = Video.objects.get(pk=rating_form.data.get('video'))
+            interest_rating = rating_form.data.get('rate-interest')
+            quality_rating = rating_form.data.get('rate-quality')
+
+            RateVideo.objects.create(video=video,interest_rating=interest_rating, quality_rating=quality_rating)
+            messages.success(request, "Votre vote a bien été enregistré", fail_silently=True)
+            return True
+        else:
+            messages.error(
+                request, "Une erreur s'est produite", fail_silently=True
+            )
+            return False
+
 
 class Video(models.Model):
     link = models.CharField(max_length=11)
@@ -263,6 +279,42 @@ class AbuseVideo(models.Model):
         max_length=1,
         choices=REASON_CHOICES,
         default=DEAD,
+    )
+
+    objects = VideoManager()
+
+
+class RateVideo(models.Model):
+    video = models.ForeignKey(Video, related_name="rate_video", on_delete=models.CASCADE)
+    added_on = models.DateTimeField(auto_now_add=True)
+
+    RATING_CHOICES = [
+        (1, '1/10'),
+        (2, '2/10'),
+        (3, '3/10'),
+        (4, '4/10'),
+        (5, '5/10'),
+        (6, '6/10'),
+        (7, '7/10'),
+        (8, '8/10'),
+        (9, '9/10'),
+        (10, '10/10'),
+    ]
+
+    interest_rating = models.PositiveSmallIntegerField(
+        validators=[
+            MaxValueValidator(10),
+            MinValueValidator(0)
+        ],
+        choices=RATING_CHOICES,
+    )
+
+    quality_rating = models.PositiveSmallIntegerField(
+        validators=[
+            MaxValueValidator(10),
+            MinValueValidator(0)
+        ],
+        choices=RATING_CHOICES,
     )
 
     objects = VideoManager()

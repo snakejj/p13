@@ -15,12 +15,14 @@
                     </div>
                     <div class="wrapper-right">
                         <h3 class="subtitle">ID: {{ request.session.video_link }}</h3>
-                            <form id="rating-form">
+                            <form id="rating-form" action="{% url 'videos:random_video' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" id="video-link-input-rating" name="video" value="{{ request.session.video_pk }}" required>
                                 <label for="interest">Intérêt /10</label><br>
-                                <input type="number" id="interest" name="interest" max="10" min="0">
+                                {{rate_form.interest}}
                                 <label for="quality">Qualité /10</label><br>
-                                <input type="number" id="quality" name="quality" max="10" min="0">
-                                <button type="submit">Noter</button>
+                                {{rate_form.quality}}
+                                <button type="submit" name="rating_sent">Commenter</button>
                             </form>
                     </div>
                 </div>

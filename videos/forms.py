@@ -1,6 +1,6 @@
 from django import forms
 
-from videos.models import Video, AbuseVideo
+from videos.models import Video, AbuseVideo, RateVideo
 
 
 class LinkForm(forms.Form):
@@ -39,6 +39,7 @@ class ReportForm(forms.Form):
     )
 
     message = forms.CharField(
+        required=False,
         label='message',
         widget=forms.Textarea(
             attrs={
@@ -51,3 +52,38 @@ class ReportForm(forms.Form):
     class Meta:
         model = AbuseVideo
         fields = ["reason", "message"]
+
+
+class RatingForm(forms.Form):
+
+    interest = forms.IntegerField(
+        required=True,
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': "Notez entre 0 et 10",
+                'id': "interest",
+                'name': "interest",
+                'min': 0,
+                'max': 10,
+
+            }
+        ),
+    )
+
+    quality = forms.IntegerField(
+        required=True,
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder': "Notez entre 0 et 10",
+                'id': "quality",
+                'name': "quality",
+                'min': 0,
+                'max': 10,
+
+            }
+        ),
+    )
+
+    class Meta:
+        model = RateVideo
+        fields = ["interest", "quality"]

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from comments.forms import CommentForm, CaptchaForm
-from videos.forms import LinkForm, ReportForm
+from videos.forms import LinkForm, ReportForm, RatingForm
 
 from videos.models import *
 from comments.models import *
@@ -33,6 +33,7 @@ def random_video(request):
 
     link_form = LinkForm(prefix='video')
     report_form = ReportForm(prefix='report')
+    rate_form = RatingForm(prefix='rate')
     comment_form = CommentForm(prefix='comment')
     captcha_form = CaptchaForm()
 
@@ -88,6 +89,15 @@ def random_video(request):
             video.submit_report_video(request, report_form)
             return redirect("videos:random_video")
 
+        elif "rating_sent" in request.POST:
+            rate_form = RatingForm(request.POST or None, prefix='rate')
+            video_rated = video.submit_rating_video(request, rate_form)
+            if video_rated is True:
+                request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
+                request.session['has_submit_report'] = False
+
+            return redirect("videos:random_video")
+
     try:
         comments = comment.list_comments(request)
         numb_comments = len(comments)
@@ -107,6 +117,7 @@ def random_video(request):
                 'comment_form': comment_form,
                 'link_form': link_form,
                 'report_form': report_form,
+                'rate_form': rate_form,
                 'social_links': social_links,
                 'captcha_form': captcha_form,
     })
