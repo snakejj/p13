@@ -220,10 +220,36 @@ class VideoManager(models.Manager):
     def submit_rating_video(self, request, rating_form):
         if rating_form.is_valid():
             video = Video.objects.get(pk=rating_form.data.get('video'))
-            interest_rating = rating_form.data.get('rate-interest')
-            quality_rating = rating_form.data.get('rate-quality')
+            interest_rating = int(rating_form.data.get('rate-interest'))
+            quality_rating = int(rating_form.data.get('rate-quality'))
 
-            RateVideo.objects.create(video=video,interest_rating=interest_rating, quality_rating=quality_rating)
+            list_of_ratings_for_this_video = RateVideo.objects.filter(video=video)
+            if len(list_of_ratings_for_this_video) > 0:
+                list_interest_ratings = []
+                list_quality_ratings = []
+                for i in range(0, len(list_of_ratings_for_this_video)):
+                    list_interest_ratings.append(list_of_ratings_for_this_video[i].quality_rating)
+                    list_quality_ratings.append(list_of_ratings_for_this_video[i].interest_rating)
+
+                list_interest_ratings.append(interest_rating)
+                list_quality_ratings.append(quality_rating)
+
+                average_interest_rating = sum(list_interest_ratings) / len(list_interest_ratings)
+                average_quality_rating = sum(list_quality_ratings) / len(list_quality_ratings)
+            else:
+                average_interest_rating = interest_rating
+                average_quality_rating = quality_rating
+
+            RateVideo.objects.create(
+                video=video,
+                interest_rating=interest_rating,
+                quality_rating=quality_rating,
+            )
+
+            Video.objects.filter(pk=video.pk).update(
+                average_interest_rating=average_interest_rating,
+                average_quality_rating=average_quality_rating
+            )
             messages.success(request, "Votre vote a bien été enregistré", fail_silently=True)
             return True
         else:
@@ -247,6 +273,18 @@ class Video(models.Model):
         (ON, 'on'),
         (OFF, 'off'),
     ]
+
+    average_interest_rating = models.DecimalField(
+        null=True,
+        max_digits=3,
+        decimal_places=2,
+    )
+
+    average_quality_rating = models.DecimalField(
+        null=True,
+        max_digits=3,
+        decimal_places=2,
+    )
 
     status = models.CharField(
         max_length=2,

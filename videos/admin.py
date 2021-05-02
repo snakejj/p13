@@ -7,8 +7,8 @@ from .models import Video, AbuseVideo, RateVideo
 
 class VideoAdmin(admin.ModelAdmin):
 
-    list_display = ('pk', 'status', 'link', 'added_on')
-    list_filter = ('status',)
+    list_display = ('pk', 'status', 'link', 'added_on', 'average_interest_rating', 'average_quality_rating')
+    list_filter = ('status', 'average_interest_rating', 'average_quality_rating')
 
 
 admin.site.register(Video, VideoAdmin)
@@ -25,8 +25,12 @@ admin.site.register(AbuseVideo, AbuseVideoAdmin)
 
 class RateVideoAdmin(admin.ModelAdmin):
 
-    list_display = ('pk', 'video', 'interest_rating', 'quality_rating',)
-    list_filter = ('interest_rating', 'quality_rating')
+    list_display = (
+        'pk',
+        'video',
+        'interest_rating',
+        'quality_rating',
+    )
 
 
 admin.site.register(RateVideo, RateVideoAdmin)

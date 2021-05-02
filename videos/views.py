@@ -22,6 +22,8 @@ def moderation_video(request):
 def top_videos(request):
     link_form = LinkForm(prefix='video')
 
+
+
     return render(request, 'videos/top_videos.html', {
         'title': "Top vidéos",
         'link_form': link_form, })
@@ -38,10 +40,12 @@ def random_video(request):
     captcha_form = CaptchaForm()
 
     forcing_new_captcha = False
+
     comment.get_captcha_int(request, forcing_new_captcha)
 
     captcha_image = ImageCaptcha(width=100, height=52)
     captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
+
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
