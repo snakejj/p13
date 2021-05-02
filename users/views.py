@@ -11,8 +11,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 ########################################################################################################################
-from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending
+from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending, \
+    get_videos_rated_count, get_rating_count
 from videos.forms import LinkForm
+from videos.models import VideoManager
 
 
 class TokenGenerator(PasswordResetTokenGenerator):
@@ -26,10 +28,16 @@ generate_token = TokenGenerator()
 
 
 def dashboard(request):
+    video = VideoManager()
+
     nb_requests_used = get_api_usage(request)
     all_videos = get_videos_count()
     all_comments = get_comments_count()
     report_pending = get_report_pending()
+    all_videos_rated = get_videos_rated_count()
+    all_ratings = get_rating_count()
+    top_5_videos = video.getting_top_videos(request)
+
 
     return render(request, 'users/dashboard.html', {
         'title': "Tableau de bord",
@@ -37,6 +45,9 @@ def dashboard(request):
         'nb_requests': nb_requests_used,
         'all_videos': all_videos,
         'all_comments': all_comments,
+        'all_videos_rated': all_videos_rated,
+        'all_ratings': all_ratings,
+        'top_5_videos': top_5_videos,
     })
 
 

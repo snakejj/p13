@@ -874,6 +874,8 @@ ul.ranks a:active {
     text-align: center;
     width: 200px;
     border : 1px solid black;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 /* -------------------END DASHBOARD-------------------- */

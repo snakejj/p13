@@ -14,10 +14,12 @@
                                         {{ report_pending.count }}
                                 </li>
                         </a>
+                        <a href="https://api.random.org/dashboard" style="text-decoration: none;">
                                 <li class="dashboard-item">
                                         <h3 class="subtitle">Nb de requetes API</h3>
                                         {{ nb_requests }} / 1000 Mensuel
                                 </li>
+                        </a>
                         <a href="{{ all_videos.url }}" style="text-decoration: none;">
                                 <li class="dashboard-item">
                                         <h3 class="subtitle">Nb de vidéos</h3>
@@ -30,6 +32,37 @@
                                         {{ all_comments.count }}
                                 </li>
                         </a>
+                        <a href="{{ all_videos_rated.url }}" style="text-decoration: none;">
+                                <li class="dashboard-item">
+                                        <h3 class="subtitle">Nb de vidéos notées</h3>
+                                        {{ all_videos_rated.count }}
+                                </li>
+                        </a>
+                        <a href="{{ all_ratings.url }}" style="text-decoration: none;">
+                                <li class="dashboard-item">
+                                        <h3 class="subtitle">Nb de notes</h3>
+                                        {{ all_ratings.count }}
+                                </li>
+                        </a>
+                                <li class="dashboard-item" style="margin-top: 1%;">
+                                        <a href="{% url 'videos:top_videos' %}" style="text-decoration: none;">
+                                        <h3 class="subtitle">Top 5 Videos</h3>
+                                        </a>
+                                        <ul style="padding-left: 0px">
+                                        {% for element in top_5_videos %}
+                                            <a class="rank" href="http://127.0.0.1:8888/top-videos/?video_link={{ element.video_link }}" style="width: 95%;">
+                                                <li>
+                                                        Vidéo n°{{ element.video_rank }}<br>
+                                                        <span style="font-size:small;">
+                                                            Interet: {{ element.average_interest }}/10
+                                                            <br>
+                                                            Qualité: {{ element.average_quality }}/10
+                                                        </span>
+                                                </li>
+                                            </a>
+                                        {% endfor %}
+                                        </ul>
+                                </li>
                 </ul>
         </div>
 {% else %}

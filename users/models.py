@@ -3,9 +3,10 @@ import os
 import requests
 from django.contrib import messages
 from django.db import models
+from django.db.models import Q
 
 from comments.models import Comment
-from videos.models import Video, AbuseVideo
+from videos.models import Video, AbuseVideo, RateVideo
 
 
 def get_report_pending():
@@ -77,5 +78,25 @@ def get_comments_count():
 
     }
     return all_comments
+
+def get_videos_rated_count():
+    count = Video.objects.filter(~Q(average_interest_rating=None)).count()
+    url = "/superadmin/videos/video/?o=5"
+    all_videos_rated = {
+        'count': count,
+        'url': url,
+
+    }
+    return all_videos_rated
+
+def get_rating_count():
+    count = RateVideo.objects.all().count()
+    url = "/superadmin/videos/ratevideo/"
+    all_rating = {
+        'count': count,
+        'url': url,
+
+    }
+    return all_rating
 
 
