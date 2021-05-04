@@ -95,6 +95,8 @@ class VideoManager(models.Manager):
             response = requests.post(url, json=data, headers=headers)
         except requests.exceptions.ConnectionError:
             response = None
+            # raise requests.exceptions.ConnectionError("L'API de randomisation est indisponible")
+
         if response is None or response.status_code != 200:
             # If there is an error with the API answer, we use a pseudo-random integer
             random_pk = randrange(0,max_pk-1)
@@ -116,7 +118,6 @@ class VideoManager(models.Manager):
 
             except KeyError:
                 # if the result key does not exist, it means there is an error in the request,
-
                 # if this message error, it means it is the first uploaded video and we need to manualy assign random_pk
                 if "Parameter 'min' must be less than parameter 'max'" in response.json()["error"]["message"]:
                     random_pk = 0
@@ -128,6 +129,7 @@ class VideoManager(models.Manager):
                         "Bravo, vous venez d'uploader la premiere vidéo",
                         fail_silently=True
                     )
+                    # raise KeyError("KeyError")
 
         return video.pk, video.link,
 
@@ -156,10 +158,10 @@ class VideoManager(models.Manager):
                 messages.error(
                     request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
                 )
-        else:
-            messages.error(
-                request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
-            )
+        # else:
+        #     messages.error(
+        #         request, "Le lien est incorrect, merci de founir un lien Youtube valide", fail_silently=True
+        #     )
 
     def submit_report_video(self, request, report_form):
         if report_form.is_valid():
@@ -199,10 +201,10 @@ class VideoManager(models.Manager):
                     list_of_reported_video = request.session['has_submit_report']
                     list_of_reported_video.append(request.session['video_link'])
                     request.session['has_submit_report'] = list_of_reported_video
-        else:
-            messages.error(
-                request, "Une erreur s'est produite", fail_silently=True
-            )
+        # else:
+        #     messages.error(
+        #         request, "Une erreur s'est produite", fail_silently=True
+        #     )
 
     def generate_share_link(self, request, video_link):
 
@@ -227,9 +229,7 @@ class VideoManager(models.Manager):
                 full_link = value[0] + base_url + "?video_link=" + video_link
                 social_links[full_link] = value[1]
         except TypeError:
-            for value in raw_data.values():
-                full_link = "#"
-                social_links[full_link] = value[1]
+            social_links = {}
 
         return social_links
 
@@ -268,11 +268,11 @@ class VideoManager(models.Manager):
             )
             messages.success(request, "Votre vote a bien été enregistré", fail_silently=True)
             return True
-        else:
-            messages.error(
-                request, "Une erreur s'est produite", fail_silently=True
-            )
-            return False
+        # else:
+        #     messages.error(
+        #         request, "Une erreur s'est produite", fail_silently=True
+        #     )
+        #     return False
 
     def getting_top_videos(self, request):
         list_of_videos_sorted_by_ratings = Video.objects.filter(
