@@ -397,7 +397,6 @@ class TestVideoManager:
 
         assert return_of_the_function == {}
 
-    @pytest.mark.xfail(raises=KeyError)
     def test_submit_rating_video(self):
 
         # ##############################################################################################################
@@ -424,15 +423,43 @@ class TestVideoManager:
         assert return_of_the_function is True
 
         # ##############################################################################################################
-        # Scenario where ratings already exists
+        # Scenario where ratings already exists and user is rating for the first time
 
         # We populate the DB
         video_instance = mixer.blend('videos.Video', pk=4821, link="VPkbtMLzeoc", status="IN")  # Entry N°0 in the db
         mixer.blend("videos.RateVideo", video=video_instance, interest_rating=5, quality_rating=4)
+        mixer.blend("videos.RateVideo", video=video_instance, interest_rating=7, quality_rating=8)
 
         request = RequestFactory().get('/video-aleatoire/')
         middleware = SessionMiddleware()
         middleware.process_request(request)
+        request.session['video_link'] = "VPkbtMLzeoc"
+        request.session.save()
+
+        rating_form = LinkForm(data={
+            'rate-interest': 1,
+            'rate-quality': 5,
+            'video': "4821",
+        })
+
+        video = VideoManager()
+        return_of_the_function = video.submit_rating_video(request, rating_form)
+
+        assert return_of_the_function is True
+
+        # ##############################################################################################################
+        # Scenario where ratings already exists and user has already rated at least one other video
+
+        # We populate the DB
+        video_instance = mixer.blend('videos.Video', pk=4821, link="VPkbtMLzeoc", status="IN")  # Entry N°0 in the db
+        mixer.blend("videos.RateVideo", video=video_instance, interest_rating=5, quality_rating=4)
+        mixer.blend("videos.RateVideo", video=video_instance, interest_rating=7, quality_rating=8)
+
+        request = RequestFactory().get('/video-aleatoire/')
+        middleware = SessionMiddleware()
+        middleware.process_request(request)
+        request.session['video_link'] = "VPkbtMLzeoc"
+        request.session['has_submit_vote'] = ["VPkbtMLzeoc"]
         request.session.save()
 
         rating_form = LinkForm(data={
