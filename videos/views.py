@@ -11,12 +11,12 @@ from comments.models import *
 from captcha.image import ImageCaptcha
 
 
-def videos_list(request):
-    return render(request, 'users/videos_list.html', {'title': "Liste des vidéos"})
-
-
-def moderation_video(request):
-    return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
+# def videos_list(request):
+#     return render(request, 'users/videos_list.html', {'title': "Liste des vidéos"})
+#
+#
+# def moderation_video(request):
+#     return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
 
 
 def top_videos(request):
