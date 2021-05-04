@@ -15,6 +15,12 @@
                     </div>
                     <div class="wrapper-right">
                         <h3 class="subtitle">ID: {{ request.session.video_link }}</h3>
+                        {% if request.session.video_link in request.session.has_submit_vote %}
+                            <p id="rating-form">
+                                Vous avez deja voté pour cette vidéo.<br>
+                                Vous pouvez soumettre une vidéo pour generer une autre vidéo aléatoire
+                            </p>
+                        {% else %}
                             <form id="rating-form" action="{% url 'videos:random_video' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" id="video-link-input-rating" name="video" value="{{ request.session.video_pk }}" required>
@@ -24,6 +30,7 @@
                                 {{rate_form.quality}}
                                 <button type="submit" name="rating_sent">Commenter</button>
                             </form>
+                        {% endif %}
                     </div>
                 </div>
     </div>

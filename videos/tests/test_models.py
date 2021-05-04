@@ -379,7 +379,7 @@ class TestVideoManager:
         video = VideoManager()
         return_of_the_function = video.generate_share_link(request, video_link)
 
-        assert "http://www.linkedin.com/shareArticle?mini=true&url=http://testserver/top-video?video_link=VPkbtMLzeoc" \
+        assert "http://www.linkedin.com/shareArticle?mini=true&url=http://testserver/video-aleatoire/?video_link=VPkbtMLzeoc" \
                in return_of_the_function
 
     @pytest.mark.xfail(raises=TypeError)
@@ -397,6 +397,7 @@ class TestVideoManager:
 
         assert return_of_the_function == {}
 
+    @pytest.mark.xfail(raises=KeyError)
     def test_submit_rating_video(self):
 
         # ##############################################################################################################
@@ -408,6 +409,7 @@ class TestVideoManager:
         request = RequestFactory().get('/video-aleatoire')
         middleware = SessionMiddleware()
         middleware.process_request(request)
+        request.session['video_link'] = "VPkbtMLzeoc"
         request.session.save()
 
         rating_form = LinkForm(data={

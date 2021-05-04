@@ -131,8 +131,11 @@ def random_video(request):
     try:
         if not request.session['has_submit_report']:
             request.session['has_submit_report'] = []
+        if not  request.session['has_submit_vote']:
+            request.session['has_submit_vote'] = []
     except KeyError:
         request.session['has_submit_report'] = []
+        request.session['has_submit_vote'] = []
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['video_link'] = request.GET.get("video_link")
@@ -183,7 +186,7 @@ def random_video(request):
             video_rated = video.submit_rating_video(request, rate_form)
             if video_rated is True:
                 request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
-                request.session['has_submit_vote'] = True
+
             return redirect("videos:random_video")
 
     try:

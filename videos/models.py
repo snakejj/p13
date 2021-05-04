@@ -256,6 +256,10 @@ class VideoManager(models.Manager):
                 average_interest_rating = interest_rating
                 average_quality_rating = quality_rating
 
+            list_of_rated_video = request.session['has_submit_vote']
+            list_of_rated_video.append(request.session['video_link'])
+            request.session['has_submit_vote'] = list_of_rated_video
+
             RateVideo.objects.create(
                 video=video,
                 interest_rating=interest_rating,
