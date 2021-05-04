@@ -5,7 +5,7 @@ from random import randrange
 import requests
 from django.contrib import messages
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.db.models import Q
+from django.db.models import Q, F
 from django.http import HttpResponseRedirect
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
@@ -279,29 +279,40 @@ class VideoManager(models.Manager):
             ~Q(
                 status="OF",
             ),
-            ~Q(
-                average_interest_rating=None,
-            )
-        ).order_by('-average_interest_rating', '-average_quality_rating')
+        ).order_by(
+            F('average_interest_rating').desc(nulls_last=True),
+            F('average_quality_rating').desc(nulls_last=True)
+        )
+
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
+        top_5_videos = []
+        i = 1
 
         top_5_videos_raw = list_of_videos_sorted_by_ratings[:5]
 
-        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
-
-        top_5_videos = []
-
-        i = 1
         for value in top_5_videos_raw:
-            top_5_videos.append(
-                {
-                    "video_rank": i,
-                    "video_link": value.link,
-                    "full_link": base_url + "?video_link=" + value.link,
-                    "average_interest": value.average_interest_rating,
-                    "average_quality": value.average_quality_rating,
-                }
-            )
-            i += 1
+            if value.average_interest_rating is None:
+                top_5_videos.append(
+                    {
+                        "video_rank": i,
+                        "video_link": value.link,
+                        "full_link": base_url + "?video_link=" + value.link,
+                        "average_interest": "Pas encore noté",
+                        "average_quality": "Pas encore noté",
+                    }
+                )
+                i += 1
+            else:
+                top_5_videos.append(
+                    {
+                        "video_rank": i,
+                        "video_link": value.link,
+                        "full_link": base_url + "?video_link=" + value.link,
+                        "average_interest": str(value.average_interest_rating) + "/10",
+                        "average_quality": str(value.average_quality_rating) + "/10",
+                    }
+                )
+                i += 1
 
         return top_5_videos
 

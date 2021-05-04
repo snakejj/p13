@@ -444,9 +444,9 @@ class TestVideoManager:
 
         assert return_of_the_function is True
 
-    def test_getting_top_videos(self):
+    def test_getting_top_videos_with_at_least_5_rated_videos(self):
         # ##############################################################################################################
-        # Scenario where the API returns a status code != than 200
+        # Scenario where the DB is populated with at least 5 videos rated
         req = RequestFactory().get('/')
         req.user = AnonymousUser()
 
@@ -480,3 +480,26 @@ class TestVideoManager:
         assert result[2].get("video_link") == "8QwgLSVtYvG"
         assert result[3].get("video_link") == "10wgLSVtYvG"
         assert result[4].get("video_link") == "9QwgLSVtYvG"
+
+    def test_getting_top_videos_with_less_than_5_rated_videos(self):
+        # ##############################################################################################################
+        # Scenario where the DB is populated with less than 5 videos rated
+        req = RequestFactory().get('/')
+        req.user = AnonymousUser()
+
+        # We populate the DB in order for the function to be able to randomly select an item from
+        mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
+                    average_quality_rating=3.30)
+        mixer.blend('videos.Video', pk=2, status="IN", link="2QwgLSVtYvG", average_interest_rating=6,
+                    average_quality_rating=3.30)
+        mixer.blend('videos.Video', pk=3, status="OF", link="3QwgLSVtYvG", average_interest_rating=2.20,
+                    average_quality_rating=3.30)
+        mixer.blend('videos.Video', pk=4, status="IN", link="4QwgLSVtYvG", average_interest_rating=None,
+                    average_quality_rating=None)
+
+        video = VideoManager()
+        result = video.getting_top_videos(req)
+
+        assert result[0].get("video_link") == "2QwgLSVtYvG"
+        assert result[1].get("video_link") == "1QwgLSVtYvG"
+        assert result[2].get("video_link") == "4QwgLSVtYvG"

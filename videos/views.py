@@ -36,14 +36,16 @@ def top_videos(request):
     captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
     top_5_videos = video.getting_top_videos(request)
-
     try:
         if request.session['top_video']:
             pass
     except KeyError:
-        request.session['top_video'] = top_5_videos[0].get("video_link")
-        video_instance = Video.objects.get(link=request.session['top_video'])
-        request.session['top_video_pk'] = video_instance.pk
+        if len(top_5_videos) > 0:
+            request.session['top_video'] = top_5_videos[0].get("video_link")
+            video_instance = Video.objects.get(link=request.session['top_video'])
+            request.session['top_video_pk'] = video_instance.pk
+        else:
+            pass
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
