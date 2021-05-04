@@ -126,7 +126,7 @@ class VideoManager(models.Manager):
 
                     messages.info(
                         request,
-                        "Bravo, vous venez d'uploader la premiere vidéo",
+                        "Il n'y a pour l'instant qu'une seule video en base de données",
                         fail_silently=True
                     )
                     # raise KeyError("KeyError")
@@ -211,7 +211,7 @@ class VideoManager(models.Manager):
         if "top-video" in request.path:
             video_link = request.session['top_video']
 
-        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), "/video-aleatoire/")
 
         raw_data = {
             "facebook_url": ["https://www.facebook.com/sharer/sharer.php?u=", "fab fa-facebook-square fa-2x"],

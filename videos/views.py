@@ -47,19 +47,19 @@ def top_videos(request):
         else:
             pass
 
-    if request.method == 'GET':
-        if 'video_link' in request.GET:
-            request.session['top_video'] = request.GET.get("video_link")
-            video_instance = Video.objects.get(link=request.session['top_video'])
-            request.session['top_video_pk'] = video_instance.pk
-            try:
-                request.session['top_video'] = request.GET.get("video_link")
-            except videos.models.Video.DoesNotExist:
-                messages.error(
-                    request, "Le video n'existe plus", fail_silently=True
-                )
-
-    elif request.method == 'POST':
+    # if request.method == 'GET':
+    #     if 'video_link' in request.GET:
+    #         request.session['top_video'] = request.GET.get("video_link")
+    #         video_instance = Video.objects.get(link=request.session['top_video'])
+    #         request.session['top_video_pk'] = video_instance.pk
+    #         try:
+    #             request.session['top_video'] = request.GET.get("video_link")
+    #         except videos.models.Video.DoesNotExist:
+    #             messages.error(
+    #                 request, "Le video n'existe plus", fail_silently=True
+    #             )
+    #
+    if request.method == 'POST':
 
         if "report_sent" in request.POST:
             report_form = ReportForm(request.POST or None, prefix='report')
@@ -139,7 +139,7 @@ def random_video(request):
             try:
                 video_shared = Video.objects.get(link=request.session['video_link'])
                 request.session['video_pk'] = video_shared.pk
-                request.session['has_submit_unique_video'] = True
+                request.session['has_shared_link'] = True
             except videos.models.Video.DoesNotExist:
                 messages.error(
                     request, "Le video n'existe pas ou plus", fail_silently=True
@@ -183,7 +183,7 @@ def random_video(request):
             video_rated = video.submit_rating_video(request, rate_form)
             if video_rated is True:
                 request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
-
+                request.session['has_submit_vote'] = True
             return redirect("videos:random_video")
 
     try:

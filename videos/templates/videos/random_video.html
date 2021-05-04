@@ -4,7 +4,7 @@
 
     {% include "core/layouts/_submit.html" %}
 
-    {% if request.session.has_submit_unique_video == True or user.is_authenticated %}
+    {% if request.session.has_submit_unique_video == True or request.session.has_shared_link == True or user.is_authenticated %}
     <div id="main-video">
                 <div class="wrapper">
                     <div class="wrapper-left">
