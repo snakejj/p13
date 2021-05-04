@@ -3,6 +3,8 @@
 {% block content %}
 
     {% include "core/layouts/_submit.html" %}
+
+    {% if request.session.has_submit_unique_video == True or user.is_authenticated %}
     <div id="main-video">
                 <div class="wrapper">
                     <div class="wrapper-left">
@@ -45,5 +47,9 @@
     {% include "core/layouts/_share.html" %}
     {% include "comments/_comments.html" %}
 
+    {% else %}
+    <p style="text-align:center;">Pour acceder à cette page vous devez soumettre une vidéo valide et pas encore proposé.</p>
+    <p style="text-align:center;">Voici les formes acceptées : bla bla bla</p>
+    {% endif %}
 
 {% endblock content %}
