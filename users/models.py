@@ -48,7 +48,7 @@ def get_api_usage(request):
             "L'API de randomisation etant indisponible, il est impossible d'avoir le nombre de requetes restante",
             fail_silently=True
         )
-        requests_left = None
+        nb_requests_used = None
     else:
         # If the API answer, we assign the API result to requests_left
         requests_left = response.json()["result"]["requestsLeft"]
