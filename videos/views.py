@@ -145,28 +145,43 @@ def random_video(request):
     captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
 
     try:
-        if not request.session['has_submit_report']:
-            request.session['has_submit_report'] = []
+        if request.session['has_submit_report']:
+            pass
     except KeyError:
         request.session['has_submit_report'] = []
     try:
-        if not request.session['has_submit_vote']:
-            request.session['has_submit_vote'] = []
+        if request.session['has_submit_vote']:
+            pass
     except KeyError:
         request.session['has_submit_vote'] = []
+
+
+    # if request.method == 'GET':
+    #     if 'video_link' in request.GET:
+    #         request.session['video_link'] = request.GET.get("video_link")
+    #         try:
+    #             video_shared = Video.objects.get(link=request.session['video_link'])
+    #             request.session['video_pk'] = video_shared.pk
+    #             request.session['has_shared_link'] = True
+    #         except videos.models.Video.DoesNotExist:
+    #             messages.error(
+    #                 request, "Le video n'existe pas ou plus", fail_silently=True
+    #             )
+    #             return redirect("core:home")
 
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['video_link'] = request.GET.get("video_link")
+            video_instance = Video.objects.filter(~Q(status="OF"), link=request.session['video_link'])
             try:
-                video_shared = Video.objects.get(link=request.session['video_link'])
-                request.session['video_pk'] = video_shared.pk
+                request.session['video_pk'] = video_instance[0].pk
                 request.session['has_shared_link'] = True
-            except videos.models.Video.DoesNotExist:
+            except IndexError:
                 messages.error(
-                    request, "Le video n'existe pas ou plus", fail_silently=True
-                )
+                        request, "Le video n'existe pas ou plus", fail_silently=True
+                    )
                 return redirect("core:home")
+
 
     elif request.method == 'POST':
         if 'link_sent' in request.POST:
