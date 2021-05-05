@@ -20,7 +20,7 @@
                                 Vous avez deja voté pour cette vidéo.<br>
                                 Vous pouvez soumettre une vidéo pour generer une autre vidéo aléatoire
                             </p>
-                        {% else %}
+                        {% elif request.session.video_link %}
                             <form id="rating-form" action="{% url 'videos:random_video' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" id="video-link-input-rating" name="video" value="{{ request.session.video_pk }}" required>
