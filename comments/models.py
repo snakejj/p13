@@ -136,8 +136,8 @@ class CommentManager(models.Manager):
             Comment.objects.create(video=video, pseudo=pseudo, email=email, message=message)
             messages.success(request, "Votre commentaire à bien été ajouté", fail_silently=True)
             return True
-        else:
-            return False
+        # else:
+        #     return False
 
 
 class Comment(models.Model):
