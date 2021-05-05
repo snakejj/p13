@@ -37,6 +37,16 @@ def top_videos(request):
 
     top_5_videos = video.getting_top_videos(request)
     try:
+        if request.session['has_submit_report']:
+            pass
+    except KeyError:
+        request.session['has_submit_report'] = []
+    try:
+        if request.session['has_submit_vote']:
+            pass
+    except KeyError:
+        request.session['has_submit_vote'] = []
+    try:
         if request.session['top_video']:
             pass
     except KeyError:
@@ -50,14 +60,20 @@ def top_videos(request):
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['top_video'] = request.GET.get("video_link")
-            video_instance = Video.objects.get(link=request.session['top_video'])
-            request.session['top_video_pk'] = video_instance.pk
+            video_instance = Video.objects.filter(link=request.session['top_video'])
             try:
-                request.session['top_video'] = request.GET.get("video_link")
-            except videos.models.Video.DoesNotExist:
+                request.session['top_video_pk'] = video_instance[0].pk
+            except IndexError:
                 messages.error(
-                    request, "Le video n'existe plus", fail_silently=True
-                )
+                        request, "Le video n'existe pas ou plus", fail_silently=True
+                    )
+
+            # try:
+            #     request.session['top_video'] = request.GET.get("video_link")
+            # except videos.models.Video.DoesNotExist:
+            #     messages.error(
+            #         request, "Le video n'existe plus", fail_silently=True
+            #     )
 
     if request.method == 'POST':
 
@@ -131,11 +147,14 @@ def random_video(request):
     try:
         if not request.session['has_submit_report']:
             request.session['has_submit_report'] = []
-        if not  request.session['has_submit_vote']:
-            request.session['has_submit_vote'] = []
     except KeyError:
         request.session['has_submit_report'] = []
+    try:
+        if not request.session['has_submit_vote']:
+            request.session['has_submit_vote'] = []
+    except KeyError:
         request.session['has_submit_vote'] = []
+
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['video_link'] = request.GET.get("video_link")
