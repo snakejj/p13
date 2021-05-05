@@ -16,6 +16,7 @@ from videos.models import VideoManager
 
 pytestmark = pytest.mark.django_db
 
+
 def test_get_report_pending():
 
     mixer.blend('videos.AbuseVideo', report_dealt_with=False)
@@ -112,6 +113,7 @@ def test_get_videos_rated_count():
 
     assert all_videos_rated['count'] == 6
     assert all_videos_rated['url'] == "/superadmin/videos/video/?o=5"
+
 
 def test_get_rating_count():
     mixer.blend('videos.RateVideo')
