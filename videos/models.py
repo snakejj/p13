@@ -92,8 +92,9 @@ class VideoManager(models.Manager):
         }
 
         try:
-            response = requests.post(url, json=data, headers=headers)
-        except requests.exceptions.ConnectionError:
+            response = requests.post(url, json=data, headers=headers, timeout=5)
+
+        except (requests.exceptions.ConnectionError, requests.Timeout):
             response = None
             # raise requests.exceptions.ConnectionError("L'API de randomisation est indisponible")
 
@@ -115,6 +116,11 @@ class VideoManager(models.Manager):
                 random_pk = response.json()["result"]["random"]["data"][0]
                 videos_list = Video.objects.filter(~Q(status="OF"))
                 video = videos_list[random_pk]
+                messages.success(
+                    request,
+                    "L'API de randomisation a répondu en " + str(round(response.elapsed.total_seconds(), 2)) + " secondes",
+                    fail_silently=True
+                )
 
             except KeyError:
                 # if the result key does not exist, it means there is an error in the request,
