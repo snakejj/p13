@@ -3,3 +3,4 @@
 __pycache__
 .env
 /core/static/captcha/captcha.png
+.coverage
