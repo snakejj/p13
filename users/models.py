@@ -37,8 +37,9 @@ def get_api_usage(request):
     }
 
     try:
-        response = requests.post(url, json=data, headers=headers)
-    except requests.exceptions.ConnectionError:
+        response = requests.post(url, json=data, headers=headers, timeout=5)
+
+    except (requests.exceptions.ConnectionError, requests.Timeout):
         response = None
     if response is None or response.status_code != 200:
         # If there is an error with the API answer, we assign None to request_left
