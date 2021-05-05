@@ -46,19 +46,19 @@ def top_videos(request):
             request.session['top_video_pk'] = video_instance.pk
         else:
             pass
+    # This part retrieve the video_url from the top_videos links
+    if request.method == 'GET':
+        if 'video_link' in request.GET:
+            request.session['top_video'] = request.GET.get("video_link")
+            video_instance = Video.objects.get(link=request.session['top_video'])
+            request.session['top_video_pk'] = video_instance.pk
+            try:
+                request.session['top_video'] = request.GET.get("video_link")
+            except videos.models.Video.DoesNotExist:
+                messages.error(
+                    request, "Le video n'existe plus", fail_silently=True
+                )
 
-    # if request.method == 'GET':
-    #     if 'video_link' in request.GET:
-    #         request.session['top_video'] = request.GET.get("video_link")
-    #         video_instance = Video.objects.get(link=request.session['top_video'])
-    #         request.session['top_video_pk'] = video_instance.pk
-    #         try:
-    #             request.session['top_video'] = request.GET.get("video_link")
-    #         except videos.models.Video.DoesNotExist:
-    #             messages.error(
-    #                 request, "Le video n'existe plus", fail_silently=True
-    #             )
-    #
     if request.method == 'POST':
 
         if "report_sent" in request.POST:
