@@ -25,6 +25,12 @@ generate_token = TokenGenerator()
 
 ########################################################################################################################
 
+# def comments_list(request):
+#     return render(request, 'users/comments_list.html', {'title': "Liste des commentaires"})
+#
+#
+# def moderation_comment(request):
+#     return render(request, 'users/moderation-comment.html', {'title': "Modérat° commentaire"})
 
 
 def dashboard(request):
@@ -49,15 +55,6 @@ def dashboard(request):
         'all_ratings': all_ratings,
         'top_5_videos': top_5_videos,
     })
-
-
-
-def comments_list(request):
-    return render(request, 'users/comments_list.html', {'title': "Liste des commentaires"})
-
-
-def moderation_comment(request):
-    return render(request, 'users/moderation-comment.html', {'title': "Modérat° commentaire"})
 
 
 def logout(request):
