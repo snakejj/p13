@@ -19,11 +19,11 @@ def legal_notice(request):
         'title': "Mentions légales",
         'link_form': link_form, })
 
-
-def login(request):
-    link_form = LinkForm(prefix='video')
-
-    return render(request, 'core/pages/login.html', {
-        'title': "Connexion",
-        'link_form': link_form, })
+#
+# def login(request):
+#     link_form = LinkForm(prefix='video')
+#
+#     return render(request, 'core/pages/login.html', {
+#         'title': "Connexion",
+#         'link_form': link_form, })
 
