@@ -3,6 +3,7 @@ import json
 import pytest
 
 import requests
+from django import urls
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.urls import reverse
 from requests.exceptions import ConnectionError
@@ -138,7 +139,7 @@ class TestTopVideosView:
         resp = views.top_videos(post_request)
 
         assert resp.status_code == 302, ''
-        assert "/top-videos/" in str(resp.items()), ''
+        assert resp.url == urls.reverse('videos:top_videos'), ''
 
     def test_if_view_top_videos_work_with_posting_comment_with_incorrect_captcha(self):
         # We populate the DB
@@ -198,7 +199,7 @@ class TestTopVideosView:
 
         resp = views.top_videos(post_request)
         assert resp.status_code == 302, 'If captcha is correct, it should redirect to the same page'
-        assert "/top-videos/" in str(resp.items()), ''
+        assert resp.url == urls.reverse('videos:top_videos'), ''
 
 
 class TestRandomVideosView:
@@ -253,6 +254,7 @@ class TestRandomVideosView:
         resp = views.random_video(request)
 
         assert resp.status_code == 302, 'Should redirect to the home page if link is incorrect'
+        assert resp.url == urls.reverse('core:home'), ''
 
     @pytest.mark.xfail(raises=IndexError)
     def test_if_view_random_video_work_with_a_shared_link_which_is_moderated_offline(self):
@@ -292,7 +294,7 @@ class TestRandomVideosView:
         resp = views.random_video(post_request)
 
         assert resp.status_code == 302, ''
-        assert "/video-aleatoire/" in str(resp.items()), ''
+        assert resp.url == urls.reverse('videos:random_video'), ''
 
     def test_if_view_random_video_work_with_posting_rating(self):
         # We populate the DB
@@ -317,10 +319,11 @@ class TestRandomVideosView:
         resp = views.random_video(post_request)
 
         assert resp.status_code == 302, ''
+        assert resp.url == urls.reverse('videos:random_video')
         assert "1QwgLSVtYvG" in post_request.session['has_submit_vote'], \
             "the 'has_submit_vote' should contain the rated video's link"
 
-    def test_if_view_top_videos_work_with_posting_report(self):
+    def test_if_view_random_work_with_posting_report(self):
         # We populate the DB
         mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
                     average_quality_rating=3.30)
@@ -343,6 +346,7 @@ class TestRandomVideosView:
         resp = views.random_video(post_request)
 
         assert resp.status_code == 302, ''
+        assert resp.url == urls.reverse('videos:random_video')
         assert "1QwgLSVtYvG" in post_request.session['has_submit_report'], \
             "the 'has_submit_report' should contain the rated video's link"
 
@@ -404,7 +408,7 @@ class TestRandomVideosView:
 
         resp = views.random_video(post_request)
         assert resp.status_code == 302, 'If captcha is correct, it should redirect to the same page'
-        assert "/video-aleatoire/" in str(resp.items()), ''
+        assert resp.url == urls.reverse('videos:random_video'), ''
 
     def test_if_view_random_video_work_with_posting_a_valid_new_video_link(self):
         # We populate the DB
@@ -426,5 +430,6 @@ class TestRandomVideosView:
 
         resp = views.random_video(post_request)
         assert resp.status_code == 302, 'If link is correct, it should redirect to the same page'
+        assert resp.url == urls.reverse('videos:random_video'), ''
         assert post_request.session['has_submit_unique_video'] is True, \
             "the 'has_submit_unique_video' should return True if video's link has been submited and is correct"
