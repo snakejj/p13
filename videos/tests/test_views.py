@@ -1,23 +1,10 @@
-import json
-
 import pytest
-
-import requests
 from django import urls
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.urls import reverse
-from requests.exceptions import ConnectionError
-import responses
-
-from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 from mixer.backend.django import mixer
-
-import videos
 from videos import views
-from videos.forms import LinkForm
-from videos.models import VideoManager
-
 pytestmark = pytest.mark.django_db
 
 
@@ -96,7 +83,6 @@ class TestTopVideosView:
 
         resp = views.top_videos(request)
 
-
         assert resp.status_code == 200, ''
         assert '<iframe src="https://www.youtube.com/embed/1QwgLSVtYvG"' in str(resp.getvalue()), ''
 
@@ -143,8 +129,8 @@ class TestTopVideosView:
 
     def test_if_view_top_videos_work_with_posting_comment_with_incorrect_captcha(self):
         # We populate the DB
-        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
-                    average_quality_rating=3.30)
+        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG",
+                                     average_interest_rating=4.50, average_quality_rating=3.30)
         mixer.blend('comments.Comment', video=video_instance)
 
         data = {
@@ -173,15 +159,15 @@ class TestTopVideosView:
 
     def test_if_view_top_videos_work_with_posting_comment_with_correct_captcha(self):
         # We populate the DB
-        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
-                    average_quality_rating=3.30)
+        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG",
+                                     average_interest_rating=4.50, average_quality_rating=3.30)
         mixer.blend('comments.Comment', video=video_instance)
 
         data = {
                 'comment-pseudo': "pseudo",
                 'comment-email': "email@dadzds.com",
                 'comment-message': "my posted message after a getting the captcha right",
-                'captcha': "7666", # This is the uncrypted value of "1234" using comments.models.decrypt()
+                'captcha': "7666",  # This is the uncrypted value of "1234" using comments.models.decrypt()
                 'video': "1",
                 'comment_sent': "",
             }
@@ -207,7 +193,6 @@ class TestRandomVideosView:
         # We populate the DB
         mixer.blend('videos.Video', pk=2, status="IN", link="2QwgLSVtYvG", average_interest_rating=6,
                     average_quality_rating=3.30)
-
 
         request = RequestFactory().get('/video-aleatoire/')
         middleware = SessionMiddleware()
@@ -352,8 +337,8 @@ class TestRandomVideosView:
 
     def test_if_view_random_video_work_with_posting_comment_with_incorrect_captcha(self):
         # We populate the DB
-        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
-                    average_quality_rating=3.30)
+        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG",
+                                     average_interest_rating=4.50, average_quality_rating=3.30)
         mixer.blend('comments.Comment', video=video_instance)
 
         data = {
@@ -382,15 +367,15 @@ class TestRandomVideosView:
 
     def test_if_view_random_video_work_with_posting_comment_with_correct_captcha(self):
         # We populate the DB
-        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
-                    average_quality_rating=3.30)
+        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG",
+                                     average_interest_rating=4.50, average_quality_rating=3.30)
         mixer.blend('comments.Comment', video=video_instance)
 
         data = {
                 'comment-pseudo': "pseudo",
                 'comment-email': "email@dadzds.com",
                 'comment-message': "my posted message after a getting the captcha right",
-                'captcha': "7666", # This is the uncrypted value of "1234" using comments.models.decrypt()
+                'captcha': "7666",  # This is the uncrypted value of "1234" using comments.models.decrypt()
                 'video': "1",
                 'comment_sent': "",
             }
@@ -412,7 +397,7 @@ class TestRandomVideosView:
 
     def test_if_view_random_video_work_with_posting_a_valid_new_video_link(self):
         # We populate the DB
-        video_instance = mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
+        mixer.blend('videos.Video', pk=1, status="IN", link="1QwgLSVtYvG", average_interest_rating=4.50,
                     average_quality_rating=3.30)
 
         data = {

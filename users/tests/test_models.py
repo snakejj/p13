@@ -4,16 +4,11 @@ import requests
 from django.contrib.sessions.middleware import SessionMiddleware
 from requests.exceptions import ConnectionError
 import responses
-
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 from mixer.backend.django import mixer
-
 from users.models import get_report_pending, get_api_usage, get_videos_count, get_comments_count, \
     get_videos_rated_count, get_rating_count
-from videos.forms import LinkForm
-from videos.models import VideoManager
-
 pytestmark = pytest.mark.django_db
 
 
@@ -28,7 +23,7 @@ def test_get_report_pending():
 
     report_pending = get_report_pending()
     assert report_pending['count'] == 4
-    assert report_pending['url'] == "/superadmin/videos/abusevideo/?report_dealt_with__exact=0"
+    assert report_pending['url'] == "/superadminvideos/abusevideo/?report_dealt_with__exact=0"
 
 
 @responses.activate
@@ -86,7 +81,7 @@ def test_get_videos_count():
     all_videos = get_videos_count()
 
     assert all_videos['count'] == 5
-    assert all_videos['url'] == "/superadmin/videos/video/"
+    assert all_videos['url'] == "/superadminvideos/video/"
 
 
 def test_get_comments_count():
@@ -96,7 +91,7 @@ def test_get_comments_count():
     all_comments = get_comments_count()
 
     assert all_comments['count'] == 2
-    assert all_comments['url'] == "/superadmin/comments/comment/"
+    assert all_comments['url'] == "/superadmincomments/comment/"
 
 
 def test_get_videos_rated_count():
@@ -112,7 +107,7 @@ def test_get_videos_rated_count():
     all_videos_rated = get_videos_rated_count()
 
     assert all_videos_rated['count'] == 6
-    assert all_videos_rated['url'] == "/superadmin/videos/video/?o=5"
+    assert all_videos_rated['url'] == "/superadminvideos/video/?o=5"
 
 
 def test_get_rating_count():
@@ -125,4 +120,4 @@ def test_get_rating_count():
     all_rating = get_rating_count()
 
     assert all_rating['count'] == 5
-    assert all_rating['url'] == "/superadmin/videos/ratevideo/"
+    assert all_rating['url'] == "/superadminvideos/ratevideo/"

@@ -1,25 +1,11 @@
-import json
-
 import pytest
-
-import requests
 from django import urls
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.contrib.sessions.models import Session
-from django.urls import reverse
-from django.views.decorators.csrf import csrf_exempt
-from requests.exceptions import ConnectionError
-import responses
-
 from django.contrib.auth.models import AnonymousUser
-from django.test import RequestFactory, Client, TestCase
+from django.test import RequestFactory
 from mixer.backend.django import mixer
-
-import videos
 from users import views
-from videos.forms import LinkForm
-from videos.models import VideoManager
-
 pytestmark = pytest.mark.django_db
 
 
@@ -30,6 +16,7 @@ def test_if_dashboard_view_is_not_working_when_not_connected():
     assert "cette page vous devez etre connec" in str(resp.getvalue()), \
         'Should display message saying that in order to display this page you must be connected'
 
+
 def test_if_dashboard_view_is_working_when_connected():
     admin = mixer.blend('auth.User', id=1)
     req = RequestFactory().get('/admin/')
@@ -38,6 +25,7 @@ def test_if_dashboard_view_is_working_when_connected():
 
     assert "Tableau de bord" in str(resp.getvalue()), \
         'Should display the dashboard'
+
 
 def test_if_logout_view_is_working():
     admin = mixer.blend('auth.User', id=1)
@@ -69,6 +57,7 @@ def test_if_login_view_is_working_with_improper_password(client):
     assert resp.status_code == 200, 'Should refresh the page'
     assert not Session.objects.exists(), 'Should not be any session if login failed'
 
+
 @pytest.mark.django_db
 def test_if_login_view_is_working_with_improper_user(client):
 
@@ -85,6 +74,7 @@ def test_if_login_view_is_working_with_improper_user(client):
 
     assert resp.status_code == 200, 'Should refresh the page'
     assert not Session.objects.exists(), 'Should not be any session if login failed'
+
 
 @pytest.mark.django_db
 def test_if_login_view_is_working_with_proper_credentials(client):
@@ -103,6 +93,7 @@ def test_if_login_view_is_working_with_proper_credentials(client):
     assert resp.status_code == 302 and resp.url == urls.reverse('users:dashboard'), \
         'Should redirect to the dashboard page'
     assert Session.objects.count() == 1, 'Should create a session for the logged in users'
+
 
 @pytest.mark.django_db
 def test_if_login_view_is_working_with_proper_credentials_but_inactive(client):

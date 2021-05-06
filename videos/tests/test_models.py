@@ -80,7 +80,6 @@ class TestVideoManager:
         mixer.blend('videos.Video', pk=9358, link="VjEKKrevKva", status="IN")    # Entry N°4 in the db
         mixer.blend('videos.Video', pk=9998, link="djOLmtIIDsn", status="IN")    # Entry N°5 in the db
 
-
         # Scenario where the API answer with a status code 200
         responses.add(
             responses.POST,
@@ -228,7 +227,7 @@ class TestVideoManager:
         })
 
         video = VideoManager()
-        return_of_the_function = video.submit_video(request, link_form)
+        return_of_the_function = video.submit_video(request, link_form_url_already_exists)
 
         assert return_of_the_function is False
 
@@ -379,7 +378,7 @@ class TestVideoManager:
         video = VideoManager()
         return_of_the_function = video.generate_share_link(request, video_link)
 
-        assert "http://www.linkedin.com/shareArticle?mini=true&url=http://testserver/video-aleatoire/?video_link=VPkbtMLzeoc" \
+        assert 'https://twitter.com/intent/tweet?url=http://testserver/video-aleatoire?video_link=VPkbtMLzeoc' \
                in return_of_the_function
 
     @pytest.mark.xfail(raises=TypeError)

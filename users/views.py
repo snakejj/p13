@@ -1,6 +1,3 @@
-import os
-
-import requests
 from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as log_out
@@ -8,29 +5,10 @@ from django.contrib.auth import login as log_in
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
-
-########################################################################################################################
-from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending, \
-    get_videos_rated_count, get_rating_count
 from videos.forms import LinkForm
 from videos.models import VideoManager
-
-
-class TokenGenerator(PasswordResetTokenGenerator):
-    pass
-
-
-generate_token = TokenGenerator()
-
-########################################################################################################################
-
-# def comments_list(request):
-#     return render(request, 'users/comments_list.html', {'title': "Liste des commentaires"})
-#
-#
-# def moderation_comment(request):
-#     return render(request, 'users/moderation-comment.html', {'title': "Modérat° commentaire"})
+from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending, \
+    get_videos_rated_count, get_rating_count
 
 
 def dashboard(request):
@@ -43,7 +21,7 @@ def dashboard(request):
     all_videos_rated = get_videos_rated_count()
     all_ratings = get_rating_count()
     top_5_videos = video.getting_top_videos(request)
-
+    print("???????????????????????????????", top_5_videos)
 
     return render(request, 'users/dashboard.html', {
         'title': "Tableau de bord",
@@ -94,6 +72,3 @@ def login(request):
             messages.error(request, "Nom d'utilisateur ou mot de passe incorrect", fail_silently=True)
     form = AuthenticationForm()
     return render(request, 'registration/login.html', {"form": form, 'title': "Connexion", 'link_form': link_form, })
-
-
-

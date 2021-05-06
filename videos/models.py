@@ -1,18 +1,14 @@
 import os
-import json
 from random import randrange
-
 import requests
+from django import urls
 from django.contrib import messages
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models import Q, F
-from django.http import HttpResponseRedirect
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
 from urllib.parse import urlparse, parse_qs
 import videos
-
-
 load_dotenv(find_dotenv())
 
 
@@ -26,7 +22,7 @@ class VideoManager(models.Manager):
         query = urlparse(raw_link)
         if query.hostname == 'youtu.be':
             clean = query.path[1:]
-            if len(clean) == 11 :
+            if len(clean) == 11:
                 return clean
         if query.hostname in {'www.youtube.com', 'youtube.com'}:
             if query.path == '/watch':
@@ -100,7 +96,7 @@ class VideoManager(models.Manager):
 
         if response is None or response.status_code != 200:
             # If there is an error with the API answer, we use a pseudo-random integer
-            random_pk = randrange(0,max_pk-1)
+            random_pk = randrange(0, max_pk-1)
             videos_list = Video.objects.filter(~Q(status="OF"))
             video = videos_list[random_pk]
 
@@ -118,7 +114,8 @@ class VideoManager(models.Manager):
                 video = videos_list[random_pk]
                 messages.success(
                     request,
-                    "L'API de randomisation a répondu en " + str(round(response.elapsed.total_seconds(), 2)) + " secondes",
+                    "L'API de randomisation a répondu en " + str(round(response.elapsed.total_seconds(), 2)) +
+                    " secondes",
                     fail_silently=True
                 )
 
@@ -194,7 +191,7 @@ class VideoManager(models.Manager):
                     request.session['has_submit_report'] = list_of_reported_video
             else:
                 # Here we do change the video's status to "RE" ("reported")
-                AbuseVideo.objects.create(video=video,reason=reason, message=message)
+                AbuseVideo.objects.create(video=video, reason=reason, message=message)
                 messages.success(request, "Votre signalement a bien été enregistré", fail_silently=True)
                 video.status = 'RE'
                 video.save()
@@ -217,7 +214,7 @@ class VideoManager(models.Manager):
         if "top-video" in request.path:
             video_link = request.session['top_video']
 
-        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), "/video-aleatoire/")
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), urls.reverse('videos:random_video'))
 
         raw_data = {
             "facebook_url": ["https://www.facebook.com/sharer/sharer.php?u=", "fab fa-facebook-square fa-2x"],
@@ -284,11 +281,6 @@ class VideoManager(models.Manager):
             )
             messages.success(request, "Votre vote a bien été enregistré", fail_silently=True)
             return True
-        # else:
-        #     messages.error(
-        #         request, "Une erreur s'est produite", fail_silently=True
-        #     )
-        #     return False
 
     def getting_top_videos(self, request):
         list_of_videos_sorted_by_ratings = Video.objects.filter(
@@ -300,7 +292,7 @@ class VideoManager(models.Manager):
             F('average_quality_rating').desc(nulls_last=True)
         )
 
-        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), request.path)
+        base_url = "{0}://{1}{2}".format(request.scheme, request.get_host(), urls.reverse('videos:top_videos'))
         top_5_videos = []
         i = 1
 
@@ -331,6 +323,7 @@ class VideoManager(models.Manager):
                 i += 1
 
         return top_5_videos
+
 
 class Video(models.Model):
     link = models.CharField(max_length=11)
@@ -404,6 +397,7 @@ class RateVideo(models.Model):
     added_on = models.DateTimeField(auto_now_add=True)
 
     RATING_CHOICES = [
+        (0, '0/10'),
         (1, '1/10'),
         (2, '2/10'),
         (3, '3/10'),

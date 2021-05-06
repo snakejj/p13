@@ -1,22 +1,9 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib import messages
-
 from comments.forms import CommentForm, CaptchaForm
 from videos.forms import LinkForm, ReportForm, RatingForm
-
 from videos.models import *
 from comments.models import *
-
 from captcha.image import ImageCaptcha
-
-
-# def videos_list(request):
-#     return render(request, 'users/videos_list.html', {'title': "Liste des vidéos"})
-#
-#
-# def moderation_video(request):
-#     return render(request, 'users/moderation-video.html', {'title': "Modérat° vidéo"})
 
 
 def top_videos(request):
@@ -155,20 +142,6 @@ def random_video(request):
     except KeyError:
         request.session['has_submit_vote'] = []
 
-
-    # if request.method == 'GET':
-    #     if 'video_link' in request.GET:
-    #         request.session['video_link'] = request.GET.get("video_link")
-    #         try:
-    #             video_shared = Video.objects.get(link=request.session['video_link'])
-    #             request.session['video_pk'] = video_shared.pk
-    #             request.session['has_shared_link'] = True
-    #         except videos.models.Video.DoesNotExist:
-    #             messages.error(
-    #                 request, "Le video n'existe pas ou plus", fail_silently=True
-    #             )
-    #             return redirect("core:home")
-
     if request.method == 'GET':
         if 'video_link' in request.GET:
             request.session['video_link'] = request.GET.get("video_link")
@@ -181,7 +154,6 @@ def random_video(request):
                         request, "Le video n'existe pas ou plus", fail_silently=True
                     )
                 return redirect("core:home")
-
 
     elif request.method == 'POST':
         if 'link_sent' in request.POST:
@@ -246,5 +218,3 @@ def random_video(request):
                 'social_links': social_links,
                 'captcha_form': captcha_form,
     })
-
-

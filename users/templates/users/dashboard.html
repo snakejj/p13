@@ -50,7 +50,7 @@
                                         </a>
                                         <ul style="padding-left: 0px">
                                         {% for element in top_5_videos %}
-                                            <a class="rank" href="http://127.0.0.1:8888/top-videos/?video_link={{ element.video_link }}" style="width: 95%;">
+                                            <a class="rank" href="{{ element.full_link }}" style="width: 95%;">
                                                 <li>
                                                         Vidéo n°{{ element.video_rank }}<br>
                                                         <span style="font-size:small;">

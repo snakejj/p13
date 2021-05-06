@@ -10,7 +10,7 @@ class CommentForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 'placeholder': "Pseudo",
-                'id':"pseudo-input",
+                'id': "pseudo-input",
                 "max_length": 100,
             }
         )
@@ -21,7 +21,7 @@ class CommentForm(forms.ModelForm):
         widget=forms.EmailInput(
             attrs={
                 'placeholder': "Email",
-                'id':"email-input",
+                'id': "email-input",
                 "max_length": 254,
             }
         )
@@ -47,7 +47,7 @@ class CaptchaForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 'placeholder': "Captcha",
-                'id':"captcha-input",
+                'id': "captcha-input",
             }
         )
     )

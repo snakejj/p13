@@ -1,11 +1,8 @@
 import hashlib
 import os
-from random import randrange
-
 from django.contrib import messages
 from dotenv import load_dotenv, find_dotenv
 from django.db import models
-
 import comments
 from videos.models import Video
 load_dotenv(find_dotenv())
@@ -63,7 +60,7 @@ class CommentManager(models.Manager):
         decrypted_captcha = str(decrypted_captcha_list).strip("[]").replace(", ", "")
         return decrypted_captcha
 
-    def get_hashed_value(self,value_to_hash):
+    def get_hashed_value(self, value_to_hash):
         value_to_hash_encoded = hashlib.sha256(value_to_hash.encode('utf-8'))
         value_to_hash_hashed = value_to_hash_encoded.hexdigest()
         return value_to_hash_hashed
@@ -110,7 +107,7 @@ class CommentManager(models.Manager):
             request.session['temp_var'] = self.encrypt(captcha_int)
             return request.session['temp_var']
 
-    def list_comments(self,request):
+    def list_comments(self, request):
         if "top-videos" in request.path:
             try:
                 video = request.session['top_video_pk']
@@ -169,4 +166,3 @@ class Comment(models.Model):
         ordering = ['-added_on']
 
     objects = CommentManager()
-
