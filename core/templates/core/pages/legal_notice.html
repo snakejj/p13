@@ -5,6 +5,57 @@
     {% include "core/layouts/_submit.html" %}
     <div id="main">
         <h3 class="subtitle">{{ title }}</h3>
+        <article style="margin:1%;">
+        <p>Voici la liste des ressources utilisés pour ce site :</p>
+         <dl>
+          <dt><a href="https://www.w3.org/html/">HTML</a></dt>
+          <dd>- Le HyperText Markup Language, généralement abrégé HTML ou dans sa dernière version HTML5, est le langage de balisage conçu pour représenter les pages web.
+            C’est un langage permettant d’écrire de l’hypertexte, d’où son nom.
+            HTML permet également de structurer sémantiquement la page, de mettre en forme le contenu, de créer des formulaires de saisie, d’inclure des ressources multimédias dont des images, des vidéos, et des programmes informatiques.
+              Il permet de créer des documents interopérables avec des équipements très variés de manière conforme aux exigences de l’accessibilité du web.
+              Il est souvent utilisé conjointement avec le langage de programmation JavaScript et des feuilles de style en cascade (CSS).
+              HTML est inspiré du Standard Generalized Markup Language (SGML).
+              Il s'agit d'un format ouvert.
+          </dd>
+          <dt><a href="https://www.w3.org/Style/CSS/">CSS</a></dt>
+          <dd>- Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML.
+              Les standards définissant CSS sont publiés par le World Wide Web Consortium (W3C).
+              Introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web et bien pris en charge par les navigateurs web dans les années 2000.
+          </dd>
+          <dt><a href="https://fontawesome.com/">Font Awesome</a></dt>
+          <dd>- Font Awesome est une police d'écriture et un outil d'icônes qui se base sur CSS, LESS et SASS. </dd>
+          <dt><a href="https://www.python.org/">Python</a></dt>
+          <dd>- Python est un langage de programmation interprété, multi-paradigme et multiplateformes.
+            Il favorise la programmation impérative structurée, fonctionnelle et orientée objet.
+            Il est doté d'un typage dynamique fort, d'une gestion automatique de la mémoire par ramasse-miettes et d'un système de gestion d'exceptions.
+          </dd>
+          <dt><a href="https://www.djangoproject.com/">Django</a></dt>
+          <dd>- Django est un cadre de développement web open source en Python.
+            Il a pour but de rendre le développement web 2.0 simple et rapide.
+            Pour cette raison, le projet a pour slogan « Le framework pour les perfectionnistes avec des deadlines. ».
+            Développé en 2003 pour le journal local de Lawrence (Kansas), Django a été publié sous licence BSD à partir de juillet 2005.
+          </dd>
+          <dt><a href="https://www.random.org/">API random.org</a></dt>
+          <dd>
+              Random.org est un site Web qui produit des nombres aléatoires, basés sur le bruit atmosphérique. Le site utilise l'API de random.org pour selectionner les vidéos à afficher de manière aléatoire.
+          </dd>
+          <dt><a href="http://gunicorn.org/">Gunicorn</a></dt>
+          <dd>
+          - Gunicorn, pour « Green Unicorn » (Licorne Verte), est un serveur web HTTP WSGI écrit en Python et disponible pour Unix.
+              Son modèle d'exécution est basé sur des sous-processus créés à l'avance, adapté du projet Ruby Unicorn.
+              Le serveur Gunicorn est compatible avec un grand nombre de frameworks web, repose sur une implémentation simple, légère en ressources et relativement rapide.
+          </dd>
+          <dt><a href="https://www.postgresql.org/">PostgreSQL</a></dt>
+          <dd>
+          - PostgreSQL est un système de gestion de base de données relationnelle et objet (SGBDRO).
+              C'est un outil libre disponible selon les termes d'une licence de type BSD.
+              Ce système est concurrent d'autres systèmes de gestion de base de données, qu'ils soient libres (comme MariaDB et Firebird), ou propriétaires (comme Oracle, MySQL, Sybase, DB2, Informix et Microsoft SQL Server).
+              Comme les projets libres Apache et Linux, PostgreSQL n'est pas contrôlé par une seule entreprise, mais est fondé sur une communauté mondiale de développeurs et d'entreprises.
+          </dd>
+
+        </dl>
+
+      </article>
     </div>
 
 {% endblock content %}
