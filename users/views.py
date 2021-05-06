@@ -21,7 +21,6 @@ def dashboard(request):
     all_videos_rated = get_videos_rated_count()
     all_ratings = get_rating_count()
     top_5_videos = video.getting_top_videos(request)
-    print("???????????????????????????????", top_5_videos)
 
     return render(request, 'users/dashboard.html', {
         'title': "Tableau de bord",
