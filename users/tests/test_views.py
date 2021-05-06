@@ -17,7 +17,6 @@ from mixer.backend.django import mixer
 
 import videos
 from users import views
-TestCase
 from videos.forms import LinkForm
 from videos.models import VideoManager
 
