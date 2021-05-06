@@ -51,13 +51,6 @@ def test_if_logout_view_is_working():
     assert resp.status_code == 302, 'Should redirect to the home page'
     assert request.user == AnonymousUser(), 'The user should be AnonymousUser'
 
-# def test_if_login_view_is_working_displaying_form():
-#     req = RequestFactory().get('/')
-#     resp = views.login(req)
-#
-#     assert "Username:" in str(resp.getvalue()), \
-#         'Should display username field label'
-
 
 @pytest.mark.django_db
 def test_if_login_view_is_working_with_improper_password(client):
