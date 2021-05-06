@@ -1,0 +1,1588 @@
+1620288452765	geckodriver	INFO	Listening on 127.0.0.1:56745
+1620288452772	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegKOvpN"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620288456228	Marionette	INFO	Listening on port 34893
+1620288456309	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:52769/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52769/, line 146: TypeError: btn is null
+1620288466754	Marionette	INFO	Stopped listening on port 34893
+1620288817809	geckodriver	INFO	Listening on 127.0.0.1:39277
+1620288818816	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiledO5gqa"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620288821995	Marionette	INFO	Listening on port 41989
+1620288822050	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:54593/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:54593/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:54593/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620288837139	Marionette	INFO	Stopped listening on port 41989
+1620289023006	geckodriver	INFO	Listening on 127.0.0.1:37657
+1620289023014	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6UPc2R"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620289026174	Marionette	INFO	Listening on port 34079
+1620289026264	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:34539/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34539/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:34539/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:34539/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620289042705	Marionette	INFO	Stopped listening on port 34079
+1620289074532	geckodriver	INFO	Listening on 127.0.0.1:46867
+1620289074540	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilevXQlp1"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620289077616	Marionette	INFO	Listening on port 36255
+1620289077699	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:46233/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46233/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:46233/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:46233/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620289091091	Marionette	INFO	Stopped listening on port 36255
+1620289831561	geckodriver	INFO	Listening on 127.0.0.1:60199
+1620289831568	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGq1aBN"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620289834499	Marionette	INFO	Listening on port 43513
+1620289834626	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:42727/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:42727/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:42727/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620289853162	Marionette	INFO	Stopped listening on port 43513
+1620289911942	geckodriver	INFO	Listening on 127.0.0.1:39791
+1620289911949	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilez9dqPJ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620289914835	Marionette	INFO	Listening on port 44895
+1620289914892	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33351/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33351/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33351/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620289919669	geckodriver	INFO	Listening on 127.0.0.1:39927
+1620289919675	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKmSjiQ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620289922718	Marionette	INFO	Listening on port 41109
+1620289922832	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33351/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33351/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33351/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620289933361	Marionette	INFO	Stopped listening on port 41109
+1620289935631	Marionette	INFO	Stopped listening on port 44895
+1620290145244	geckodriver	INFO	Listening on 127.0.0.1:51201
+1620290145252	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJb4MM9"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620290148112	Marionette	INFO	Listening on port 39923
+1620290148240	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:53907/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53907/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:53907/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:53907/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53907/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620290218784	geckodriver	INFO	Listening on 127.0.0.1:34233
+1620290218788	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7nLtPu"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620290221598	Marionette	INFO	Listening on port 32843
+1620290221723	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60431/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60431/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:60431/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60431/video-aleatoire, line 135: TypeError: btn is null
+1620290228960	Marionette	INFO	Stopped listening on port 32843
+1620290229933	Marionette	INFO	Stopped listening on port 39923
+1620290693297	geckodriver	INFO	Listening on 127.0.0.1:57767
+1620290693303	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilen07j5b"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620290696371	Marionette	INFO	Listening on port 39529
+1620290696459	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:34993/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34993/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:34993/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34993/video-aleatoire, line 135: TypeError: btn is null
+1620290701082	Marionette	INFO	Stopped listening on port 39529
+1620290850824	geckodriver	INFO	Listening on 127.0.0.1:32799
+1620290850832	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebqiwIs"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620290854013	Marionette	INFO	Listening on port 35851
+1620290854088	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:40653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:40653/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:40653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:40653/video-aleatoire, line 135: TypeError: btn is null
+1620291101841	geckodriver	INFO	Listening on 127.0.0.1:52763
+1620291101849	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile55w4AL"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620291104837	Marionette	INFO	Listening on port 39587
+1620291104898	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60029/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60029/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:60029/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60029/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:60029/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60029/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:60029/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620291119726	Marionette	INFO	Stopped listening on port 39587
+console.info: MINT: main/search-config update being skipped
+1620291174041	Marionette	INFO	Stopped listening on port 35851
+1620291193412	geckodriver	INFO	Listening on 127.0.0.1:59117
+1620291193418	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewVlGol"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620291196206	Marionette	INFO	Listening on port 36915
+1620291196263	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:34607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34607/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:34607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34607/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:34607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:34607/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:34607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620291426213	geckodriver	INFO	Listening on 127.0.0.1:34265
+1620291426219	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFWgYdB"
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1620291427808	Marionette	INFO	Stopped listening on port 36915
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620291429540	Marionette	INFO	Listening on port 44119
+1620291429666	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:48101/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48101/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:48101/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48101/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48101/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48101/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48101/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620291447692	Marionette	INFO	Stopped listening on port 44119
+1620292434893	geckodriver	INFO	Listening on 127.0.0.1:59613
+1620292434899	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilecZKlxr"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292438025	Marionette	INFO	Listening on port 37679
+1620292438136	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59999/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59999/, line 146: TypeError: btn is null
+1620292448850	Marionette	INFO	Stopped listening on port 37679
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620292450188	geckodriver	INFO	Listening on 127.0.0.1:37747
+1620292450195	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegN70R4"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292452972	Marionette	INFO	Listening on port 36379
+1620292453043	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59999/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59999/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:59999/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59999/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:59999/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59999/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:59999/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620292462389	Marionette	INFO	Stopped listening on port 36379
+1620292523025	geckodriver	INFO	Listening on 127.0.0.1:59825
+1620292523031	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8ugUFc"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292525957	Marionette	INFO	Listening on port 33429
+1620292526077	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:45225/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45225/, line 146: TypeError: btn is null
+1620292536759	Marionette	INFO	Stopped listening on port 33429
+console.warn: "Async method failed in safeAsyncMethod" (new Error("Connection closed, pending request to server0.conn0.child3/customhighlighter70, type hide failed\n\nRequest stack:\nrequest@resource://devtools/shared/protocol/Front.js:288:14\ngenerateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:46:19\nhide@resource://devtools/client/fronts/highlighters.js:32:18\nexports.safeAsyncMethod/<@resource://devtools/shared/async-utils.js:57:25\nhideHighlighterType@resource://devtools/client/inspector/shared/highlighters-overlay.js:636:23\nexports.safeAsyncMethod/<@resource://devtools/shared/async-utils.js:57:25\n_hideBoxModel@resource://devtools/client/inspector/markup/markup.js:732:40\n_onMouseOut@resource://devtools/client/inspector/markup/markup.js:700:16\nobserve@resource://gre/modules/AsyncShutdown.jsm:573:16\nGeckoDriver.prototype.quit@chrome://marionette/content/driver.js:3598:20\ndespatch@chrome://marionette/content/server.js:297:40\nexecute@chrome://marionette/content/server.js:267:16\nonPacket/<@chrome://marionette/content/server.js:240:20\nonPacket@chrome://marionette/content/server.js:241:9\n_onJSONObjectReady/<@chrome://marionette/content/transport.js:504:20\n", "resource://devtools/shared/protocol/Front.js", 99))
+1620292538307	geckodriver	INFO	Listening on 127.0.0.1:36165
+1620292538314	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejFFi3o"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292541220	Marionette	INFO	Listening on port 32957
+1620292541350	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:45225/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45225/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:45225/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45225/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45225/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45225/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45225/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.info: MINT: main/search-config update being skipped
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1620292963996	geckodriver	INFO	Listening on 127.0.0.1:34075
+1620292964002	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileqiuSkx"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292967101	Marionette	INFO	Listening on port 46441
+1620292967172	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47509/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47509/connexion, line 143: TypeError: btn is null
+1620292968491	geckodriver	INFO	Listening on 127.0.0.1:44911
+1620292968497	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFJa7me"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620292971317	Marionette	INFO	Listening on port 43753
+1620292971443	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47509/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47509/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47509/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/whats-new-panel Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1620292978305	Marionette	INFO	Stopped listening on port 43753
+1620292980376	Marionette	INFO	Stopped listening on port 46441
+1620293178044	geckodriver	INFO	Listening on 127.0.0.1:34959
+1620293178050	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7h30tI"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293181113	Marionette	INFO	Listening on port 33889
+1620293181185	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/connexion, line 151: TypeError: btn is null
+1620293182516	geckodriver	INFO	Listening on 127.0.0.1:41081
+1620293182522	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7BvbsM"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293185556	Marionette	INFO	Listening on port 36241
+1620293185661	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58819/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58819/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620293231363	geckodriver	INFO	Listening on 127.0.0.1:52495
+1620293231371	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewBWiq0"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293234362	Marionette	INFO	Listening on port 33577
+1620293234405	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/connexion, line 151: TypeError: btn is null
+1620293235942	geckodriver	INFO	Listening on 127.0.0.1:51735
+1620293235950	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFttFdm"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293238843	Marionette	INFO	Listening on port 44225
+1620293238919	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:49581/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:49581/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620293244931	Marionette	INFO	Stopped listening on port 32957
+1620293246588	Marionette	INFO	Stopped listening on port 33889
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620293248292	Marionette	INFO	Stopped listening on port 36241
+1620293249972	Marionette	INFO	Stopped listening on port 33577
+1620293253289	Marionette	INFO	Stopped listening on port 44225
+1620293408795	geckodriver	INFO	Listening on 127.0.0.1:41935
+1620293408805	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJDyMDE"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293412135	Marionette	INFO	Listening on port 46555
+1620293412244	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/connexion, line 151: TypeError: btn is null
+1620293413619	geckodriver	INFO	Listening on 127.0.0.1:37847
+1620293413625	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileojR22i"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293416343	Marionette	INFO	Listening on port 37057
+1620293416499	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48615/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48615/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.info: MINT: main/search-config update being skipped
+console.info: MINT: main/search-config update being skipped
+1620293709819	Marionette	INFO	Stopped listening on port 46555
+1620293726793	Marionette	INFO	Stopped listening on port 37057
+1620293730875	geckodriver	INFO	Listening on 127.0.0.1:56583
+1620293730883	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEyVEBh"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293734001	Marionette	INFO	Listening on port 46655
+1620293734136	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/connexion, line 151: TypeError: btn is null
+1620293735503	geckodriver	INFO	Listening on 127.0.0.1:37023
+1620293735507	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1kZdq2"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293738326	Marionette	INFO	Listening on port 40571
+1620293738439	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33891/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33891/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620293741567	Marionette	INFO	Stopped listening on port 46655
+1620293757448	Marionette	INFO	Stopped listening on port 40571
+1620293762237	geckodriver	INFO	Listening on 127.0.0.1:44765
+1620293762243	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGaLVRt"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293765389	Marionette	INFO	Listening on port 37297
+1620293765484	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/connexion, line 151: TypeError: btn is null
+1620293766784	geckodriver	INFO	Listening on 127.0.0.1:59283
+1620293766790	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile9npZro"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620293769626	Marionette	INFO	Listening on port 43209
+1620293769740	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55235/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55235/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620293784035	Marionette	INFO	Stopped listening on port 37297
+1620293786335	Marionette	INFO	Stopped listening on port 43209
+1620294195832	geckodriver	INFO	Listening on 127.0.0.1:48453
+1620294195840	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefCJFeh"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294198731	Marionette	INFO	Listening on port 44725
+1620294198785	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58475/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58475/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58475/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:58475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620294214683	Marionette	INFO	Stopped listening on port 44725
+1620294239355	geckodriver	INFO	Listening on 127.0.0.1:44825
+1620294239364	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePTzCo9"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294242171	Marionette	INFO	Listening on port 43789
+1620294242310	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:37085/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37085/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:37085/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37085/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:37085/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37085/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:37085/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294248220	Marionette	INFO	Stopped listening on port 43789
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620294406400	geckodriver	INFO	Listening on 127.0.0.1:55917
+1620294406406	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewXgMmk"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294409378	Marionette	INFO	Listening on port 38157
+1620294409451	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:51421/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51421/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:51421/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51421/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51421/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51421/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51421/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294415207	Marionette	INFO	Stopped listening on port 38157
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620294489618	geckodriver	INFO	Listening on 127.0.0.1:47111
+1620294489625	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezK6Kp4"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294492490	Marionette	INFO	Listening on port 40413
+1620294492561	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55475/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55475/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55475/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55475/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294498596	Marionette	INFO	Stopped listening on port 40413
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620294512297	geckodriver	INFO	Listening on 127.0.0.1:47413
+1620294512305	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileggcLee"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294515447	Marionette	INFO	Listening on port 35807
+1620294515544	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58509/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58509/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58509/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:58509/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620294531365	Marionette	INFO	Stopped listening on port 35807
+1620294541092	geckodriver	INFO	Listening on 127.0.0.1:53673
+1620294541100	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVDkOTU"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294543983	Marionette	INFO	Listening on port 40121
+1620294544067	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:60691/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60691/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:60691/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60691/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:60691/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:60691/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:60691/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294550145	Marionette	INFO	Stopped listening on port 40121
+1620294583134	geckodriver	INFO	Listening on 127.0.0.1:42369
+1620294583141	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJifOyp"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294586155	Marionette	INFO	Listening on port 33833
+1620294586276	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:41763/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41763/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:41763/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41763/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41763/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41763/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41763/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294591554	Marionette	INFO	Stopped listening on port 33833
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620294608180	geckodriver	INFO	Listening on 127.0.0.1:33383
+1620294608188	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEjY47i"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294611100	Marionette	INFO	Listening on port 34675
+1620294611233	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55527/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55527/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55527/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55527/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55527/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55527/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55527/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294616627	Marionette	INFO	Stopped listening on port 34675
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  Error: Shutdown, aborting read-only worker requests.
+1620294809428	geckodriver	INFO	Listening on 127.0.0.1:34723
+1620294809436	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMmHmNe"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294812425	Marionette	INFO	Listening on port 36949
+1620294812471	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33177/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33177/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33177/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33177/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33177/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33177/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33177/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:33177/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620294827023	Marionette	INFO	Stopped listening on port 36949
+1620294840583	geckodriver	INFO	Listening on 127.0.0.1:51995
+1620294840590	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuw6Akf"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294843748	Marionette	INFO	Listening on port 45855
+1620294843848	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:37905/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37905/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:37905/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37905/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:37905/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:37905/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:37905/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294849211	Marionette	INFO	Stopped listening on port 45855
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620294899820	geckodriver	INFO	Listening on 127.0.0.1:35617
+1620294899827	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekqdiiq"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294902818	Marionette	INFO	Listening on port 39047
+1620294902871	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:56877/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:56877/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:56877/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:56877/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:56877/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:56877/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:56877/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:56877/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620294914052	Marionette	INFO	Stopped listening on port 39047
+1620294917625	geckodriver	INFO	Listening on 127.0.0.1:42275
+1620294917632	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZXHxR4"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620294920706	Marionette	INFO	Listening on port 40367
+1620294920779	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:41653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41653/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:41653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41653/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41653/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41653/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620294927609	Marionette	INFO	Stopped listening on port 40367
+1620296032214	geckodriver	INFO	Listening on 127.0.0.1:45291
+1620296032222	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileop1mYK"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296035457	Marionette	INFO	Listening on port 45909
+1620296035563	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:42249/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:42249/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:42249/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:42249/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:42249/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:42249/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:42249/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: http://localhost:42249/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+1620296046371	Marionette	INFO	Stopped listening on port 45909
+1620296055222	geckodriver	INFO	Listening on 127.0.0.1:51829
+1620296055228	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileY37Lay"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296058060	Marionette	INFO	Listening on port 38457
+1620296058217	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:38295/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:38295/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:38295/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:38295/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:38295/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:38295/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:38295/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620296064241	Marionette	INFO	Stopped listening on port 38457
+1620296097082	geckodriver	INFO	Listening on 127.0.0.1:37423
+1620296097089	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6ipyFV"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296099995	Marionette	INFO	Listening on port 33313
+1620296100030	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:36511/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36511/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:36511/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36511/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36511/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36511/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36511/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620296105342	Marionette	INFO	Stopped listening on port 33313
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620296118923	geckodriver	INFO	Listening on 127.0.0.1:48915
+1620296118929	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWd8fuO"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296121792	Marionette	INFO	Listening on port 44203
+1620296121866	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:36803/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36803/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:36803/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36803/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36803/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36803/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36803/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620296127224	Marionette	INFO	Stopped listening on port 44203
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/whats-new-panel Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1620296156273	geckodriver	INFO	Listening on 127.0.0.1:56127
+1620296156280	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileD6Wncj"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296159189	Marionette	INFO	Listening on port 36395
+1620296159221	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:51761/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51761/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:51761/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51761/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51761/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51761/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51761/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620296164611	Marionette	INFO	Stopped listening on port 36395
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620296417028	geckodriver	INFO	Listening on 127.0.0.1:60933
+1620296417035	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilenJF6CY"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296419995	Marionette	INFO	Listening on port 39789
+1620296420079	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:44105/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:44105/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:44105/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:44105/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:44105/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:44105/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:44105/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620296426647	Marionette	INFO	Stopped listening on port 39789
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620296993625	geckodriver	INFO	Listening on 127.0.0.1:53841
+1620296993633	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4KyEcl"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620296996687	Marionette	INFO	Listening on port 37905
+1620296996778	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:51609/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51609/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:51609/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51609/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51609/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51609/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51609/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297007458	Marionette	INFO	Stopped listening on port 37905
+1620297043334	geckodriver	INFO	Listening on 127.0.0.1:44979
+1620297043341	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2u61EJ"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620297046425	Marionette	INFO	Listening on port 43817
+1620297046510	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:52211/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52211/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:52211/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52211/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:52211/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52211/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:52211/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297055080	Marionette	INFO	Stopped listening on port 43817
+1620297408985	geckodriver	INFO	Listening on 127.0.0.1:50053
+1620297408992	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNnMBB4"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620297412179	Marionette	INFO	Listening on port 40225
+1620297412233	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33505/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33505/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33505/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33505/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33505/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33505/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33505/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297418362	Marionette	INFO	Stopped listening on port 40225
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+1620297513253	geckodriver	INFO	Listening on 127.0.0.1:35443
+1620297513261	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepCatSa"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620297516407	Marionette	INFO	Listening on port 45677
+1620297516499	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:33699/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33699/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:33699/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33699/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33699/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:33699/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:33699/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297660774	geckodriver	INFO	Listening on 127.0.0.1:51799
+1620297661780	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOLM024"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620297664948	Marionette	INFO	Listening on port 40391
+1620297665016	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58313/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58313/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58313/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58313/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58313/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58313/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58313/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297705737	geckodriver	INFO	Listening on 127.0.0.1:52217
+1620297705746	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileqa1ObA"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620297708865	Marionette	INFO	Listening on port 40819
+1620297708989	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:41981/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41981/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:41981/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41981/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41981/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:41981/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:41981/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620297714819	Marionette	INFO	Stopped listening on port 40819
+console.info: MINT: main/search-config update being skipped
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+console.info: MINT: main/search-config update being skipped
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1620298126473	geckodriver	INFO	Listening on 127.0.0.1:36495
+1620298126480	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileS8YAhm"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298129672	Marionette	INFO	Listening on port 34005
+1620298129745	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:36837/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36837/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:36837/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36837/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36837/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:36837/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:36837/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298142809	Marionette	INFO	Stopped listening on port 34005
+1620298151149	Marionette	INFO	Stopped listening on port 45677
+1620298152510	Marionette	INFO	Stopped listening on port 40391
+1620298359528	geckodriver	INFO	Listening on 127.0.0.1:33917
+1620298359534	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6ac4WP"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298362600	Marionette	INFO	Listening on port 38023
+1620298362674	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:45327/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45327/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:45327/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45327/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45327/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45327/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45327/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298368700	Marionette	INFO	Stopped listening on port 38023
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620298422516	geckodriver	INFO	Listening on 127.0.0.1:52789
+1620298422522	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewwY0PX"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298426000	Marionette	INFO	Listening on port 45149
+1620298426076	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:47923/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47923/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:47923/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47923/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47923/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47923/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47923/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298652205	geckodriver	INFO	Listening on 127.0.0.1:57889
+1620298652211	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileBOcng3"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298655144	Marionette	INFO	Listening on port 34909
+1620298655286	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/connexion, line 151: TypeError: btn is null
+1620298657681	geckodriver	INFO	Listening on 127.0.0.1:60715
+1620298657688	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7rfybM"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298660695	Marionette	INFO	Listening on port 46259
+1620298660736	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:55841/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:55841/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298666146	Marionette	INFO	Stopped listening on port 46259
+1620298668343	Marionette	INFO	Stopped listening on port 34909
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620298672895	Marionette	INFO	Stopped listening on port 45149
+1620298700555	geckodriver	INFO	Listening on 127.0.0.1:35247
+1620298700563	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileqVVCwM"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298703693	Marionette	INFO	Listening on port 39505
+1620298703797	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/admin, line 238: TypeError: btn is null
+1620298706521	geckodriver	INFO	Listening on 127.0.0.1:40159
+1620298706527	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5al41w"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298709309	Marionette	INFO	Listening on port 43097
+1620298709365	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:59747/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:59747/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://devtools/shared/protocol/Front.js, line 99: Error: Connection closed, pending request to server0.conn0.child3/domnode77, type setNodeValue failed
+
+Request stack:
+request@resource://devtools/shared/protocol/Front.js:288:14
+generateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:46:19
+showTextEditor/done/</<@resource://devtools/client/inspector/markup/views/text-editor.js:101:25
+do@resource://devtools/client/shared/undo.js:70:16
+endBatch@resource://devtools/client/shared/undo.js:81:11
+do@resource://devtools/client/shared/undo.js:93:10
+showTextEditor/done/<@resource://devtools/client/inspector/markup/views/text-editor.js:99:31
+process@resource://gre/modules/Promise-backend.js:961:38
+walkerLoop@resource://gre/modules/Promise-backend.js:845:29
+Promise*scheduleWalkerLoop@resource://gre/modules/Promise-backend.js:775:19
+schedulePromise@resource://gre/modules/Promise-backend.js:809:12
+completePromise@resource://gre/modules/Promise-backend.js:741:12
+
+1620298730297	Marionette	INFO	Stopped listening on port 39505
+1620298732738	Marionette	INFO	Stopped listening on port 43097
+1620298805873	geckodriver	INFO	Listening on 127.0.0.1:55071
+1620298805880	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVDpYmc"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298808872	Marionette	INFO	Listening on port 39571
+1620298808922	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/admin, line 238: TypeError: btn is null
+1620298811688	geckodriver	INFO	Listening on 127.0.0.1:52875
+1620298811695	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileo0VaEy"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298814395	Marionette	INFO	Listening on port 46559
+1620298814430	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:45497/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:45497/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298859812	Marionette	INFO	Stopped listening on port 39571
+1620298862283	Marionette	INFO	Stopped listening on port 46559
+1620298865367	geckodriver	INFO	Listening on 127.0.0.1:35921
+1620298865374	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebAmWEj"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298868459	Marionette	INFO	Listening on port 44291
+1620298868531	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/admin, line 238: TypeError: btn is null
+1620298871163	geckodriver	INFO	Listening on 127.0.0.1:55003
+1620298871169	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexGPwTb"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620298874140	Marionette	INFO	Listening on port 42279
+1620298874202	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:50617/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:50617/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620298888894	Marionette	INFO	Stopped listening on port 42279
+1620298985203	Marionette	INFO	Stopped listening on port 44291
+1620299009445	geckodriver	INFO	Listening on 127.0.0.1:44363
+1620299009453	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegAnJjL"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299012499	Marionette	INFO	Listening on port 38811
+1620299012602	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/admin, line 238: TypeError: btn is null
+1620299015077	geckodriver	INFO	Listening on 127.0.0.1:55211
+1620299015087	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5zJTjy"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299017965	Marionette	INFO	Listening on port 44863
+1620299018032	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58567/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58567/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299026240	Marionette	INFO	Stopped listening on port 44863
+1620299027769	Marionette	INFO	Stopped listening on port 38811
+1620299222250	geckodriver	INFO	Listening on 127.0.0.1:40773
+1620299222258	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEWfWL3"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299225215	Marionette	INFO	Listening on port 33415
+1620299225307	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/admin, line 238: TypeError: btn is null
+1620299228191	geckodriver	INFO	Listening on 127.0.0.1:49271
+1620299228196	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileaizqiM"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299231045	Marionette	INFO	Listening on port 44877
+1620299231137	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:58991/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:58991/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299333508	Marionette	INFO	Stopped listening on port 33415
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620299335083	Marionette	INFO	Stopped listening on port 44877
+1620299368521	geckodriver	INFO	Listening on 127.0.0.1:60621
+1620299368527	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileogpAWb"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299371378	Marionette	INFO	Listening on port 33173
+1620299371497	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/admin, line 238: TypeError: btn is null
+1620299374223	geckodriver	INFO	Listening on 127.0.0.1:55129
+1620299374229	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejTqFkx"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299377000	Marionette	INFO	Listening on port 45947
+1620299377071	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:46665/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:46665/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.info: MINT: main/search-config update being skipped
+console.info: MINT: main/search-config update being skipped
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1620299773879	geckodriver	INFO	Listening on 127.0.0.1:39245
+1620299773888	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileDxAL8f"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299777008	Marionette	INFO	Listening on port 43263
+1620299777127	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/connexion, line 143: TypeError: btn is null
+1620299784013	geckodriver	INFO	Listening on 127.0.0.1:57143
+1620299784018	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebBPqZ3"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299787439	Marionette	INFO	Listening on port 45005
+1620299787507	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:48435/admin, line 121: TypeError: btn is null
+JavaScript error: http://localhost:48435/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299800475	Marionette	INFO	Stopped listening on port 45005
+1620299805977	Marionette	INFO	Stopped listening on port 43263
+1620299825132	geckodriver	INFO	Listening on 127.0.0.1:47595
+1620299825140	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0zXquI"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299828353	Marionette	INFO	Listening on port 41401
+1620299828493	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/admin, line 238: TypeError: btn is null
+1620299834330	geckodriver	INFO	Listening on 127.0.0.1:53387
+1620299834335	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilex5qiBA"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299837499	Marionette	INFO	Listening on port 38431
+1620299837598	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:53607/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:53607/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299858456	Marionette	INFO	Stopped listening on port 41401
+1620299860981	Marionette	INFO	Stopped listening on port 38431
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1620299873608	geckodriver	INFO	Listening on 127.0.0.1:36059
+1620299873614	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuMbgNM"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299876443	Marionette	INFO	Listening on port 39075
+1620299876567	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/admin, line 238: TypeError: btn is null
+1620299879688	geckodriver	INFO	Listening on 127.0.0.1:40429
+1620299879693	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEzwN1K"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299882502	Marionette	INFO	Listening on port 38401
+1620299882572	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:47151/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:47151/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299892465	Marionette	INFO	Stopped listening on port 33173
+1620299894467	Marionette	INFO	Stopped listening on port 45947
+1620299896625	Marionette	INFO	Stopped listening on port 39075
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 988: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+1620299898892	Marionette	INFO	Stopped listening on port 38401
+1620299913982	geckodriver	INFO	Listening on 127.0.0.1:50969
+1620299913990	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZN4ktg"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299917040	Marionette	INFO	Listening on port 42797
+1620299917142	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/admin, line 238: TypeError: btn is null
+1620299922592	geckodriver	INFO	Listening on 127.0.0.1:38599
+1620299922597	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesdAAHD"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620299925630	Marionette	INFO	Listening on port 39529
+1620299925734	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:52901/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:52901/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620299935643	Marionette	INFO	Stopped listening on port 39529
+1620299936682	Marionette	INFO	Stopped listening on port 42797
+1620300030327	geckodriver	INFO	Listening on 127.0.0.1:47231
+1620300030332	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8fW84f"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620300033176	Marionette	INFO	Listening on port 41113
+1620300033289	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/connexion, line 143: TypeError: btn is null
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/admin, line 238: TypeError: btn is null
+1620300035934	geckodriver	INFO	Listening on 127.0.0.1:43349
+1620300035939	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekJoyT1"
+console.info: MINT: Trying to use the system region (based on LANG).
+console.info: MINT: System region is GB
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.info: MINT: Loading search-config defaults.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1620300038975	Marionette	INFO	Listening on port 33777
+1620300039132	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/, line 146: TypeError: btn is null
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: http://localhost:51825/video-aleatoire, line 135: TypeError: btn is null
+JavaScript error: http://localhost:51825/static/DataTables/datatables.min.js, line 33: ReferenceError: jQuery is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1620300067893	Marionette	INFO	Stopped listening on port 33777
+1620300069542	Marionette	INFO	Stopped listening on port 41113
