@@ -1,0 +1,8 @@
+pytest~=6.2.3
+Django~=3.1.7
+mixer~=7.1.2
+requests~=2.25.1
+responses~=0.13.3
+python-dotenv~=0.16.0
+captcha~=0.3
+selenium~=3.141.0
