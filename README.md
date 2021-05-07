@@ -47,13 +47,36 @@ SENTRY_DSN : The sentry url used to monitor the app
 Once transferred to your host, you will need to use theses commands:
 
    
-_In order to set the database:_    
+1°) _In order to set the database:_    
 ```bash
 python3 manage.py makemigrations
 
 python3 manage.py migrate 
 ```
 
+2°) _Then we take care of the static files:_
+```bash
+python3 manage.py collectstatic
+```
+It may give you a warning, don't worry just say yes:
+```bash
+You have requested to collect static files at the destination
+location as specified in your settings:
+
+    [...]/core/static
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+```
+3°) _We then need to create a superuser:_
+```bash
+python3 manage.py createsuperuser
+```
+
+You're now good to go. Nevertheless we advise you to "prime" the website by filling the database with some videos you 
+deem interesting so that first users get some interesting videos which will encourage them to see more and therefore 
+post some more videos etc...
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to 
