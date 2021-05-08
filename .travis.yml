@@ -1,0 +1,29 @@
+language: python
+python:
+  - '3.8.5'
+
+services:
+  - postgresql
+
+addons:
+  firefox: latest
+
+branches:
+  only:
+    - staging
+
+install:
+  - pip install tchappui-webdrivers
+
+before_script:
+  - pip install -r requirements.txt
+  - install-webdrivers --path webdrivers
+  - ls -a
+
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="bubble.settings.travis"
+
+script:
+  - pytest functional_tests/functional_tests.py
+  - pytest -v
