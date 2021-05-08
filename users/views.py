@@ -14,7 +14,7 @@ from users.models import get_api_usage, get_videos_count, get_comments_count, ge
 def dashboard(request):
     video = VideoManager()
 
-    nb_requests_used = get_api_usage(request)
+    nb_requests_used, daily_api_limit = get_api_usage(request)
     all_videos = get_videos_count()
     all_comments = get_comments_count()
     report_pending = get_report_pending()
@@ -26,6 +26,7 @@ def dashboard(request):
         'title': "Tableau de bord",
         'report_pending': report_pending,
         'nb_requests': nb_requests_used,
+        'daily_api_limit': daily_api_limit,
         'all_videos': all_videos,
         'all_comments': all_comments,
         'all_videos_rated': all_videos_rated,

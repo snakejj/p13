@@ -55,10 +55,12 @@ def test_get_api_usage_expected():
     req = RequestFactory().get('/admin/')
     req.user = AnonymousUser()
 
-    nb_requests_used = get_api_usage(req)
+    nb_requests_used, api_daily_limit = get_api_usage(req)
 
     assert nb_requests_used == int(os.getenv("API_DAILY_LIMIT")) - 458, \
         'Should return the value of the api_daily_limit (1000) minus the "requestsLeft" (458), so 1000-458= 542 '
+    assert api_daily_limit == int(os.getenv("API_DAILY_LIMIT")), \
+        'Should return the value of the api_daily_limit variable located in the .env file'
 
 
 @responses.activate
@@ -70,9 +72,11 @@ def test_get_api_usage_when_api_does_not_answer_or_not_as_expected():
     middleware.process_request(request)
     request.session.save()
 
-    nb_requests_used = get_api_usage(request)
+    nb_requests_used, api_daily_limit = get_api_usage(request)
 
     assert nb_requests_used is None
+    assert api_daily_limit == int(os.getenv("API_DAILY_LIMIT")), \
+        'Should return the value of the api_daily_limit variable located in the .env file'
 
 
 def test_get_videos_count():

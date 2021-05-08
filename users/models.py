@@ -41,6 +41,9 @@ def get_api_usage(request):
 
     except (requests.exceptions.ConnectionError, requests.Timeout):
         response = None
+
+    api_daily_limit = int(os.getenv("API_DAILY_LIMIT"))
+
     if response is None or response.status_code != 200:
         # If there is an error with the API answer, we assign None to request_left
 
@@ -52,12 +55,10 @@ def get_api_usage(request):
         nb_requests_used = None
     else:
         # If the API answer, we assign the API result to requests_left
-        print(response.json())
         requests_left = response.json()["result"]["requestsLeft"]
-        api_daily_limit = int(os.getenv("API_DAILY_LIMIT"))
         nb_requests_used = api_daily_limit - requests_left
 
-    return nb_requests_used
+    return nb_requests_used, api_daily_limit
 
 
 def get_videos_count():
