@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 import requests
@@ -9,6 +11,8 @@ from django.test import RequestFactory
 from mixer.backend.django import mixer
 from users.models import get_report_pending, get_api_usage, get_videos_count, get_comments_count, \
     get_videos_rated_count, get_rating_count
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 pytestmark = pytest.mark.django_db
 
 
@@ -53,8 +57,8 @@ def test_get_api_usage_expected():
 
     nb_requests_used = get_api_usage(req)
 
-    assert nb_requests_used == 1000 - 458, \
-        'Should return the value of the api_monthly_limit (1000) minus the "requestsLeft" (458), so 1000-458= 542 '
+    assert nb_requests_used == int(os.getenv("API_DAILY_LIMIT")) - 458, \
+        'Should return the value of the api_daily_limit (1000) minus the "requestsLeft" (458), so 1000-458= 542 '
 
 
 @responses.activate

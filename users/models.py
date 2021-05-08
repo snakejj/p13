@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.db.models import Q
 from comments.models import Comment
 from videos.models import Video, AbuseVideo, RateVideo
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 
 def get_report_pending():
@@ -50,9 +52,10 @@ def get_api_usage(request):
         nb_requests_used = None
     else:
         # If the API answer, we assign the API result to requests_left
+        print(response.json())
         requests_left = response.json()["result"]["requestsLeft"]
-        api_monthly_limit = 1000
-        nb_requests_used = api_monthly_limit - requests_left
+        api_daily_limit = int(os.getenv("API_DAILY_LIMIT"))
+        nb_requests_used = api_daily_limit - requests_left
 
     return nb_requests_used
 

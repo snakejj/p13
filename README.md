@@ -31,8 +31,9 @@ pip install -r requirements.txt
 
 ## Configuration :
 
-You will need to provide theses environment variables :
+You will need to create a ".env" file at the root of the project, and provide theses environment variables :
 
+```
 SECRET_KEY : the Django secret key  
 DEBUG_PROD : The value should be False  
 DEBUG : The value should be True  
@@ -40,9 +41,11 @@ DB_NAME : The name of the database
 DB_USER : The user associated to the database  
 DB_PASSWORD : The password associated to the user  
 DB_HOST : Host of your database  
-RANDOM_API_KEY= The Random.org API Key  
 CAPTCHA_SECRET_KEY= A secret key (4 is enough) which helps encrypt the captcha value before it's stored in user session  
-SENTRY_DSN : The sentry url used to monitor the app
+SENTRY_DSN : The sentry url used to monitor the app  
+RANDOM_API_KEY= The Random.org API Key # The free plan gives you 1000 request per day
+API_DAILY_LIMIT : The Random.org API daily limit # The free plan gives you 1000 request per day
+```
 
 Once transferred to your host, you will need to use theses commands:
 
@@ -77,6 +80,10 @@ python3 manage.py createsuperuser
 You're now good to go. Nevertheless we advise you to "prime" the website by filling the database with some videos you 
 deem interesting so that first users get some interesting videos which will encourage them to see more and therefore 
 post some more videos etc...
+
+#### Random.org API
+
+The 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to 
