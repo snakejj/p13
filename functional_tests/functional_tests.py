@@ -40,7 +40,7 @@ class FunctionalTests(StaticLiveServerTestCase):
         super().tearDownClass()
         cls.driver.quit()
 
-    def test_submit_video(self):
+    def test_submit_an_incorrect_link_video(self):
         self.driver.get(self.live_server_url)
         WebDriverWait(self.driver, 10)
 
@@ -64,6 +64,12 @@ class FunctionalTests(StaticLiveServerTestCase):
         assert "Vidéo aléatoire" in self.driver.title
         assert "Le lien est incorrect, merci de founir un lien Youtube valide" in self.driver.page_source
 
+    def test_submit_video_which_already_exists_in_db(self):
+        self.driver.get(self.live_server_url)
+        WebDriverWait(self.driver, 10)
+
+        assert "Accueil" in self.driver.title
+
         # Submit a video which already exists in db
         try:
             link_to_login_page = WebDriverWait(self.driver, 10).until(
@@ -81,6 +87,12 @@ class FunctionalTests(StaticLiveServerTestCase):
 
         assert "Vidéo aléatoire" in self.driver.title
         assert "merci de proposer une autre" in self.driver.page_source
+
+    def test_submit_valid_video_which_doesnt_exist_in_db(self):
+        self.driver.get(self.live_server_url)
+        WebDriverWait(self.driver, 10)
+
+        assert "Accueil" in self.driver.title
 
         # Submit a video which doesn't exist
         try:
