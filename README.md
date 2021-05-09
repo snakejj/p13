@@ -62,7 +62,7 @@ python3 manage.py migrate
 python3 manage.py collectstatic
 ```
 It may give you a warning, don't worry just say yes:
-```bash
+```
 You have requested to collect static files at the destination
 location as specified in your settings:
 
@@ -81,9 +81,6 @@ You're now good to go. Nevertheless we advise you to "prime" the website by fill
 deem interesting so that first users get some interesting videos which will encourage them to see more and therefore 
 post some more videos etc...
 
-#### Random.org API
-
-The 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to 
