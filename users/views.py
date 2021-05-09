@@ -64,7 +64,7 @@ def login(request):
                     if user is not None:
                         log_in(request, user)
                         messages.info(request, f"Bienvenue {username} !", fail_silently=True)
-                        return redirect('/admin')
+                        return redirect('users:dashboard')
 
                 else:
                     messages.error(request, "Nom d'utilisateur ou mot de passe incorrect", fail_silently=True)
