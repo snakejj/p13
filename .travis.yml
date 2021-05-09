@@ -18,7 +18,6 @@ install:
 before_script:
   - pip install -r requirements.txt
   - install-webdrivers --path webdrivers
-  - ls -a
 
 env:
   global:
