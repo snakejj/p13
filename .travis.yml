@@ -17,8 +17,6 @@ install:
 
 before_script:
   - pip install -r requirements.txt
-  - pip install pytest-cov
-  - pip install pytest-django
   - install-webdrivers --path webdrivers
   - ls -a
 
