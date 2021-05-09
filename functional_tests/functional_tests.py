@@ -71,7 +71,7 @@ class FunctionalTests(StaticLiveServerTestCase):
             self.driver.quit()
 
         assert "Vidéo aléatoire" in self.driver.title
-        assert "La vidéo à deja été proposé, merci de proposer une autre vidéo" in self.driver.page_source
+        assert "merci de proposer une autre" in self.driver.page_source
 
         WebDriverWait(self.driver, 10)
         # Submit a video which doesn't exist
