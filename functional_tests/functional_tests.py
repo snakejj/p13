@@ -48,10 +48,15 @@ class FunctionalTests(StaticLiveServerTestCase):
 
         # Submit an incorrect link
         try:
+            link_to_login_page = WebDriverWait(self.driver, 10).until(
+                expected_conditions.presence_of_element_located((By.NAME, "link_sent"))
+            )
+
             # Filling the video form
             self.driver.find_element_by_name('video-link').send_keys('https://www.youtuhM')
             # Submitting the form
-            self.driver.find_element_by_name("link_sent").click()
+            link_to_login_page.click()
+
         except:
             print("The page loading was greater than 10 seconds, hence the test was stopped")
             self.driver.quit()
@@ -59,13 +64,17 @@ class FunctionalTests(StaticLiveServerTestCase):
         assert "Vidéo aléatoire" in self.driver.title
         assert "Le lien est incorrect, merci de founir un lien Youtube valide" in self.driver.page_source
 
-        WebDriverWait(self.driver, 10)
         # Submit a video which already exists in db
         try:
+            link_to_login_page = WebDriverWait(self.driver, 10).until(
+                expected_conditions.presence_of_element_located((By.NAME, "link_sent"))
+            )
+
             # Filling the video form
             self.driver.find_element_by_name('video-link').send_keys('https://www.youtube.com/watch?v=Yut87qR_thM')
             # Submitting the form
-            self.driver.find_element_by_name("link_sent").click()
+            link_to_login_page.click()
+
         except:
             print("The page loading was greater than 10 seconds, hence the test was stopped")
             self.driver.quit()
@@ -73,13 +82,17 @@ class FunctionalTests(StaticLiveServerTestCase):
         assert "Vidéo aléatoire" in self.driver.title
         assert "merci de proposer une autre" in self.driver.page_source
 
-        WebDriverWait(self.driver, 10)
         # Submit a video which doesn't exist
         try:
+            link_to_login_page = WebDriverWait(self.driver, 10).until(
+                expected_conditions.presence_of_element_located((By.NAME, "link_sent"))
+            )
+
             # Filling the video form
             self.driver.find_element_by_name('video-link').send_keys('https://www.youtube.com/watch?v=uvf0lD5xzH0')
             # Submitting the form
-            self.driver.find_element_by_name("link_sent").click()
+            link_to_login_page.click()
+
         except:
             print("The page loading was greater than 10 seconds, hence the test was stopped")
             self.driver.quit()
