@@ -44,7 +44,8 @@ DB_HOST : Host of your database
 CAPTCHA_SECRET_KEY= A secret key (4 is enough) which helps encrypt the captcha value before it's stored in user session  
 SENTRY_DSN : The sentry url used to monitor the app  
 RANDOM_API_KEY= The Random.org API Key # The free plan gives you 1000 request per day
-API_DAILY_LIMIT : The Random.org API daily limit # The free plan gives you 1000 request per day
+API_DAILY_LIMIT : The Random.org API daily limit # The free plan gives you 1000 request per day  
+ALLOWED_HOSTS = The Allowed hosts, with this format  -> ALLOWED_HOSTS=0.0.0.0,127.0.0.1,localhost
 ```
 
 Once transferred to your host, you will need to use theses commands:
