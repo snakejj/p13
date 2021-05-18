@@ -48,8 +48,16 @@
     {% include "comments/_comments.html" %}
 
     {% else %}
-    <p style="text-align:center;">Pour acceder à cette page vous devez soumettre une vidéo valide et pas encore proposé.</p>
-    <p style="text-align:center;">Voici les formes acceptées : bla bla bla</p>
+    <p style="margin-left: 2%;">Pour acceder à cette page vous devez soumettre une vidéo valide et pas encore proposé.</p>
+    <p style="margin-left: 2%;">Voici quelques formes acceptées :</p>
+    <ul style="margin-left: 2%;">
+        <li>http://youtu.be/cjMfVe8wScM</li>
+        <li>http://www.youtube.com/embed/cjMfVe8wScM</li>
+        <li>http://www.youtube.com/v/cjMfVe8wScM?version=3&amp;hl=en_US</li>
+        <li>http://www.youtube.com/watch?v=cjMfVe8wScM</li>
+        <li>http://www.youtube.com/watch?v=cjMfVe8wScM&feature=feedu</li>
+        <li>etc...</li>
+    </ul>
     {% endif %}
 
 {% endblock content %}
