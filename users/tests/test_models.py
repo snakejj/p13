@@ -9,7 +9,8 @@ import responses
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 from mixer.backend.django import mixer
-from users.models import get_report_pending, get_api_usage, get_videos_count, get_comments_count, \
+from videos.api_random_client import ApiRandomOrg
+from users.models import get_report_pending, get_videos_count, get_comments_count, \
     get_videos_rated_count, get_rating_count
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
@@ -54,8 +55,9 @@ def test_get_api_usage_expected():
 
     req = RequestFactory().get('/admin/')
     req.user = AnonymousUser()
+    api_instance = ApiRandomOrg()
 
-    nb_requests_used, api_daily_limit = get_api_usage(req)
+    nb_requests_used, api_daily_limit = api_instance.get_api_usage(req)
 
     assert nb_requests_used == int(os.getenv("API_DAILY_LIMIT")) - 458, \
         'Should return the value of the api_daily_limit (1000) minus the "requestsLeft" (458), so 1000-458= 542 '
@@ -72,7 +74,8 @@ def test_get_api_usage_when_api_does_not_answer_or_not_as_expected():
     middleware.process_request(request)
     request.session.save()
 
-    nb_requests_used, api_daily_limit = get_api_usage(request)
+    api_instance = ApiRandomOrg()
+    nb_requests_used, api_daily_limit = api_instance.get_api_usage(request)
 
     assert nb_requests_used is None
     assert api_daily_limit == int(os.getenv("API_DAILY_LIMIT")), \

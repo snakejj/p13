@@ -5,16 +5,18 @@ from django.contrib.auth import login as log_in
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+
+from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm
 from videos.models import VideoManager
-from users.models import get_api_usage, get_videos_count, get_comments_count, get_report_pending, \
+from users.models import get_videos_count, get_comments_count, get_report_pending, \
     get_videos_rated_count, get_rating_count
 
 
 def dashboard(request):
     video = VideoManager()
-
-    nb_requests_used, daily_api_limit = get_api_usage(request)
+    api_instance = ApiRandomOrg()
+    nb_requests_used, daily_api_limit = api_instance.get_api_usage(request)
     all_videos = get_videos_count()
     all_comments = get_comments_count()
     report_pending = get_report_pending()
