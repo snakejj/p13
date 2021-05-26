@@ -17,7 +17,7 @@ class FunctionalTests(StaticLiveServerTestCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.driver = webdriver.Firefox(
-            executable_path=str(BASE_DIR / 'webdrivers' / 'geckodriver'),
+            executable_path=str(BASE_DIR / 'apps' / 'webdrivers' / 'geckodriver'),
             options=firefox_options,
         )
         cls.driver.implicitly_wait(30)
