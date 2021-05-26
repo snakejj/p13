@@ -18,6 +18,16 @@ class ApiRandomOrg:
 
         self.url = "https://api.random.org/json-rpc/4/invoke"
 
+    def _api_call(self, data):
+        try:
+            response = requests.post(self.url, json=data, headers=self.headers, timeout=5)
+
+        except (requests.exceptions.ConnectionError, requests.Timeout):
+            response = None
+            # raise requests.exceptions.ConnectionError("L'API de randomisation est indisponible")
+
+        return response
+
     def get_api_usage(self, request):
         data = {
             "jsonrpc": "2.0",
@@ -28,11 +38,7 @@ class ApiRandomOrg:
             "id": 15998
         }
 
-        try:
-            response = requests.post(self.url, json=data, headers=self.headers, timeout=5)
-
-        except (requests.exceptions.ConnectionError, requests.Timeout):
-            response = None
+        response = self._api_call(data)
 
         api_daily_limit = int(os.getenv("API_DAILY_LIMIT"))
 
@@ -69,12 +75,7 @@ class ApiRandomOrg:
             "id": 42
         }
 
-        try:
-            response = requests.post(self.url, json=data, headers=self.headers, timeout=5)
-
-        except (requests.exceptions.ConnectionError, requests.Timeout):
-            response = None
-            # raise requests.exceptions.ConnectionError("L'API de randomisation est indisponible")
+        response = self._api_call(data)
 
         if response is None or response.status_code != 200:
             # If there is an error with the API answer, we use a pseudo-random integer
