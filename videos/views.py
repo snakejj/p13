@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from comments.forms import CommentForm, CaptchaForm
+from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm, ReportForm, RatingForm
 from videos.models import *
 from comments.models import *
@@ -117,6 +118,7 @@ def top_videos(request):
 def random_video(request):
     video = VideoManager()
     comment = CommentManager()
+    api_instance = ApiRandomOrg()
 
     link_form = LinkForm(prefix='video')
     report_form = ReportForm(prefix='report')
@@ -161,7 +163,7 @@ def random_video(request):
 
             video_is_unique = video.submit_video(request, link_form)
             if video_is_unique is True:
-                request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
+                request.session['video_pk'], request.session['video_link'] = api_instance.select_random_video(request)
 
             return redirect("videos:random_video")
 
@@ -191,7 +193,7 @@ def random_video(request):
             rate_form = RatingForm(request.POST or None, prefix='rate')
             video_rated = video.submit_rating_video(request, rate_form)
             if video_rated is True:
-                request.session['video_pk'], request.session['video_link'] = video.select_random_video(request)
+                request.session['video_pk'], request.session['video_link'] = api_instance.select_random_video(request)
 
             return redirect("videos:random_video")
 

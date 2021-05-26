@@ -9,6 +9,7 @@ from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 from mixer.backend.django import mixer
 
+from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm
 from videos.models import VideoManager
 
@@ -105,8 +106,8 @@ class TestVideoManager:
 
         requests.post('https://api.random.org/json-rpc/4/invoke')
 
-        video = VideoManager()
-        test = video.select_random_video(req)
+        api_instance = ApiRandomOrg()
+        test = api_instance.select_random_video(req)
 
         assert test == (9102, "krfeBAJCTQh"), 'Should return the pk and link of the 3rd entry in DB (at index 0)'
 
@@ -135,10 +136,10 @@ class TestVideoManager:
         requests.post('https://api.random.org/json-rpc/4/invoke')
 
         # We simulate the randrange output and choose the 4th entry in db
-        monkeypatch.setattr('videos.models.randrange', lambda a, b: 4)
+        monkeypatch.setattr('videos.api_random_client.randrange', lambda a, b: 4)
 
-        video = VideoManager()
-        test = video.select_random_video(req)
+        api_instance = ApiRandomOrg()
+        test = api_instance.select_random_video(req)
 
         assert test == (9358, "VjEKKrevKva"), 'Should return the pk and link of the 4th entry in DB (at index 0)'
 
@@ -170,8 +171,8 @@ class TestVideoManager:
 
         requests.post('https://api.random.org/json-rpc/4/invoke')
 
-        video = VideoManager()
-        test = video.select_random_video(req)
+        api_instance = ApiRandomOrg()
+        test = api_instance.select_random_video(req)
 
         assert test == (3548, "VPkbtMLGtoc"), 'Should return the pk and link of the 3rd entry in DB (at index 0)'
 
@@ -191,11 +192,11 @@ class TestVideoManager:
         req.user = AnonymousUser()
 
         # We simulate the randrange output and choose the 4th entry in db
-        monkeypatch.setattr('videos.models.randrange', lambda a, b: 4)
+        monkeypatch.setattr('videos.api_random_client.randrange', lambda a, b: 4)
 
-        video = VideoManager()
+        api_instance = ApiRandomOrg()
 
-        assert video.select_random_video(req) == (9358, 'VjEKKrevKva')
+        assert api_instance.select_random_video(req) == (9358, 'VjEKKrevKva')
 
     def test_submit_video(self):
         # ##############################################################################################################

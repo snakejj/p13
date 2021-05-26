@@ -19,48 +19,6 @@ def get_report_pending():
     return report_pending
 
 
-def get_api_usage(request):
-    headers = {
-        'Content-type': 'application/json',
-        'Accept': 'application/json'
-    }
-
-    url = "https://api.random.org/json-rpc/4/invoke"
-
-    data = {
-        "jsonrpc": "2.0",
-        "method": "getUsage",
-        "params": {
-            "apiKey": os.getenv("RANDOM_API_KEY")
-        },
-        "id": 15998
-    }
-
-    try:
-        response = requests.post(url, json=data, headers=headers, timeout=5)
-
-    except (requests.exceptions.ConnectionError, requests.Timeout):
-        response = None
-
-    api_daily_limit = int(os.getenv("API_DAILY_LIMIT"))
-
-    if response is None or response.status_code != 200:
-        # If there is an error with the API answer, we assign None to request_left
-
-        messages.info(
-            request,
-            "L'API de randomisation etant indisponible, il est impossible d'avoir le nombre de requetes restante",
-            fail_silently=True
-        )
-        nb_requests_used = None
-    else:
-        # If the API answer, we assign the API result to requests_left
-        requests_left = response.json()["result"]["requestsLeft"]
-        nb_requests_used = api_daily_limit - requests_left
-
-    return nb_requests_used, api_daily_limit
-
-
 def get_videos_count():
     count = Video.objects.all().count()
     url = "/superadminvideos/video/"
