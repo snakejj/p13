@@ -6,22 +6,25 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 
+from comments.managers import CommentManager
 from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm
-from videos.models import VideoManager
-from users.models import get_videos_count, get_comments_count, get_report_pending, \
-    get_videos_rated_count, get_rating_count
+from videos.managers import VideoManager, AbuseVideoManager, RateVideoManager
 
 
 def dashboard(request):
     video = VideoManager()
+    abuse = AbuseVideoManager()
+    rate = RateVideoManager()
+    comment = CommentManager()
     api_instance = ApiRandomOrg()
+
     nb_requests_used, daily_api_limit = api_instance.get_api_usage(request)
-    all_videos = get_videos_count()
-    all_comments = get_comments_count()
-    report_pending = get_report_pending()
-    all_videos_rated = get_videos_rated_count()
-    all_ratings = get_rating_count()
+    all_videos = video.get_videos_count()
+    all_comments = comment.get_comments_count()
+    report_pending = abuse.get_report_pending()
+    all_videos_rated = rate.get_videos_rated_count()
+    all_ratings = rate.get_rating_count()
     top_5_videos = video.getting_top_videos(request)
 
     return render(request, 'users/dashboard.html', {

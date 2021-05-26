@@ -1,14 +1,18 @@
+from django.contrib import messages
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from comments.forms import CommentForm, CaptchaForm
 from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm, ReportForm, RatingForm
-from videos.models import *
+from videos.managers import VideoManager, AbuseVideoManager, RateVideoManager
+from comments.managers import CommentManager
 from comments.models import *
 from captcha.image import ImageCaptcha
 
 
 def top_videos(request):
     video = VideoManager()
+    abuse = AbuseVideoManager()
     comment = CommentManager()
 
     link_form = LinkForm(prefix='video')
@@ -21,7 +25,7 @@ def top_videos(request):
     comment.get_captcha_int(request, forcing_new_captcha)
 
     captcha_image = ImageCaptcha(width=100, height=52)
-    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/img/captcha.png')
 
     top_5_videos = video.getting_top_videos(request)
     try:
@@ -67,7 +71,7 @@ def top_videos(request):
 
         if "report_sent" in request.POST:
             report_form = ReportForm(request.POST or None, prefix='report')
-            video.submit_report_video(request, report_form)
+            abuse.submit_report_video(request, report_form)
             return redirect("videos:top_videos")
 
         elif 'comment_sent' in request.POST:
@@ -117,6 +121,8 @@ def top_videos(request):
 
 def random_video(request):
     video = VideoManager()
+    rate = RateVideoManager()
+    abuse = AbuseVideoManager()
     comment = CommentManager()
     api_instance = ApiRandomOrg()
 
@@ -131,7 +137,7 @@ def random_video(request):
     comment.get_captcha_int(request, forcing_new_captcha)
 
     captcha_image = ImageCaptcha(width=100, height=52)
-    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/img/captcha.png')
 
     try:
         if request.session['has_submit_report']:
@@ -186,12 +192,12 @@ def random_video(request):
 
         elif "report_sent" in request.POST:
             report_form = ReportForm(request.POST or None, prefix='report')
-            video.submit_report_video(request, report_form)
+            abuse.submit_report_video(request, report_form)
             return redirect("videos:random_video")
 
         elif "rating_sent" in request.POST:
             rate_form = RatingForm(request.POST or None, prefix='rate')
-            video_rated = video.submit_rating_video(request, rate_form)
+            video_rated = rate.submit_rating_video(request, rate_form)
             if video_rated is True:
                 request.session['video_pk'], request.session['video_link'] = api_instance.select_random_video(request)
 

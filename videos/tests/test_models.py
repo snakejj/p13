@@ -11,7 +11,7 @@ from mixer.backend.django import mixer
 
 from videos.api_random_client import ApiRandomOrg
 from videos.forms import LinkForm
-from videos.models import VideoManager
+from videos.managers import VideoManager, RateVideoManager, AbuseVideoManager
 
 pytestmark = pytest.mark.django_db
 
@@ -284,7 +284,7 @@ class TestVideoManager:
             }
         )
 
-        video = VideoManager()
+        video = AbuseVideoManager()
         video.submit_report_video(request, report_form)
 
         assert "VPkbtMLzeoc" in request.session['has_submit_report']
@@ -310,7 +310,7 @@ class TestVideoManager:
             }
         )
 
-        video = VideoManager()
+        video = AbuseVideoManager()
         video.submit_report_video(request, report_form)
 
         assert "VBkbtMLze1c" in request.session['has_submit_report']
@@ -336,7 +336,7 @@ class TestVideoManager:
             }
         )
 
-        video = VideoManager()
+        video = AbuseVideoManager()
         video.submit_report_video(request, report_form)
 
         assert "VPkbtMLze0c" in request.session['has_submit_report']
@@ -362,7 +362,7 @@ class TestVideoManager:
             }
         )
 
-        video = VideoManager()
+        video = AbuseVideoManager()
         video.submit_report_video(request, report_form)
 
         assert "VPkbtMLze1c" in request.session['has_submit_report']
@@ -417,7 +417,7 @@ class TestVideoManager:
             'video': "4821",
         })
 
-        video = VideoManager()
+        video = RateVideoManager()
         return_of_the_function = video.submit_rating_video(request, rating_form)
 
         assert return_of_the_function is True
@@ -442,7 +442,7 @@ class TestVideoManager:
             'video': "4821",
         })
 
-        video = VideoManager()
+        video = RateVideoManager()
         return_of_the_function = video.submit_rating_video(request, rating_form)
 
         assert return_of_the_function is True
@@ -468,7 +468,7 @@ class TestVideoManager:
             'video': "4821",
         })
 
-        video = VideoManager()
+        video = RateVideoManager()
         return_of_the_function = video.submit_rating_video(request, rating_form)
 
         assert return_of_the_function is True

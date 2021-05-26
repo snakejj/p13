@@ -9,9 +9,10 @@ import responses
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 from mixer.backend.django import mixer
+
+from comments.managers import CommentManager
 from videos.api_random_client import ApiRandomOrg
-from users.models import get_report_pending, get_videos_count, get_comments_count, \
-    get_videos_rated_count, get_rating_count
+from videos.managers import AbuseVideoManager,VideoManager, RateVideoManager
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 pytestmark = pytest.mark.django_db
@@ -26,7 +27,8 @@ def test_get_report_pending():
     mixer.blend('videos.AbuseVideo', report_dealt_with=True)
     mixer.blend('videos.AbuseVideo', report_dealt_with=False)
 
-    report_pending = get_report_pending()
+    abuse = AbuseVideoManager()
+    report_pending = abuse.get_report_pending()
     assert report_pending['count'] == 4
     assert report_pending['url'] == "/superadminvideos/abusevideo/?report_dealt_with__exact=0"
 
@@ -89,7 +91,8 @@ def test_get_videos_count():
     mixer.blend('videos.Video')
     mixer.blend('videos.Video')
 
-    all_videos = get_videos_count()
+    video = VideoManager()
+    all_videos = video.get_videos_count()
 
     assert all_videos['count'] == 5
     assert all_videos['url'] == "/superadminvideos/video/"
@@ -99,7 +102,8 @@ def test_get_comments_count():
     mixer.blend('comments.Comment')
     mixer.blend('comments.Comment')
 
-    all_comments = get_comments_count()
+    comment = CommentManager()
+    all_comments = comment.get_comments_count()
 
     assert all_comments['count'] == 2
     assert all_comments['url'] == "/superadmincomments/comment/"
@@ -115,7 +119,8 @@ def test_get_videos_rated_count():
     mixer.blend('videos.Video', average_interest_rating=None)
     mixer.blend('videos.Video', average_interest_rating=8.2)
 
-    all_videos_rated = get_videos_rated_count()
+    rate = RateVideoManager()
+    all_videos_rated = rate.get_videos_rated_count()
 
     assert all_videos_rated['count'] == 6
     assert all_videos_rated['url'] == "/superadminvideos/video/?o=5"
@@ -128,7 +133,8 @@ def test_get_rating_count():
     mixer.blend('videos.RateVideo')
     mixer.blend('videos.RateVideo')
 
-    all_rating = get_rating_count()
+    rate = RateVideoManager()
+    all_rating = rate.get_rating_count()
 
     assert all_rating['count'] == 5
     assert all_rating['url'] == "/superadminvideos/ratevideo/"
