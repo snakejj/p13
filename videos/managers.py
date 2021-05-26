@@ -2,11 +2,9 @@ from django.apps import apps
 from django.db import models
 from django import urls
 from django.contrib import messages
+from django.db.models import Q, F
 from urllib.parse import urlparse, parse_qs
 import videos
-from django.db.models import Q, F
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
 
 
 class VideoManager(models.Manager):
