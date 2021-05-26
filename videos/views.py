@@ -25,7 +25,7 @@ def top_videos(request):
     comment.get_captcha_int(request, forcing_new_captcha)
 
     captcha_image = ImageCaptcha(width=100, height=52)
-    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/img/captcha.png')
 
     top_5_videos = video.getting_top_videos(request)
     try:
@@ -137,7 +137,7 @@ def random_video(request):
     comment.get_captcha_int(request, forcing_new_captcha)
 
     captcha_image = ImageCaptcha(width=100, height=52)
-    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/captcha/captcha.png')
+    captcha_image.write(str(comment.decrypt(request.session['temp_var'])), 'core/static/img/captcha.png')
 
     try:
         if request.session['has_submit_report']:
